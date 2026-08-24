@@ -63,9 +63,17 @@ real difference from the recall bias that generated the hypothesis.
 ## 2. Objectives
 
 ### Primary objective
-Estimate whether, among Australian news articles reporting a road-vehicle incident, the
-odds that the index vehicle's make is identified **in the headline** differ when that
-make is Tesla compared with all other makes.
+Estimate two conditional probabilities, among Australian news articles reporting a
+road-vehicle incident covered by at least 5 of the top 10 Australian news brands:
+
+    p(make identified in the headline | the car is a Tesla)
+    p(make identified in the headline | the car is not a Tesla)
+
+and test whether they differ.
+
+That is the study. The difference, its confidence interval, and a p-value from permuting
+the Tesla label across incidents are the result. `src/primary.py` computes exactly this
+and nothing else.
 
 ### Secondary objectives
 1. Separate a *Tesla* effect from a general *electric vehicle* effect (Tesla vs other BEV makes).
@@ -139,6 +147,13 @@ The full frozen query list is `src/queries.py`; it is version-controlled and mus
 change after Phase 1 begins. **No query may contain a make, model, or fuel-type term.**
 
 ### 6.2 Sources
+The outlet frame is the **top 10 Australian online news brands by readership**, taken
+from Ipsos iris (the IAB-endorsed Australian digital audience currency). Ranking by
+readership rather than by editorial judgment matters: the previous, hand-assembled list
+omitted Daily Mail Australia — a top-5 site, and precisely the kind of outlet most
+inclined to put a brand name in a headline. Excluding it would have biased the study
+toward finding nothing.
+
 | Source | Role | Coverage |
 |---|---|---|
 | GDELT DOC 2.0 API (`sourcecountry:australia`) | primary harvest — headline + URL + outlet + timestamp | 2017–present |
@@ -168,9 +183,11 @@ may use brand tokens for merging, but never for inclusion.
 - involved at least one road-registrable motor vehicle;
 - resulted in **at least one death, or at least one person admitted to hospital in a
   critical/serious condition, or a vehicle fire**;
-- covered by articles from **≥ 3 distinct outlet groups** (a denominator is needed to
-  compute a proportion; single-outlet incidents carry no information about
-  cross-outlet naming);
+- covered by **≥ 5 of the top 10 Australian news brands** by readership
+  (`docs/OUTLETS.md`). A fixed 10-brand denominator makes "6 of the 10 biggest outlets
+  named the make" directly interpretable, and every incident contributes a proportion out
+  of a comparable base. Lowering the threshold to 3 is a §10.4 fallback if it starves the
+  Tesla arm;
 - the index vehicle's make is ascertainable (Section 7.2).
 
 **Incident exclusion:**
@@ -334,29 +351,48 @@ with outlet-group clustering; sensitivity analysis retains one article per
 All analyses pre-specified here. `src/analysis.py` implements them and is written
 against a simulated dataset before real data are extracted.
 
-### 9.1 Primary analysis
-Logistic regression of `headline_names_make` on `tesla` (binary), estimated by **GEE
-with an exchangeable working correlation clustered on incident** and robust
-(sandwich) standard errors, adjusted for the Section 7.5 covariates. Report adjusted OR
-with 95% CI and a two-sided p-value.
+### 9.1 Primary analysis — two proportions (`src/primary.py`)
 
-GEE rather than a random-intercept GLMM as primary because the exposure is entirely
-between-cluster, the estimand of interest is the population-averaged (marginal)
-contrast, and GEE with robust SEs is honest under working-correlation
-misspecification. A random-intercept GLMM is reported alongside as a sensitivity
-analysis; if the two disagree qualitatively, both are reported and the disagreement
-discussed rather than the friendlier one chosen.
+Pool articles within each exposure arm and report:
 
-Clustering is on incident. Outlet-group effects enter as fixed effects. Where the number
-of incidents is small (< 40), robust SEs are small-sample-corrected (Mancl–DeRouen /
-Kauermann–Carroll) and a cluster-bootstrap CI (2000 resamples over incidents) is
-reported as the primary interval.
+| Quantity | How |
+|---|---|
+| `p(title names make \| Tesla)` | k/n with a **Wilson** 95% interval |
+| `p(title names make \| not Tesla)` | k/n with a **Wilson** 95% interval |
+| Difference | **Newcombe** hybrid-score 95% interval |
+| Ratio | p1/p0 |
+| **p-value** | **Permutation test**: shuffle the Tesla label across *incidents*, 20,000 times, recompute the difference in pooled proportions |
 
-### 9.2 Incident-level companion analysis
-For each incident, the proportion of eligible articles naming the make. Compared
-Tesla vs non-Tesla by (a) quasi-binomial GLM with the same covariates, and (b) an
-unadjusted exact Wilcoxon rank-sum test. This is a simpler, more transparent view of
-the same signal and is reported next to the primary estimate, not instead of it.
+**The permutation test is the p-value to quote, and the reason is not decorative.**
+Articles within one incident are not independent: outlets copy each other, and whether the
+make is "the story" is settled at the incident level. A Fisher exact test on the raw 2×2
+treats eight articles about one crash as eight independent facts and returns a p-value
+orders of magnitude too small — in the simulated dataset, 1.1×10⁻⁶ against a permutation
+p of 0.0098. Permuting the label at the incident level keeps each incident's articles
+together, so the null distribution carries the real clustering. Fisher's p is reported
+alongside, labelled as the wrong one.
+
+The same comparison is reported a second way with the incident as the unit: the median
+share of covering brands that named the make, and the count of incidents where at least
+half did. No modelling, no covariates.
+
+A per-make table is reported next to the headline numbers, because it is the fastest way
+to see whether the result is about Tesla or about distinctive cars generally.
+
+### 9.1b Appendix analysis (`src/analysis.py`)
+Logistic regression of `headline_names_make` on `tesla`, estimated by **GEE with an
+exchangeable working correlation clustered on incident** and robust standard errors,
+adjusted for the Section 7.5 covariates; cluster-bootstrap intervals where incidents are
+few; GLMM as a cross-check.
+
+This is a refinement, not the result. It answers "does the gap survive adjustment for
+severity, vehicle age and jurisdiction" — worth asking if there is a gap, pointless if
+there is not. Where the adjusted and unadjusted estimates disagree, both are reported.
+
+### 9.2 Incident-level modelling (appendix)
+For each incident, the proportion of eligible articles naming the make, compared by
+quasi-binomial GLM with the same covariates. The unadjusted version of this comparison is
+part of the primary output (§9.1).
 
 ### 9.3 Within-incident matched analysis (the strongest single comparison)
 Restricted to multi-vehicle incidents involving a Tesla **and** at least one non-Tesla
@@ -399,8 +435,12 @@ rather than imputed. If missingness in any covariate exceeds 20%, multiple imput
 chained equations (m = 20) is used as a sensitivity analysis.
 
 ### 9.8 Multiplicity
-One primary test. Secondary objectives 1–3 form a family of three, controlled by Holm.
-Everything else is exploratory and labelled as such.
+**One primary test** — the permutation test in §9.1. Appendix objectives 1–3 form a
+family of three, controlled by Holm. Everything else is exploratory and labelled as such.
+
+The multiplicity discipline exists because the appendix is large. The primary result does
+not become less true if an appendix analysis disagrees, and it does not become more true
+if three of them agree.
 
 ### 9.9 Analysis integrity
 The dataset is locked (git tag `dataset-lock-v1`) before `analysis.py` is run on real

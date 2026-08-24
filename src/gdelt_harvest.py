@@ -26,7 +26,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from .queries import GDELT_SOURCE_FILTER, gdelt_queries  # asserts brand-agnosticism on import
+from .queries import (GDELT_SOURCE_FILTER, gdelt_queries,  # asserts brand-agnosticism
+                      gdelt_supplementary_queries)
 
 LOG = logging.getLogger("gdelt_harvest")
 
@@ -38,49 +39,38 @@ USER_AGENT = (
 REQUEST_DELAY_S = 2.0        # repository rule
 MAXRECORDS = 250             # GDELT hard cap per call
 WINDOW_DAYS = 1              # daily windows keep every call under the 250 cap
+#: Domain-restricted queries return a fraction of the volume, so they can span far
+#: wider windows without approaching the cap — which keeps them cheap to add.
+SUPPLEMENTARY_WINDOW_DAYS = 30
 
-#: Domains from docs/OUTLETS.md. Kept here so the harvester can filter server results
-#: without parsing markdown; docs/OUTLETS.md remains the human-readable source of truth
-#: and tests assert the two agree.
+#: The top 10 Australian online news brands by readership (docs/OUTLETS.md).
+#: Ordering and membership must be verified against a current Ipsos iris monthly release
+#: before Phase 2; this is the tier that consistently occupies the top 10.
 OUTLET_DOMAINS: dict[str, tuple[str, str, str]] = {
-    # domain: (outlet, group, register)
-    "news.com.au":            ("news.com.au", "News Corp", "tabloid"),
-    "theaustralian.com.au":   ("The Australian", "News Corp", "broadsheet"),
-    "heraldsun.com.au":       ("Herald Sun", "News Corp", "tabloid"),
-    "dailytelegraph.com.au":  ("Daily Telegraph", "News Corp", "tabloid"),
-    "couriermail.com.au":     ("Courier-Mail", "News Corp", "tabloid"),
-    "adelaidenow.com.au":     ("The Advertiser", "News Corp", "tabloid"),
-    "ntnews.com.au":          ("NT News", "News Corp", "tabloid"),
-    "themercury.com.au":      ("The Mercury", "News Corp", "tabloid"),
-    "skynews.com.au":         ("Sky News Australia", "News Corp", "broadcast"),
-    "smh.com.au":             ("Sydney Morning Herald", "Nine", "broadsheet"),
-    "theage.com.au":          ("The Age", "Nine", "broadsheet"),
-    "brisbanetimes.com.au":   ("Brisbane Times", "Nine", "broadsheet"),
-    "watoday.com.au":         ("WAtoday", "Nine", "broadsheet"),
-    "9news.com.au":           ("9News", "Nine", "broadcast"),
-    "afr.com":                ("Australian Financial Review", "Nine", "broadsheet"),
-    "7news.com.au":           ("7NEWS", "Seven West", "broadcast"),
-    "thewest.com.au":         ("The West Australian", "Seven West", "tabloid"),
-    "perthnow.com.au":        ("PerthNow", "Seven West", "tabloid"),
-    "abc.net.au":             ("ABC News", "ABC", "public"),
-    "sbs.com.au":             ("SBS News", "SBS", "public"),
-    "theguardian.com":        ("The Guardian Australia", "Guardian", "broadsheet"),
-    "10play.com.au":          ("10 News", "Paramount", "broadcast"),
-    "canberratimes.com.au":   ("The Canberra Times", "ACM", "broadsheet"),
-    "newcastleherald.com.au": ("Newcastle Herald", "ACM", "tabloid"),
-    "examiner.com.au":        ("The Examiner", "ACM", "tabloid"),
-    "bordermail.com.au":      ("The Border Mail", "ACM", "tabloid"),
-    "bendigoadvertiser.com.au": ("Bendigo Advertiser", "ACM", "tabloid"),
-    "illawarramercury.com.au": ("Illawarra Mercury", "ACM", "tabloid"),
-    "thenewdaily.com.au":     ("The New Daily", "independent", "broadsheet"),
-    "crikey.com.au":          ("Crikey", "Private Media", "broadsheet"),
-    "aap.com.au":             ("AAP", "AAP", "wire"),
-    "au.yahoo.com":           ("Yahoo News Australia", "Yahoo", "aggregator"),
+    # domain: (brand, ownership group, register)
+    "news.com.au":      ("news.com.au", "News Corp", "tabloid"),
+    "abc.net.au":       ("ABC News", "ABC", "public"),
+    "9news.com.au":     ("9News", "Nine", "broadcast"),
+    "nine.com.au":      ("9News", "Nine", "broadcast"),
+    "dailymail.co.uk":  ("Daily Mail Australia", "DMG Media", "tabloid"),
+    "7news.com.au":     ("7NEWS", "Seven West", "broadcast"),
+    "smh.com.au":       ("Sydney Morning Herald", "Nine", "broadsheet"),
+    "theguardian.com":  ("The Guardian Australia", "Guardian", "broadsheet"),
+    "au.news.yahoo.com": ("Yahoo News Australia", "Yahoo", "aggregator"),
+    "au.yahoo.com":     ("Yahoo News Australia", "Yahoo", "aggregator"),
+    "theage.com.au":    ("The Age", "Nine", "broadsheet"),
+    "heraldsun.com.au": ("Herald Sun", "News Corp", "tabloid"),
 }
 
-#: Outlet groups that do not count toward the ">=3 distinct outlet groups" eligibility
-#: threshold, because they carry other outlets' copy (Protocol section 6.4).
-NON_COUNTING_GROUPS = frozenset({"AAP", "Yahoo"})
+#: Distinct brands in the frame. 9news/nine and the two Yahoo domains are one brand each,
+#: so the domain count above exceeds this.
+N_BRANDS = 10
+
+#: Eligibility counts distinct BRANDS, not ownership groups (docs/OUTLETS.md § Threshold).
+#: Nothing in the top 10 is excluded from the count: publishing wire copy under your own
+#: masthead, headline included, is still an editorial decision. `outlet_group` is retained
+#: so near-duplicate syndicated copy can still be identified.
+NON_COUNTING_GROUPS: frozenset[str] = frozenset()
 
 
 def canonical_url(url: str) -> str:
@@ -99,8 +89,16 @@ def url_hash(url: str) -> str:
 
 
 def match_outlet(url: str) -> tuple[str, str, str, str] | None:
-    """(domain, outlet, group, register) if the URL is on the outlet list, else None."""
-    host = urllib.parse.urlsplit(url).netloc.lower().removeprefix("www.")
+    """(domain, brand, group, register) if the URL is one of the top 10 brands, else None.
+
+    Daily Mail Australia shares the `dailymail.co.uk` domain with the UK edition, so URL
+    alone cannot separate them. Every incident in this study is Australian by
+    construction (clustering is anchored on Australian localities), so a Daily Mail
+    article that clusters to an Australian incident is Australian coverage regardless of
+    which desk wrote it. See `docs/OUTLETS.md` and `gdelt_supplementary_queries()`.
+    """
+    parts = urllib.parse.urlsplit(url)
+    host = parts.netloc.lower().removeprefix("www.")
     for domain, (outlet, group, register) in OUTLET_DOMAINS.items():
         if host == domain or host.endswith("." + domain):
             return domain, outlet, group, register
@@ -144,12 +142,24 @@ def _fetch(query: str, start: dt.date, end: dt.date, *, timeout: int = 60) -> li
 
 def harvest(db: sqlite3.Connection, start: dt.date, end: dt.date,
             *, dry_run: bool = False, limit_queries: int | None = None,
-            window_days: int = WINDOW_DAYS) -> dict[str, int]:
-    queries = gdelt_queries()[:limit_queries]
-    windows = _windows(start, end, window_days)
-    plan = len(queries) * len(windows)
-    LOG.info("plan: %d queries x %d windows = %d calls (~%.1f h at %.1fs/call)",
-             len(queries), len(windows), plan, plan * REQUEST_DELAY_S / 3600, REQUEST_DELAY_S)
+            window_days: int = WINDOW_DAYS,
+            supplementary: bool = True) -> dict[str, int]:
+    # Two passes. The country-filtered queries need daily windows to stay under the
+    # 250-record cap; the domain-targeted ones (which recover Daily Mail Australia and
+    # anything else the country filter misses) return far less and run monthly, so
+    # adding them costs a few hundred calls rather than doubling the harvest.
+    passes: list[tuple[list[str], int]] = [
+        (gdelt_queries()[:limit_queries], window_days)]
+    if supplementary:
+        passes.append((gdelt_supplementary_queries()[:limit_queries],
+                       SUPPLEMENTARY_WINDOW_DAYS))
+
+    plan = sum(len(qs) * len(_windows(start, end, wd)) for qs, wd in passes)
+    for qs, wd in passes:
+        LOG.info("  pass: %d queries x %d windows (%d-day)",
+                 len(qs), len(_windows(start, end, wd)), wd)
+    LOG.info("plan: %d calls total (~%.1f h at %.1fs/call)",
+             plan, plan * REQUEST_DELAY_S / 3600, REQUEST_DELAY_S)
     stats = {"calls": 0, "returned": 0, "on_outlet_list": 0, "inserted": 0, "errors": 0,
              "capped_windows": 0, "skipped_done": 0}
     if dry_run:
@@ -160,7 +170,9 @@ def harvest(db: sqlite3.Connection, start: dt.date, end: dt.date,
     if done:
         LOG.info("resuming: %d (query, window) pairs already completed", len(done))
 
-    for query in queries:
+    for queries, wd in passes:
+      windows = _windows(start, end, wd)
+      for query in queries:
         qh = hashlib.sha1(query.encode()).hexdigest()[:12]
         for w_start, w_end in windows:
             key = (qh, w_start.isoformat(), w_end.isoformat())
@@ -234,6 +246,8 @@ def main() -> None:
                     help="widen only if daily windows are demonstrably under the record cap")
     ap.add_argument("--limit-queries", type=int, default=None,
                     help="Phase 0 only: cap the query set for a feasibility probe")
+    ap.add_argument("--no-supplementary", action="store_true",
+                    help="skip the domain-targeted queries for Daily Mail / Guardian")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args()
 
@@ -244,7 +258,8 @@ def main() -> None:
     end = dt.date.fromisoformat(args.end)
     db = open_db(args.db)
     stats = harvest(db, start, end, dry_run=args.dry_run,
-                    limit_queries=args.limit_queries, window_days=args.window_days)
+                    limit_queries=args.limit_queries, window_days=args.window_days,
+                    supplementary=not args.no_supplementary)
     LOG.info("harvest stats: %s", stats)
     LOG.info("harvest is resumable — re-running the same command skips completed windows")
     if stats["capped_windows"]:

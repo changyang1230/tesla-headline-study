@@ -26,8 +26,12 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 # sanity check before spending any API calls
-python -m pytest tests -q     # expect 63 passed
+python -m pytest tests -q     # expect 76 passed
 python -m src.power           # read the "detectable" table
+
+# see what the finished output looks like, on data whose answer is known
+python -m src.simulate --out data/simulated.csv --tesla-or 4.0
+python -m src.primary --csv data/simulated.csv --out output/primary_simulated.md
 ```
 
 Every command in this runbook runs from the repository root.
@@ -118,7 +122,14 @@ shuf -n 60 output/candidate_incidents.csv > /tmp/phase0_sample.csv
 ```
 
 For each: open two or three of the URLs, record the make, whether it meets the severity
-bar (death / critical injury / fire), and how many distinct outlet groups covered it.
+bar (death / critical injury / fire), and **how many of the top 10 brands covered it**.
+
+Record separately the incidents where you **could not determine the make at all** — that
+pile is the denominator problem, and `primary.py` reports it. It matters because for a
+Tesla some outlet almost always says so, while for a small hatchback outlets often just
+write "a car". If that pile is large and skewed toward non-Teslas, the surviving
+non-Tesla sample is enriched for incidents where somebody named the make, which pushes
+`p(title | non-Tesla)` up and makes the gap look smaller than it is.
 
 ## Step 6 — Extrapolate and decide
 
@@ -166,7 +177,8 @@ Create `output/phase0_feasibility.md` recording:
 
 - articles harvested, windows capped, outlet coverage
 - chosen clustering threshold and its calibration evidence
-- clusters found, eligible clusters, mean articles per incident
+- clusters found, clusters covered by ≥5 of the top 10 brands, mean articles per incident
+- **incidents where the make could not be determined**, and their apparent make mix
 - observed ICC
 - Tesla incidents in the sample, and the projection with its assumptions stated
 - **which decision rule fired, and what you are doing about it**

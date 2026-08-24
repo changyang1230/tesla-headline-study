@@ -37,7 +37,7 @@ COSINE_THRESHOLD = 0.35
 #: rule catches pairs whose cosine is diluted by differing event vocabulary.
 RARE_SHARED_TOKENS = 2
 RARE_DF_FRACTION = 0.002     # a token is "rare" if it appears in <0.2% of harvested headlines
-MIN_OUTLET_GROUPS = 3        # Protocol section 6.4 eligibility
+MIN_OUTLETS = 5              # >=5 of the top 10 brands (docs/OUTLETS.md)
 
 #: Both thresholds are provisional. Phase 0 calibrates them against a hand-labelled
 #: sample of ~200 articles and records the chosen values in output/phase0_feasibility.md
@@ -145,12 +145,13 @@ def cluster(rows: list[sqlite3.Row], *, threshold: float = COSINE_THRESHOLD) -> 
     return sorted(groups.values(), key=len, reverse=True)
 
 
-def counting_groups(rows: list[sqlite3.Row], idxs: list[int]) -> set[str]:
+def counting_brands(rows: list[sqlite3.Row], idxs: list[int]) -> set[str]:
+    """Distinct top-10 brands covering this cluster (docs/OUTLETS.md § Threshold)."""
     out = set()
     for i in idxs:
         meta = OUTLET_DOMAINS.get(rows[i]["domain"])
         if meta and meta[1] not in NON_COUNTING_GROUPS:
-            out.add(meta[1])
+            out.add(meta[0])          # brand, not ownership group
     return out
 
 
@@ -158,7 +159,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--db", default="data/study.db")
     ap.add_argument("--out", default="output/candidate_incidents.csv")
-    ap.add_argument("--min-groups", type=int, default=MIN_OUTLET_GROUPS)
+    ap.add_argument("--min-outlets", type=int, default=MIN_OUTLETS)
     ap.add_argument("--threshold", type=float, default=COSINE_THRESHOLD,
                     help="cosine linkage threshold; calibrate in Phase 0")
     args = ap.parse_args()
@@ -171,15 +172,15 @@ def main() -> None:
     LOG.info("clustering %d harvested articles", len(rows))
 
     clusters = cluster(rows, threshold=args.threshold)
-    kept = [c for c in clusters if len(counting_groups(rows, c)) >= args.min_groups]
-    LOG.info("%d clusters, %d meeting the >=%d outlet-group threshold",
-             len(clusters), len(kept), args.min_groups)
+    kept = [c for c in clusters if len(counting_brands(rows, c)) >= args.min_outlets]
+    LOG.info("%d clusters, %d covered by >=%d of the top 10 brands",
+             len(clusters), len(kept), args.min_outlets)
 
     out = pathlib.Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh)
-        w.writerow(["cluster_id", "n_articles", "n_outlet_groups", "first_seen",
+        w.writerow(["cluster_id", "n_articles", "n_brands", "first_seen",
                     "example_headlines", "urls",
                     # blank columns for the human reviewer (Codebook section 1)
                     "VERIFIED_single_incident", "incident_date", "state", "locality",
@@ -188,7 +189,7 @@ def main() -> None:
         for cid, idxs in enumerate(kept, start=1):
             dates = sorted(d for d in (_parse_seendate(rows[i]["seendate"]) for i in idxs) if d)
             w.writerow([
-                f"C{cid:04d}", len(idxs), len(counting_groups(rows, idxs)),
+                f"C{cid:04d}", len(idxs), len(counting_brands(rows, idxs)),
                 dates[0].isoformat() if dates else "",
                 " || ".join((rows[i]["title_at_crawl"] or "")[:120] for i in idxs[:5]),
                 " ".join(rows[i]["canonical_url"] for i in idxs),

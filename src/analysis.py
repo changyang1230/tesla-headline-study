@@ -1,12 +1,21 @@
-"""Pre-specified analysis (Protocol section 9). Run ONCE, after dataset lock.
+"""APPENDIX analysis (Protocol section 9.1b). Run ONCE, after dataset lock.
+
+**This is not the study.** The study is `src/primary.py`: two conditional probabilities
+and a permutation test. Run that first.
+
+What this adds is one question: does the gap between those two probabilities survive
+adjustment for severity, incident type, vehicle age, jurisdiction, year and outlet — and
+does it hold inside crashes that involved a Tesla *and* another car, where every
+confounder is held constant by construction? Worth asking if there is a gap. Pointless if
+there is not.
 
 Everything in this file was written and debugged against `simulate.py` output before any
 real data existed. That is what makes "pre-specified" mean something here: the model
 formulae could not have been shaped by the real results.
 
 Usage:
-    python -m src.analysis --csv data/simulated.csv --out output/results_simulated.md
-    python -m src.analysis --db  data/study.db      --out output/results.md
+    python -m src.primary  --db data/study.db                    # <- the study
+    python -m src.analysis --db data/study.db --out output/results.md   # <- the appendix
 
 Any analysis not in this file at dataset-lock time is post-hoc and belongs in a
 separately labelled section of the manuscript.
@@ -264,7 +273,11 @@ def run(df: pd.DataFrame, n_boot: int, out_path: pathlib.Path, label: str) -> No
     n_inc = df.incident_id.nunique()
     n_tesla_inc = int(df.groupby("incident_id").tesla.first().sum())
 
-    w(f"# Results — {label}")
+    w(f"# Appendix results — {label}")
+    w()
+    w("> **This is the appendix.** The study's result is in `output/primary_result.md` "
+      "(`python -m src.primary`): two conditional probabilities and a permutation test. "
+      "What follows asks only whether that gap survives adjustment.")
     w()
     w(f"Generated {dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds')}  ")
     w(f"Articles: **{len(df)}** across **{n_inc}** incidents "

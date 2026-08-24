@@ -1,6 +1,8 @@
-# Results — simulated data
+# Appendix results — simulated data
 
-Generated 2026-08-24T08:03:32+00:00  
+> **This is the appendix.** The study's result is in `output/primary_result.md` (`python -m src.primary`): two conditional probabilities and a permutation test. What follows asks only whether that gap survives adjustment.
+
+Generated 2026-08-24T11:56:14+00:00  
 Articles: **1248** across **158** incidents (**28** Tesla, 130 non-Tesla)
 
 > Pre-specified in PROTOCOL.md section 9. Anything not in `src/analysis.py` at dataset lock is post-hoc and must be labelled as such.
@@ -18,23 +20,23 @@ Estimated intracluster correlation (exchangeable working correlation): **0.332**
 
 ## Primary analysis — Tesla vs all other makes
 
-Adjusted GEE (exchangeable, clustered on incident, robust SE): **OR 2.12 (95% CI 1.17–3.83), p = 0.0126; cluster-bootstrap CI 1.00–3.79**
+Adjusted GEE (exchangeable, clustered on incident, robust SE): **OR 2.28 (95% CI 1.27–4.10), p = 0.0059; cluster-bootstrap CI 1.12–4.18**
 
 Unadjusted: OR 2.46 (95% CI 1.44–4.19), p = 0.0010
 
-Interpretation: the adjusted odds that a headline identifies the vehicle's make are higher for Tesla by a factor of 2.12. This is a statement about **editorial behaviour**, not about vehicle safety.
+Interpretation: the adjusted odds that a headline identifies the vehicle's make are higher for Tesla by a factor of 2.28. This is a statement about **editorial behaviour**, not about vehicle safety.
 
 ## Incident-level companion analysis
 
 Median proportion of covering articles naming the make: Tesla **0.52** (n=28) vs other **0.15** (n=130); Mann–Whitney p = 0.0016
-Adjusted quasi-binomial GLM: OR 1.88 (95% CI 1.49–2.39), p = 0.0000 (dispersion 0.42)
+Adjusted quasi-binomial GLM: OR 2.03 (95% CI 1.40–2.93), p = 0.0002 (dispersion 1.00)
 
 ## Secondary objectives (Holm-adjusted family of three)
 
 | Contrast | OR | 95% CI | p (raw) | p (Holm) |
 |---|---|---|---|---|
-| Tesla vs other BEV | 2.62 | 1.03–6.63 | 0.0423 | 0.0845 |
-| Tesla vs premium ICE | 2.02 | 0.97–4.21 | 0.0594 | 0.0845 |
+| Tesla vs other BEV | 3.82 | 1.47–9.94 | 0.0061 | 0.0121 |
+| Tesla vs premium ICE | 2.13 | 0.99–4.57 | 0.0526 | 0.0526 |
 | Within-incident (matched) | 4.67 | 1.93–11.27 | 0.0002 | 0.0006 |
 
 **Within-incident detail** — 13 multi-vehicle incidents involving a Tesla and one other identified make, 102 articles. Named both: 18; Tesla only: **28**; other make only: **6**; neither: 50. McNemar exact p = 0.0002.
@@ -43,11 +45,11 @@ This is the comparison least vulnerable to confounding, because both makes are i
 
 ## Negative controls (Protocol section 9.4)
 
-**Outcome control** — make named anywhere in the body: OR 2.05 (95% CI 1.00–4.20), p = 0.0500
+**Outcome control** — make named anywhere in the body: OR 2.12 (95% CI 1.04–4.30), p = 0.0386
 
 A large headline effect with a null body effect points to headline-specific salience. Similar effects on both would instead suggest the Tesla was simply easier to identify, which is a different claim.
 
-**Exposure control** — Toyota vs other non-Tesla makes: OR 0.82 (95% CI 0.21–3.14), p = 0.7710
+**Exposure control** — Toyota vs other non-Tesla makes: OR 0.84 (95% CI 0.23–3.15), p = 0.7991
 
 Toyota is the highest-volume make on Australian roads with no salience narrative attached. A large effect here would mean the model is picking up something other than brand salience.
 
@@ -55,16 +57,16 @@ Toyota is the highest-volume make on Australian roads with no salience narrative
 
 | Analysis | Rationale | OR | 95% CI | p |
 |---|---|---|---|---|
-| Tier 1 make only | removes media-dependent make ascertainment (§7.2) | 1.59 | 0.71–3.56 | 0.2616 |
-| Make token only | excludes model tokens from the outcome (§7.3) | 2.00 | 1.13–3.53 | 0.0166 |
-| One article per wire group | removes syndicated duplication (§8.4) | 2.09 | 1.16–3.74 | 0.0137 |
-| Excluding wire copy | original reporting only | 2.02 | 1.12–3.66 | 0.0196 |
-| Independence working correlation | GEE working-structure robustness | 1.90 | 1.07–3.39 | 0.0288 |
+| Tier 1 make only | removes media-dependent make ascertainment (§7.2) | 1.79 | 0.77–4.15 | 0.1760 |
+| Make token only | excludes model tokens from the outcome (§7.3) | 2.13 | 1.21–3.73 | 0.0083 |
+| One article per wire group | removes syndicated duplication (§8.4) | 2.23 | 1.25–3.99 | 0.0066 |
+| Excluding wire copy | original reporting only | 2.16 | 1.20–3.89 | 0.0100 |
+| Independence working correlation | GEE working-structure robustness | 2.05 | 1.16–3.64 | 0.0139 |
 | Unadjusted | no covariate adjustment | 2.46 | 1.44–4.19 | 0.0010 |
 
 ## Mediator-adjusted model (Protocol section 9.5 — descriptive only)
 
-Adding the self-driving and fire narratives: OR 1.45 (95% CI 0.69–3.04), p = 0.3228 (primary was OR 2.12).
+Adding the self-driving and fire narratives: OR 1.55 (95% CI 0.76–3.20), p = 0.2303 (primary was OR 2.28).
 
 Reported descriptively. These are mediators, not confounders, so this is *not* a better-adjusted estimate — it shows how much of the association travels with those two narratives. Formal mediation identification assumptions are not met here.
 

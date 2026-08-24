@@ -1,58 +1,83 @@
-# Outlet list (frozen at Phase 2)
+# The top 10 Australian online news sources
 
-An article is eligible only if its outlet appears here. The list is deliberately broad —
-narrowing it to "outlets I read" would reintroduce the selection problem the design
-exists to avoid.
+The frame is the ten highest-readership Australian online news brands. An incident
+qualifies for the study only if **at least 5 of these 10** covered it (§ Threshold below).
 
-`outlet_group` matters because syndicated copy travels within a group; it is the
-clustering unit for the syndication sensitivity analysis (Protocol §8.4).
+## Source of truth: Ipsos iris
 
-| Outlet | Domain | Group | Register | Reach |
-|---|---|---|---|---|
-| news.com.au | news.com.au | News Corp | tabloid | national |
-| The Australian | theaustralian.com.au | News Corp | broadsheet | national |
-| Herald Sun | heraldsun.com.au | News Corp | tabloid | VIC |
-| Daily Telegraph | dailytelegraph.com.au | News Corp | tabloid | NSW |
-| Courier-Mail | couriermail.com.au | News Corp | tabloid | QLD |
-| The Advertiser | adelaidenow.com.au | News Corp | tabloid | SA |
-| NT News | ntnews.com.au | News Corp | tabloid | NT |
-| The Mercury | themercury.com.au | News Corp | tabloid | TAS |
-| Sky News Australia | skynews.com.au | News Corp | broadcast | national |
-| Sydney Morning Herald | smh.com.au | Nine | broadsheet | NSW |
-| The Age | theage.com.au | Nine | broadsheet | VIC |
-| Brisbane Times | brisbanetimes.com.au | Nine | broadsheet | QLD |
-| WAtoday | watoday.com.au | Nine | broadsheet | WA |
-| 9News | 9news.com.au | Nine | broadcast | national |
-| Australian Financial Review | afr.com | Nine | broadsheet | national |
-| 7NEWS | 7news.com.au | Seven West | broadcast | national |
-| The West Australian | thewest.com.au | Seven West | tabloid | WA |
-| PerthNow | perthnow.com.au | Seven West | tabloid | WA |
-| ABC News | abc.net.au | ABC | public | national |
-| SBS News | sbs.com.au | SBS | public | national |
-| The Guardian Australia | theguardian.com | Guardian | broadsheet | national |
-| 10 News | 10play.com.au | Paramount | broadcast | national |
-| The Canberra Times | canberratimes.com.au | ACM | broadsheet | ACT |
-| Newcastle Herald | newcastleherald.com.au | ACM | tabloid | NSW |
-| The Examiner | examiner.com.au | ACM | tabloid | TAS |
-| The Border Mail | bordermail.com.au | ACM | tabloid | VIC/NSW |
-| Bendigo Advertiser | bendigoadvertiser.com.au | ACM | tabloid | VIC |
-| Illawarra Mercury | illawarramercury.com.au | ACM | tabloid | NSW |
-| The New Daily | thenewdaily.com.au | independent | broadsheet | national |
-| Crikey | crikey.com.au | Private Media | broadsheet | national |
-| AAP | aap.com.au | AAP | wire | national |
-| Yahoo News Australia | au.yahoo.com | Yahoo | aggregator | national |
+**Ipsos iris** is the official digital audience measurement currency for Australia,
+endorsed by IAB Australia; it replaced Nielsen Digital Panel in mid-2021 and publishes
+monthly rankings of news brands by total audience (browser + app, all devices).
 
-## Notes
+- IAB Australia release page: `iabaustralia.com.au` → Research & Resources → Ipsos iris
+- Monthly "Top 10 news brands" tables are published as free summaries; the underlying
+  panel data is subscription-only, but the ranked brand list is public.
 
-- **AAP is a wire, not an outlet.** Its copy appears under other mastheads. It is listed
-  so that wire-origin articles can be identified and so `is_wire` can be set. AAP's own
-  site is not counted as one of the "3 distinct outlet groups" required for incident
-  eligibility.
-- **Yahoo News Australia** carries a mix of original and syndicated copy and is coded as
-  `aggregator`; it is excluded from the outlet-group count for the same reason.
-- Regional ACM titles are included because a large share of Australian fatal crashes
-  happen outside capital cities and a metro-only list would systematically under-sample
-  regional incidents — which would matter here, because Tesla's fleet is
-  disproportionately metropolitan (Protocol §12, threat 4).
-- Adding an outlet after Phase 2 requires a dated entry in the Codebook rule log and a
-  re-run of the harvest for the full period, not just for recent incidents.
+## ⚠️ Verify before freezing
+
+The list below is the tier that consistently occupies the top 10, but **the exact
+ordering moves month to month and I have not verified it against a current release.**
+Before Phase 2:
+
+1. Pull the most recent Ipsos iris monthly news-brand ranking.
+2. Take the top 10 Australian news brands by total audience.
+3. Fill in the `audience` column with the figure and the month.
+4. Replace any brand below that the current data excludes, and record the swap in
+   CODEBOOK.md §5.
+
+Averaging the rankings over three or four consecutive months is worth the extra ten
+minutes — single months bounce around on the back of one big story.
+
+| # | Brand | Domain(s) | Owner | Register | Audience (fill in) |
+|---|---|---|---|---|---|
+| 1 | news.com.au | news.com.au | News Corp | tabloid | |
+| 2 | ABC News | abc.net.au | ABC | public | |
+| 3 | 9News / nine.com.au | 9news.com.au, nine.com.au | Nine | broadcast | |
+| 4 | Daily Mail Australia | dailymail.co.uk/auhome | DMG Media | tabloid | |
+| 5 | 7NEWS | 7news.com.au | Seven West | broadcast | |
+| 6 | Sydney Morning Herald | smh.com.au | Nine | broadsheet | |
+| 7 | The Guardian Australia | theguardian.com | Guardian | broadsheet | |
+| 8 | Yahoo News Australia | au.news.yahoo.com, au.yahoo.com | Yahoo | aggregator | |
+| 9 | The Age | theage.com.au | Nine | broadsheet | |
+| 10 | Herald Sun | heraldsun.com.au | News Corp | tabloid | |
+
+## Two corrections from the previous list
+
+**Daily Mail Australia was missing.** It is consistently a top-5 Australian news site by
+audience and is exactly the kind of outlet most inclined to put a brand name in a
+headline. Leaving it out would have biased the study *toward finding nothing* — dropping
+the outlets most likely to produce the effect.
+
+**Yahoo News Australia was excluded as an "aggregator."** On readership grounds that was
+wrong; it is a top-10 news destination for Australian readers. It is included, and flagged
+`aggregator` so syndicated copy can still be identified — but it counts toward the
+coverage threshold.
+
+## Threshold
+
+**An incident qualifies if ≥ 5 of these 10 brands covered it.**
+
+This is stricter than the previous rule (≥3 distinct ownership groups) and it will reduce
+the number of eligible incidents — including Tesla ones, which are the binding
+constraint. The tradeoff is deliberate: with a fixed 10-brand denominator, "6 of the 10
+biggest outlets named the make" is a directly interpretable statement, and every incident
+contributes a proportion out of a comparable base.
+
+`MIN_OUTLETS` in `src/primary.py` carries this. If Phase 0 shows the threshold starving
+the Tesla arm, dropping it to 3 is a pre-specified fallback (Protocol §10.4) — invoked and
+recorded **before** any outcome comparison, not after.
+
+## Notes on counting
+
+- **SMH and The Age are separate brands** but share Nine newsroom copy, so an incident
+  covered by both often reflects one editorial decision. They count separately toward the
+  threshold (they are separately-ranked brands) but `outlet_group` marks them as Nine so
+  the syndication check can find near-duplicates.
+- **9News and nine.com.au** are one brand for this purpose; count once.
+- **Daily Mail Australia** sits on a `.co.uk` domain. `match_outlet()` matches on the
+  `/auhome` path and the AU-specific article URL patterns, not the bare domain, so UK
+  articles are not swept in.
+- **AAP** is a wire, not a destination brand. It does not appear in the top 10 and does
+  not count toward the threshold, but wire copy running under a listed brand counts as
+  that brand's coverage — publishing someone else's copy under your masthead, headline
+  included, is still an editorial decision.

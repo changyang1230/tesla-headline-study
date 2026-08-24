@@ -96,6 +96,30 @@ def gdelt_queries() -> list[str]:
     ]
 
 
+#: Brands GDELT may not tag `sourcecountry:australia` because they sit on a foreign
+#: domain. Daily Mail Australia is the case that matters: it is a top-5 Australian news
+#: site publishing on `dailymail.co.uk`, so the country filter can miss it entirely.
+#: Dropping it would bias the study toward finding nothing — it is exactly the kind of
+#: outlet most inclined to put a brand in a headline.
+CROSS_DOMAIN_BRANDS: tuple[str, ...] = ("dailymail.co.uk", "theguardian.com")
+
+
+def gdelt_supplementary_queries() -> list[str]:
+    """Domain-targeted queries for brands the country filter may miss.
+
+    Same brand-free event vocabulary; only the source filter changes. Results still have
+    to cluster onto an Australian incident to enter the study, so non-Australian coverage
+    falls out at the clustering step.
+    """
+    outcome = _or_group(OUTCOME_TERMS)
+    chunk = (len(EVENT_TERMS) + EVENT_CHUNKS - 1) // EVENT_CHUNKS
+    return [
+        f"{_or_group(EVENT_TERMS[i:i + chunk])} {outcome} domain:{brand}"
+        for brand in CROSS_DOMAIN_BRANDS
+        for i in range(0, len(EVENT_TERMS), chunk)
+    ]
+
+
 def gdelt_queries_narrow() -> list[str]:
     """Cross product of event x outcome terms — the fallback if OR queries are rejected
     or if a window keeps hitting the record cap. Far slower; same coverage."""
@@ -124,7 +148,7 @@ def assert_brand_agnostic() -> None:
         brand_tokens.update(normalise(x) for x in m.models)
     brand_tokens.update({"electric", "ev", "hybrid", "petrol", "diesel", "luxury", "suv brand"})
 
-    for term in EVENT_TERMS + OUTCOME_TERMS + CONTEXT_TERMS:
+    for term in EVENT_TERMS + OUTCOME_TERMS + CONTEXT_TERMS + CROSS_DOMAIN_BRANDS:
         t = normalise(term)
         for b in brand_tokens:
             if b and re.search(rf"(?<![\w]){re.escape(b)}(?![\w])", t):
