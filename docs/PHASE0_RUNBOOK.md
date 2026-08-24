@@ -18,16 +18,27 @@ your attention on the review CSV.
 
 ## Setup
 
+From the repository root:
+
 ```bash
+git fetch origin
 git checkout claude/tesla-media-bias-study-304eg5
-cd research/tesla-headline-salience
+
+# venv at the repo root — VS Code auto-detects `.venv` there and `.venv/` is gitignored
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r research/tesla-headline-salience/requirements.txt
 
 # sanity check before spending any API calls
-python -m pytest tests -q          # expect 46+ passed
-python -m src.power                # read the "detectable" table
+python -m pytest research/tesla-headline-salience/tests -q   # expect 63 passed
+cd research/tesla-headline-salience
+python -m src.power                                          # read the "detectable" table
 ```
+
+Every later command in this runbook is run from `research/tesla-headline-salience`.
+
+This project is standalone — it does not need the coronial `.env`, the iCloud databases,
+or any of the pipeline setup. The only credential it ever needs is `ANTHROPIC_API_KEY`,
+and not until the LLM-coding step at the very end.
 
 ## Step 1 — Confirm GDELT is reachable
 
