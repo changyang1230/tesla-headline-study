@@ -27,7 +27,7 @@ Protocol §0 states exactly which is which.
 
 ## The design in one paragraph
 
-Harvest five years of Australian vehicle-incident coverage using a query set that
+Harvest three years of Australian vehicle-incident coverage using a query set that
 **contains no brand names**. Cluster the articles into incidents. Establish each
 incident's vehicle make from police and coronial sources wherever possible. Then, for
 every article, ask one mechanical question: does the headline identify the make? Compare
@@ -92,8 +92,9 @@ python -m src.cluster_incidents --db data/study.db --out output/candidate_incide
 
 Step 3 makes live requests and must run on your own machine — `api.gdeltproject.org` is
 blocked by the Claude Code web sandbox's egress policy. The harvest is **resumable**: if
-it dies, re-run the identical command and it skips completed windows. A full five-year
-harvest is ~7,300 API calls at a 2-second delay — roughly four hours, once, overnight.
+it dies, re-run the identical command and it skips completed windows. The full
+2023–2025 harvest is ~4,400 API calls at a 2-second delay — roughly two and a half
+hours, once, overnight.
 
 ## Phases
 

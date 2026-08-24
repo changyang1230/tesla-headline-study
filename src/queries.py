@@ -73,7 +73,7 @@ GDELT_SOURCE_FILTER = "sourcecountry:australia"
 
 #: GDELT rejects very long/complex queries, so event terms are OR-ed in chunks rather
 #: than as one enormous disjunction. Four chunks x daily windows keeps every call under
-#: the 250-record cap while finishing a five-year harvest in a few hours.
+#: the 250-record cap while finishing the three-year harvest in a couple of hours.
 EVENT_CHUNKS = 4
 
 

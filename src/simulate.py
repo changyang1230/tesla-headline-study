@@ -55,7 +55,7 @@ def simulate(n_tesla: int = 28, n_other: int = 130, seed: int = 1,
         deaths = int(rng.choice([0, 1, 2], p=[0.25, 0.55, 0.20]))
         itype = str(rng.choice(TYPES, p=[0.45, 0.25, 0.10, 0.20]))
         child = int(rng.random() < 0.12)
-        year = int(rng.integers(2021, 2026))
+        year = int(rng.integers(2023, 2026))   # Protocol section 5: 2023-2025
         age_band = str(rng.choice(["<=2y", "3-7y", ">=8y", "unknown"],
                                   p=[0.45, 0.25, 0.15, 0.15] if make == "Tesla"
                                   else [0.15, 0.30, 0.40, 0.15]))

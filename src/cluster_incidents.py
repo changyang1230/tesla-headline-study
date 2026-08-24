@@ -120,7 +120,8 @@ def cluster(rows: list[sqlite3.Row], *, threshold: float = COSINE_THRESHOLD) -> 
     rare_sets = [{w for w in set(d) if df[w] <= rare_cut} for d in docs]
     dates = [_parse_seendate(r["seendate"]) for r in rows]
 
-    # Bucket by date so the comparison stays near-linear instead of O(n^2) over five years.
+    # Bucket by date so the comparison stays near-linear instead of O(n^2) over the
+    # whole study period.
     buckets: dict[dt.date, list[int]] = collections.defaultdict(list)
     for i, d in enumerate(dates):
         if d:

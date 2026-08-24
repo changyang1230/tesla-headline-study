@@ -48,7 +48,7 @@ Recorded before any data are seen, so that the result can be scored against them
 | Tesla headline make-identification rate | 30–60% | The hypothesis |
 | Direction of Tesla vs other-BEV contrast | Tesla higher, but by much less | Some of it is an EV-novelty effect |
 | Direction of Tesla vs premium-ICE contrast | Roughly equal | Suspicion that this is largely a "distinctive car" effect |
-| Probability the study reaches ≥25 Tesla incidents in 2021–2025 | ~50% | Small fleet, narrow severity window |
+| Probability the study reaches ≥25 Tesla incidents in 2023–2025 | ~45% | Narrow severity window; the trimmed 2021–22 years contributed few Teslas, so the loss is small but real |
 
 If the Tesla vs premium-ICE contrast comes out null, the honest conclusion is that the
 phenomenon is real but is not *about Tesla* — and the paper should say that in the title.

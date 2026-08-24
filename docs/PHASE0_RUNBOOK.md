@@ -125,21 +125,30 @@ bar (death / critical injury / fire), and how many distinct outlet groups covere
 ```
 tesla_rate      = tesla incidents / eligible incidents in the sample
 eligible_6mo    = eligible clusters in the full 6-month harvest
-projected_tesla = tesla_rate x eligible_6mo x 10      # 6 months -> 5 years
+projected_tesla = tesla_rate x eligible_6mo x 6       # 6 months -> 3 years (2023-2025)
 ```
 
-The ×10 assumes a flat rate across 2021–2025, which is **wrong** — Australia's Tesla
-fleet grew sharply over the window, so 2024 over-represents the average. Halve the
-projection for a conservative figure and report both.
+The ×6 assumes a flat rate across 2023–2025. That is not exactly true — the fleet kept
+growing — but the probe window (H1 2024) sits almost exactly at the **midpoint** of the
+study period, so over- and under-estimation roughly cancel. This is the main practical
+gain from the three-year window: over 2021–2025 a 2024 probe sat near the end of a period
+of steep growth and would have badly overstated the earlier years.
+
+Still report a conservative figure alongside the central one — multiply by 0.8 — and state
+both in `phase0_feasibility.md`.
 
 ### Decision rules — written before the numbers, honour them
 
 | Projected eligible Tesla incidents | Action |
 |---|---|
-| **≥ 25** | Proceed to Phase 1 as designed. |
-| **15–24** | Proceed, but invoke Protocol §10.4 fallback 1 (extend the window back to 2019-01-01) *first*, then recount. |
-| **8–14** | Fallbacks 1 **and** 2 (relax severity to any hospitalisation or major property damage). Re-estimate. If still under 25, the study is descriptive: report an interval, do not claim a test. |
+| **≥ 25** | Proceed to Phase 1 as designed on 2023–2025. |
+| **15–24** | Invoke Protocol §10.4 fallback 1 — extend the window back to **2021-01-01** — then recount. This is cheap: the harvest is resumable, so it is `--start 2021-01-01` on the same database and only the new windows are fetched. |
+| **8–14** | Fallbacks 1 and 2 (back to 2019-01-01), then 3 (relax severity to any hospitalisation or major property damage). Re-estimate after each. If still under 25, the study is descriptive: report an interval, do not claim a test. |
 | **< 8** | Stop, or switch to the within-incident matched design as the *primary* analysis (Protocol §9.3) — it needs far fewer incidents because each article is its own control. Say plainly in the writeup that the between-incident comparison was under-powered. |
+
+Invoke a rung and record it **before** running any outcome comparison. Reaching for a
+wider window after seeing a disappointing p-value is a different activity with a
+different name.
 
 ## Step 7 — Estimate the ICC
 
@@ -167,17 +176,24 @@ than on enthusiasm.
 
 ---
 
-## If you want the full five-year harvest
+## The full harvest
 
 ```bash
-nohup python -m src.gdelt_harvest --start 2021-01-01 --end 2025-12-31 \
+nohup python -m src.gdelt_harvest --start 2023-01-01 --end 2025-12-31 \
       --db data/study.db -v > harvest.log 2>&1 &
 tail -f harvest.log
 ```
 
-~7,300 calls, ~4 hours. Resumable. Do this only **after** Phase 0 says the study is
-viable — there is no point harvesting five years to discover there are nine Tesla
-incidents.
+~4,400 calls, ~2.5 hours (the H1-2024 probe windows are already done and will be skipped).
+Resumable. Do this only **after** Phase 0 says the study is viable — there is no point
+harvesting three years to discover there are nine Tesla incidents.
+
+If a §10.4 fallback later widens the window, re-run against the **same database** with the
+earlier start date. Completed windows are skipped, so only the new years are fetched:
+
+```bash
+python -m src.gdelt_harvest --start 2021-01-01 --end 2025-12-31 --db data/study.db -v
+```
 
 ## Then: LLM-assisted coding
 

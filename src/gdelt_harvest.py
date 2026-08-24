@@ -5,7 +5,7 @@ which self-asserts brand-agnosticism at import time. There is no code path here 
 accepts a user-supplied query.
 
 Usage:
-    python -m src.gdelt_harvest --start 2021-01-01 --end 2025-12-31 --db data/study.db
+    python -m src.gdelt_harvest --start 2023-01-01 --end 2025-12-31 --db data/study.db
     python -m src.gdelt_harvest --dry-run          # show the plan, make no requests
 
 Follows this repository's scraping rules: never stop on errors (log and continue),
@@ -226,7 +226,7 @@ def open_db(path: str | pathlib.Path) -> sqlite3.Connection:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--start", default="2021-01-01")
+    ap.add_argument("--start", default="2023-01-01")   # Protocol section 5
     ap.add_argument("--end", default="2025-12-31")
     ap.add_argument("--db", default="data/study.db")
     ap.add_argument("--dry-run", action="store_true")

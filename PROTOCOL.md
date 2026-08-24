@@ -104,10 +104,18 @@ Incident (level 2)  ──┬── Article 1 (level 1)   outcome: make in headl
 ## 5. Setting and period
 
 - **Population:** road-vehicle incidents occurring in Australia (all states and territories).
-- **Period:** incidents occurring **2021-01-01 to 2025-12-31** (five complete calendar years).
-  Complete years avoid a partial-year tail where coverage is still accruing.
-  Pre-specified extension if Phase 0 shows too few Tesla incidents: extend backwards to
-  2019-01-01 (see Section 10.4).
+- **Period:** incidents occurring **2023-01-01 to 2025-12-31** (three complete calendar
+  years). Complete years avoid a partial-year tail where coverage is still accruing.
+  Pre-specified extensions if Phase 0 shows too few Tesla incidents: back to 2021-01-01,
+  then to 2019-01-01 (see Section 10.4).
+
+  **Why three years and not five.** Australia's Tesla fleet only reached meaningful scale
+  around 2022. Calendar 2021 and 2022 would therefore have contributed very few exposed
+  incidents while contributing a full share of unexposed ones, of harvest cost, and of
+  secular drift in editorial norms. Trimming them raises the Tesla density of the frame,
+  narrows the range the `year` covariate has to absorb, and roughly halves the harvest.
+  The cost is a smaller absolute Tesla arm — which is the binding constraint — so §10.4's
+  first fallback is simply to put 2021–2022 back.
 - **Coverage window per incident:** articles published from the incident date to
   incident date + 14 days. Later articles (inquest, trial, sentencing) are a separate,
   pre-specified exploratory stratum, not part of the primary dataset — court reporting
@@ -421,26 +429,37 @@ The ρ = 0.5 assumption is the fragile one; Phase 0 estimates it from real data 
 target is revised **before** any outcome comparison is run.
 
 ### 10.3 Feasibility risk
-Whether ≥ 25 eligible Tesla incidents exist in Australia in 2021–2025 is genuinely
-unknown at protocol time. Tesla's Australian fleet only reached meaningful scale around
-2022, and serious-injury-or-worse crashes with confirmed make are a small subset of a
-small fleet. **Phase 0 exists to answer this before any effort is committed.**
+Whether ≥ 25 eligible Tesla incidents exist in Australia in 2023–2025 is genuinely
+unknown at protocol time. Serious-injury-or-worse crashes with a confirmed make are a
+small subset of a fleet that, while growing fast, is still a minority of registrations.
+**Phase 0 exists to answer this before any effort is committed.**
+
+The three-year window concentrates the exposed arm rather than enlarging it, so this risk
+is if anything sharper than it was over five years. The fallback ladder below is the
+response, and it is ordered so the cheapest recovery — restoring the two years just
+trimmed — comes first.
 
 ### 10.4 Pre-specified fallbacks, in order
 If Phase 0 yields < 25 Tesla incidents:
-1. Extend the period back to 2019-01-01.
-2. Relax severity to include any crash with a hospitalisation or major property damage.
-3. Add New Zealand outlets and incidents as a second population, analysed with a
+1. Extend the period back to **2021-01-01** (restores the two years trimmed in §5). Cheap:
+   the harvester is resumable, so this is one more command, not a re-run.
+2. Extend further back to **2019-01-01**. Expect diminishing returns — the fleet was small
+   — and a wider `year` range for the covariate to absorb.
+3. Relax severity to include any crash with a hospitalisation or major property damage.
+4. Add New Zealand outlets and incidents as a second population, analysed with a
    country term.
-4. If still under-powered, **report it as a descriptive study with a confidence
+5. If still under-powered, **report it as a descriptive study with a confidence
    interval and say plainly that it is under-powered.** An honest wide interval is a
-   publishable result; a study that quietly redefines its outcome until p < 0.05 is not.
+   real result; a study that quietly redefines its outcome until p < 0.05 is not.
+
+Each rung is invoked and recorded **before** any outcome comparison is run, never after
+seeing a p-value.
 
 ## 11. Phases and deliverables
 
 | Phase | Work | Output | Gate |
 |---|---|---|---|
-| **0. Feasibility** | Brand-agnostic harvest for 2021–2025; cluster; count candidate Tesla incidents; estimate `m` and ρ on ~20 incidents | `output/phase0_feasibility.md` | ≥ 25 Tesla incidents, or invoke 10.4 |
+| **0. Feasibility** | Brand-agnostic harvest for 2023–2025; cluster; count candidate Tesla incidents; estimate `m` and ρ on ~20 incidents | `output/phase0_feasibility.md` | ≥ 25 Tesla incidents, or invoke 10.4 |
 | **1. Frame build** | Full harvest, clustering, manual incident verification, eligibility screening | locked incident register | κ ≥ 0.7 |
 | **2. Freeze** | Freeze protocol + lexicon + queries; record content hashes in `provenance`; tag commit | git tag `protocol-v1` | before any outcome extraction |
 | **2b. Coder validation** | Hand-code 25–30 incidents blind; validate LLM coding | `output/coding_validation.md` | κ and differential check pass (§8.2) |
@@ -465,7 +484,7 @@ pushed before extraction begins.
 | 6 | **Headline mutation** — live headlines differ from published ones | either | Earliest archived version (8.3) |
 | 7 | **Index coverage** — GDELT/CC-NEWS index outlets unevenly | either | Dual-source harvest; agreement check (6.2) |
 | 8 | **Recall bias in the investigator** — the hypothesis came from memorable examples | inflates effect | Investigator does not select incidents; automated frame; named seed examples excluded from the analysis dataset (13) |
-| 9 | **Secular trend** — Tesla coverage norms changed 2021→2025 | either | `year` covariate; trend subgroup |
+| 9 | **Secular trend** — Tesla coverage norms changed over the window | either | `year` covariate; trend subgroup. The three-year window (§5) narrows the drift the covariate has to absorb, at the cost of a smaller exposed arm |
 | 10 | **"EV" vs "Tesla" confusion** | mislabels mechanism | Secondary contrast vs `other_bev` (9.x) |
 | 11 | **"Premium" vs "Tesla" confusion** | mislabels mechanism | Secondary contrast vs `premium_ice` |
 | 12 | **Model-token asymmetry** — Tesla model names are distinctive, Toyota's are ubiquitous | either | Model tokens count as identification (7.3); make-only sensitivity |
@@ -552,7 +571,7 @@ analysis exists.
 ## Appendix B — Estimand (target trial framing)
 
 > Among Australian news articles that report a road-vehicle incident meeting the
-> eligibility criteria, in the population of such incidents occurring 2021–2025, the
+> eligibility criteria, in the population of such incidents occurring 2023–2025, the
 > ratio of the odds that the article's headline identifies the index vehicle's make when
 > that make is Tesla, to the same odds when that make is not Tesla, holding constant
 > incident severity, incident type, jurisdiction, year, vehicle age band, multi-vehicle
