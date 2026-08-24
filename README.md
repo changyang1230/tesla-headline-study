@@ -10,13 +10,19 @@ impression cannot be evidence for itself. This project is the design that can te
 two apart.
 
 **Status: protocol written, no data collected.** Nothing here has been run against real
-articles yet.
+articles yet. **Start with [`docs/PHASE0_RUNBOOK.md`](docs/PHASE0_RUNBOOK.md)** — it
+answers whether the study is viable at all before any effort is committed.
+
+**Track: lean** — personal research, done properly. The design integrity stays (brand-blind
+frame, freeze before extraction, pre-specified analysis); the journal machinery does not.
+Protocol §0 states exactly which is which.
 
 | Document | What it is |
 |---|---|
 | [`PROTOCOL.md`](PROTOCOL.md) | The study design. Read this first. |
 | [`CODEBOOK.md`](CODEBOOK.md) | Every variable definition and coding rule. |
 | [`docs/OUTLETS.md`](docs/OUTLETS.md) | The frozen outlet list. |
+| [`docs/PHASE0_RUNBOOK.md`](docs/PHASE0_RUNBOOK.md) | Step-by-step feasibility probe with the go/no-go rules. **Run this first.** |
 | [`docs/SEED_EXAMPLES.md`](docs/SEED_EXAMPLES.md) | The motivating cases — excluded from the analysis, and why. |
 
 ## The design in one paragraph
@@ -80,27 +86,49 @@ python -m pytest tests -q
 python -m src.simulate --out data/simulated.csv --tesla-or 4.0
 python -m src.analysis --csv data/simulated.csv --out output/results_simulated.md
 
-# 3. Phase 0 feasibility — a small brand-agnostic probe (makes real network calls)
-python -m src.gdelt_harvest --start 2024-01-01 --end 2024-03-31 --db data/study.db
+# 3. Phase 0 feasibility — see docs/PHASE0_RUNBOOK.md for the full procedure
+python -m src.gdelt_harvest --start 2024-01-01 --end 2024-06-30 --db data/study.db
 python -m src.cluster_incidents --db data/study.db --out output/candidate_incidents.csv
 ```
 
-Step 3 makes live requests. A full five-year harvest is ~7,300 API calls at a 2-second
-delay — roughly four hours. Run it once, overnight.
+Step 3 makes live requests and must run on your own machine — `api.gdeltproject.org` is
+blocked by the Claude Code web sandbox's egress policy. The harvest is **resumable**: if
+it dies, re-run the identical command and it skips completed windows. A full five-year
+harvest is ~7,300 API calls at a 2-second delay — roughly four hours, once, overnight.
 
 ## Phases
 
 | Phase | Gate |
 |---|---|
 | 0. Feasibility | Are there ≥25 eligible Tesla incidents? If not, invoke a Protocol §10.4 fallback **now**, not after the analysis. |
-| 1. Frame build | Manual incident verification; inter-coder κ ≥ 0.7. |
-| 2. Registration | Freeze protocol, lexicon, queries. Register on OSF. Tag `protocol-v1`. |
-| 3. Extraction | Headline capture and automated coding. Tag `dataset-lock-v1`. |
+| 1. Frame build | Manual incident verification. |
+| 2. Freeze | Freeze protocol, lexicon, queries; hashes into `provenance`. Tag `protocol-v1`. |
+| 2b. Coder validation | Hand-code 25–30 incidents blind; `validate_coding.py` must pass — including the differential check. |
+| 3. Extraction | Headline capture, automated outcome coding, LLM-assisted incident coding + adjudication. Tag `dataset-lock-v1`. |
 | 4. Analysis | `python -m src.analysis --db data/study.db`. Run once. |
 | 5. Write-up | STROBE-structured manuscript. |
 
 Phase 2 must precede Phase 3. Registering after seeing the outcome data turns a
 confirmatory study into an exploratory one wearing a confirmatory costume.
+
+## LLM-assisted coding, and the trap in it
+
+Claude extracts incident-level variables from article body text (`src/llm_coding.py`).
+Three safeguards: the model sees body text with **headlines stripped**, it **never codes
+the outcome** (that comes from the frozen lexicon), and every value carries an evidence
+quote and confidence, with hedges routed to human review.
+
+The safeguard that matters most is in `src/validate_coding.py`. Overall coding accuracy is
+not sufficient:
+
+> If Claude recovers the make from article text more reliably for Teslas than for Mazdas,
+> Tesla incidents enter the study with better exposure ascertainment. That is differential
+> misclassification pointing the same way as the hypothesis — enough to manufacture the
+> entire effect from nothing but the coder.
+
+So validation reports a per-make recall table with an explicit **Tesla-vs-rest
+differential**, hard-capped at ±0.10, and exits non-zero if it fails. Read that number,
+not the headline kappa.
 
 ## What this study can and cannot say
 

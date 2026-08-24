@@ -151,12 +151,22 @@ def harvest(db: sqlite3.Connection, start: dt.date, end: dt.date,
     LOG.info("plan: %d queries x %d windows = %d calls (~%.1f h at %.1fs/call)",
              len(queries), len(windows), plan, plan * REQUEST_DELAY_S / 3600, REQUEST_DELAY_S)
     stats = {"calls": 0, "returned": 0, "on_outlet_list": 0, "inserted": 0, "errors": 0,
-             "capped_windows": 0}
+             "capped_windows": 0, "skipped_done": 0}
     if dry_run:
         return stats
 
+    done = {(r[0], r[1], r[2]) for r in db.execute(
+        "SELECT query_hash, window_start, window_end FROM harvest_progress")}
+    if done:
+        LOG.info("resuming: %d (query, window) pairs already completed", len(done))
+
     for query in queries:
+        qh = hashlib.sha1(query.encode()).hexdigest()[:12]
         for w_start, w_end in windows:
+            key = (qh, w_start.isoformat(), w_end.isoformat())
+            if key in done:
+                stats["skipped_done"] += 1
+                continue
             try:
                 arts = _fetch(query, w_start, w_end)
             except (urllib.error.URLError, TimeoutError, OSError) as exc:
@@ -192,7 +202,14 @@ def harvest(db: sqlite3.Connection, start: dt.date, end: dt.date,
                     "(url_hash, canonical_url, source, domain, title_at_crawl, seendate, query) "
                     "VALUES (?,?,?,?,?,?,?)", rows)
                 stats["inserted"] += cur.rowcount
-                db.commit()
+
+            # Checkpoint after the insert, in the same commit: a window is only marked
+            # done once its articles are durably stored.
+            db.execute("INSERT OR REPLACE INTO harvest_progress "
+                       "(query_hash, window_start, window_end, n_returned, capped) "
+                       "VALUES (?,?,?,?,?)",
+                       (*key, len(arts), int(len(arts) >= MAXRECORDS)))
+            db.commit()
 
             time.sleep(REQUEST_DELAY_S)
     return stats
@@ -229,6 +246,7 @@ def main() -> None:
     stats = harvest(db, start, end, dry_run=args.dry_run,
                     limit_queries=args.limit_queries, window_days=args.window_days)
     LOG.info("harvest stats: %s", stats)
+    LOG.info("harvest is resumable — re-running the same command skips completed windows")
     if stats["capped_windows"]:
         LOG.error("%d windows hit the result cap — reduce WINDOW_DAYS and re-run before "
                   "treating this harvest as complete", stats["capped_windows"])

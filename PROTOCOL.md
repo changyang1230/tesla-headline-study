@@ -1,9 +1,46 @@
 # Study protocol — Brand salience in Australian news headlines about vehicle incidents
 
 **Short title:** The Tesla Headline Study
-**Version:** 0.1 (DRAFT — not yet registered)
+**Version:** 0.2 (DRAFT)
 **Design:** Retrospective observational study of news content (media-content analysis)
-**Status:** Protocol written before any outcome data extracted. Register before Phase 2.
+**Track:** Lean — personal research, done properly (see §0)
+**Status:** Protocol written before any outcome data extracted. Freeze before Phase 3.
+
+---
+
+## 0. Study track
+
+This is a **personal research project**, not a journal submission. The distinction
+changes what is worth doing, and it is worth being explicit about which parts are which,
+because the temptation under "it's just for me" is to drop the wrong half.
+
+**Kept in full — these protect the validity of the answer:**
+
+| | Why it stays |
+|---|---|
+| Brand-agnostic sampling frame (§6.1) | Without it the study is circular. Non-negotiable. |
+| Freeze before outcome extraction (§11 Phase 2) | A protocol written after seeing the data isn't a protocol. |
+| Pre-specified analysis, run once (§9) | The alternative is fishing until something is significant. |
+| Two-tier make ascertainment + Tier-1 sensitivity (§7.2) | The collider is real whoever is reading. |
+| Mechanical primary outcome (§8.1) | The cheapest bias-removal available. |
+| Negative controls (§9.4) | The fastest way to catch a model measuring the wrong thing. |
+| Seed examples excluded (§13) | They are the biased sample that generated the hypothesis. |
+| Reporting the interval, and reporting nulls (§14) | The point is to find out, not to be right. |
+
+**Relaxed — these exist to convince reviewers, and there are none:**
+
+| Journal version | Lean version |
+|---|---|
+| OSF pre-registration with a DOI | Git tag `protocol-v1` + content hashes recorded in the `provenance` table. Same function: an auditable timestamp that predates the data. |
+| Two independent human coders, Cohen's κ | LLM-assisted coding with human adjudication, validated against a hand-coded gold standard (§8.2). |
+| Formal HREC exemption correspondence | No human participants and no identified individuals recorded; §8.5 handling rules stand. |
+| STROBE checklist as a submission requirement | STROBE used as a self-discipline checklist, not filed. |
+| Formal conflict-of-interest declarations | One line in the writeup if any vehicle ownership is relevant. |
+
+**The lean track does not license:** changing the outcome definition after seeing
+results, dropping a sensitivity analysis because it was inconvenient, or quietly widening
+the window until the sample is big enough. If the answer is "under-powered, wide
+interval, don't know" — that is the finding, and it is worth having.
 
 ---
 
@@ -100,7 +137,7 @@ change after Phase 1 begins. **No query may contain a make, model, or fuel-type 
 | Common Crawl CC-NEWS (via `news-please`) | second harvest; catches outlets GDELT indexes thinly | 2016–present |
 | Wayback Machine CDX API | earliest archived headline (see 8.3) | variable |
 | Outlet news sitemaps | gap-filling for named outlets | ~2 years rolling |
-| ProQuest ANZ Newsstream / Factiva | optional licensed cross-check if institutional access available | full |
+| ~~ProQuest ANZ Newsstream / Factiva~~ | **Not available** — no institutional access. Would have given complete full text, original headlines and clean outlet metadata; its absence is why the dual-source harvest and the §8.3 headline-versioning rules matter more here. | — |
 | State police media-release feeds (NSW, VIC, QLD, WA, SA, TAS, NT, ACT) | independent make ascertainment (Tier 1) | varies |
 | Coronial findings (this repository's own corpus) | independent make ascertainment (Tier 1), delayed | varies |
 
@@ -222,14 +259,39 @@ the headline string. It involves no human judgment about whether a headline "emp
 the brand. This is a deliberate design strength: it removes the coder's knowledge of the
 hypothesis from the primary outcome entirely.
 
-### 8.2 Human coding and reliability
-Human coding is needed for incident-level variables (index vehicle, severity,
-type, ADAS allegation) and for `first_mention_position`. Procedure:
-- Two coders independently code a **20% random sample**; Cohen's κ reported per variable;
-  κ < 0.7 on any variable triggers codebook revision and full recoding of that variable.
-- Incident-level coders see the article body but code into a fixed schema.
-- A reviewer **blinded to the headline** determines the index vehicle wherever Tier 1
-  sources allow, to prevent the headline from driving the exposure assignment.
+### 8.2 LLM-assisted coding with human adjudication (lean track)
+Incident-level variables (severity, type, ADAS allegation, index vehicle) are extracted
+by Claude from article body text into the fixed schema, then adjudicated by the
+investigator. Implemented in `src/llm_coding.py`. Three safeguards:
+
+1. **Headline blinding.** The model receives body text with headlines and standfirsts
+   stripped (`strip_headlines()`, asserted in tests). Codebook §1.2 requires the index
+   vehicle to be determined without the headline; if the headline drove exposure
+   assignment, the study would be measuring its own outcome.
+2. **It never codes the outcome.** `headline_names_make` comes from the frozen lexicon,
+   mechanically. A model that could infer the hypothesis must not decide the outcome.
+3. **Evidence and confidence per field.** Every value carries a verbatim quote and a
+   confidence; anything below 0.75, or missing its quote, is routed to human review
+   rather than accepted.
+
+Machine output is written to `dual_coding` as coder `claude` — never directly into
+`incident`. The `incident` table holds adjudicated values only, so a re-run can never
+overwrite a human decision and agreement stays recomputable.
+
+**Validation before use (`src/validate_coding.py`).** The investigator hand-codes 25–30
+incidents *without first reading the machine output*, and agreement is computed per
+variable: κ ≥ 0.90 for `index_make` (it is the exposure), κ ≥ 0.70 elsewhere.
+
+**The differential check is the one that decides admissibility.** Overall accuracy is not
+enough. If Claude recovers the make from body text more reliably for Teslas than for
+other makes, Tesla incidents enter the study with better exposure ascertainment —
+differential misclassification pointing in the same direction as the hypothesis, capable
+of manufacturing the entire effect. Tesla recall minus non-Tesla recall must be within
+±0.10. If it is not, machine-coded `index_make` is abandoned: the exposure is hand-coded
+for every incident, or the analysis is restricted to Tier 1 makes.
+
+The investigator determines the index vehicle from Tier 1 sources, **blinded to the
+headline**, wherever such sources exist.
 
 ### 8.3 Headline versioning
 Headlines are edited after publication. The recorded headline is the **earliest
@@ -380,13 +442,16 @@ If Phase 0 yields < 25 Tesla incidents:
 |---|---|---|---|
 | **0. Feasibility** | Brand-agnostic harvest for 2021–2025; cluster; count candidate Tesla incidents; estimate `m` and ρ on ~20 incidents | `output/phase0_feasibility.md` | ≥ 25 Tesla incidents, or invoke 10.4 |
 | **1. Frame build** | Full harvest, clustering, manual incident verification, eligibility screening | locked incident register | κ ≥ 0.7 |
-| **2. Registration** | Freeze protocol + lexicon + queries; register on OSF; tag commit | OSF DOI, git tag `protocol-v1` | before any outcome extraction |
-| **3. Extraction** | Headline capture, archived-version retrieval, automated outcome coding, human incident coding | locked dataset, tag `dataset-lock-v1` | dual-coding complete |
+| **2. Freeze** | Freeze protocol + lexicon + queries; record content hashes in `provenance`; tag commit | git tag `protocol-v1` | before any outcome extraction |
+| **2b. Coder validation** | Hand-code 25–30 incidents blind; validate LLM coding | `output/coding_validation.md` | κ and differential check pass (§8.2) |
+| **3. Extraction** | Headline capture, archived-version retrieval, automated outcome coding, LLM-assisted incident coding + adjudication | locked dataset, tag `dataset-lock-v1` | every review-flagged field adjudicated |
 | **4. Analysis** | Run `analysis.py` once | `output/results.md`, figures | — |
 | **5. Write-up** | STROBE-structured manuscript + public artifact | manuscript | — |
 
-Phase 2 registration must precede Phase 3. Registering after seeing the outcome data
-converts a confirmatory study into an exploratory one wearing a confirmatory costume.
+Phase 2 must precede Phase 3. A protocol frozen after seeing the outcome data converts a
+confirmatory study into an exploratory one wearing a confirmatory costume — and a git tag
+is just as good as a DOI at proving which came first, as long as the tag is real and
+pushed before extraction begins.
 
 ## 12. Threats to validity, and what is done about each
 
@@ -404,10 +469,14 @@ converts a confirmatory study into an exploratory one wearing a confirmatory cos
 | 10 | **"EV" vs "Tesla" confusion** | mislabels mechanism | Secondary contrast vs `other_bev` (9.x) |
 | 11 | **"Premium" vs "Tesla" confusion** | mislabels mechanism | Secondary contrast vs `premium_ice` |
 | 12 | **Model-token asymmetry** — Tesla model names are distinctive, Toyota's are ubiquitous | either | Model tokens count as identification (7.3); make-only sensitivity |
+| 13 | **Differential LLM coding** — Claude recovers Tesla makes from text more reliably than other makes | inflates effect, potentially entirely | Gold-standard validation with an explicit Tesla-vs-rest recall differential; hard stop at ±0.10 (8.2) |
+| 14 | **LLM coder sees the hypothesis** — the model could infer what is being tested | inflates effect | Headline-blinded input; the model never codes the outcome (8.2) |
 
-Threats 1, 2 and 8 are the ones that could invalidate the study outright. They are the
-reason the design starts from a brand-blind harvest rather than from a list of
-remembered crashes.
+Threats 1, 2, 8 and 13 are the ones that could invalidate the study outright — each is a
+route by which the exposure gets ascertained by the outcome. They are the reason the
+design starts from a brand-blind harvest rather than a list of remembered crashes, and
+the reason machine coding has to earn its place with a differential check rather than an
+accuracy score.
 
 ## 13. Seed examples
 
@@ -423,23 +492,25 @@ test. Their exclusion is recorded in the flow diagram.
 
 ## 14. Reporting
 
-- STROBE checklist for observational studies, completed and published as a supplement.
+- STROBE checklist for observational studies, used as a self-discipline checklist while
+  writing (not filed anywhere).
 - Flow diagram: articles harvested → clustered → incidents → eligible → analysed, with
   exclusions and reasons at each step.
 - All code, the frozen lexicon, the frozen query set, and the incident-level dataset
-  (headlines, URLs, coded variables — no full body text) published in this repository
-  under an open licence.
+  (headlines, URLs, coded variables — no full body text) live in this repository.
 - Both the primary and the Tier-1-only estimate reported in the abstract, whichever way
   they point.
 
 ## 15. Declarations
 
 - **Funding:** none.
-- **Conflicts of interest:** to be declared by each investigator. Any vehicle ownership,
-  shareholding, or professional relationship relevant to any make in the study —
-  including Tesla — is declared in the manuscript.
-- **Data availability:** as in Section 14.
-- **Registration:** OSF, before Phase 3.
+- **Conflicts of interest:** one line in the writeup if the investigator owns, or has any
+  material relationship with, a vehicle of any make in the study — Tesla included. Worth
+  stating even in a personal project: it is the reader's cue for how to weigh a result
+  that happens to confirm a prior.
+- **Data availability:** as in §14.
+- **Freeze record:** git tag `protocol-v1`, with protocol, codebook, lexicon and query
+  content hashes in the `provenance` table.
 
 ---
 

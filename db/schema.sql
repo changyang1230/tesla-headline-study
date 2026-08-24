@@ -22,6 +22,20 @@ CREATE TABLE IF NOT EXISTS harvest (
 CREATE INDEX IF NOT EXISTS ix_harvest_domain  ON harvest(domain);
 CREATE INDEX IF NOT EXISTS ix_harvest_seendate ON harvest(seendate);
 
+-- Harvest progress, so a long run can resume after an interruption. A five-year
+-- harvest is ~7,300 API calls over several hours; without this, any interruption
+-- means starting over, and a partial re-run would bias coverage toward whatever
+-- date range happened to complete.
+CREATE TABLE IF NOT EXISTS harvest_progress (
+    query_hash   TEXT NOT NULL,
+    window_start TEXT NOT NULL,
+    window_end   TEXT NOT NULL,
+    n_returned   INTEGER NOT NULL DEFAULT 0,
+    capped       INTEGER NOT NULL DEFAULT 0,
+    completed_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (query_hash, window_start, window_end)
+);
+
 -- ---------------------------------------------------------------------------
 -- Incidents (Codebook 1). Manually verified clusters.
 -- ---------------------------------------------------------------------------
