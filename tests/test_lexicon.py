@@ -5,7 +5,7 @@ outcome definition. Every Codebook section 3 rule appears here as an executable 
 and every false positive found in Phase 0 must be added as a case before the lexicon is
 changed.
 
-Run:  python -m pytest research/tesla-headline-salience/tests -q
+Run:  python -m pytest tests -q
 """
 
 from __future__ import annotations

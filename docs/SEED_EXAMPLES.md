@@ -56,9 +56,9 @@ phenomenon is real but is not *about Tesla* — and the paper should say that in
 ## Candidate Tier 1 verification sources
 
 - Victoria Police media releases: `police.vic.gov.au/media-releases`
-- Coroners Court of Victoria findings: `coronerscourt.vic.gov.au` — and this
-  repository's own coronial corpus, which may already hold S1/S2 if findings have been
-  handed down
+- Coroners Court of Victoria findings: `coronerscourt.vic.gov.au` — and the
+  [coronial](https://github.com/changyang1230/coronial) findings database, which may
+  already hold S1/S2 if findings have been handed down
 - Court listings and sentencing remarks for any prosecuted matter
 - Australian Transport Safety Bureau / state crash investigation reports where applicable
 

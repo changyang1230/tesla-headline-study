@@ -75,8 +75,7 @@ tests/                   the outcome definition, as executable assertions
 ## Getting started
 
 ```bash
-pip install -r research/tesla-headline-salience/requirements.txt
-cd research/tesla-headline-salience
+pip install -r requirements.txt
 
 # 1. What sample size does this need, and what could it detect?
 python -m src.power
@@ -140,8 +139,16 @@ It also may not end up being about Tesla. If the `Tesla vs premium ICE` contrast
 out null, the honest conclusion is that distinctive and expensive cars get named and
 Tesla is one of them — a different, and more interesting, finding.
 
-## Relationship to the rest of this repository
+## Provenance
 
-Standalone. It shares the repository's scraping conventions (robots.txt, 2-second
-delays, never stop on errors) and may draw on the coronial findings corpus as a Tier 1
-source for vehicle makes, but it has its own database and touches no production data.
+This project began inside the [coronial](https://github.com/changyang1230/coronial)
+repository (an Australian coroners findings database) and was split out with
+`git subtree split`, so the commit history predates this repo. It kept two things from
+there: the scraping conventions (honour robots.txt, 2-second delays between requests,
+never stop on errors — log and continue), and coroners court findings as a **Tier 1
+source for vehicle makes** (Protocol §7.2). Coronial findings are media-independent and
+often name the vehicle, which makes them exactly the kind of source this study needs to
+break the circularity described above. They lag the incident by years, so they supplement
+police media releases rather than replacing them.
+
+Nothing here reads or writes any coronial database.

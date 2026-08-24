@@ -32,8 +32,8 @@ LOG = logging.getLogger("gdelt_harvest")
 
 API = "https://api.gdeltproject.org/api/v2/doc/doc"
 USER_AGENT = (
-    "coronial-research/tesla-headline-salience "
-    "(academic media-content study; contact via repository)"
+    "tesla-headline-salience-study/0.2 "
+    "(non-commercial media-content research; contact via repository)"
 )
 REQUEST_DELAY_S = 2.0        # repository rule
 MAXRECORDS = 250             # GDELT hard cap per call

@@ -1,0 +1,33 @@
+# Local working data. Protocol 8.5: article body text stays on disk and is never
+# redistributed, so it is never committed.
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/*.csv
+data/bodies/
+
+# Run outputs regenerated from the data (results_simulated.md IS committed — it is the
+# evidence that the analysis works on data whose answer is known)
+output/candidate_incidents.csv
+output/results.md
+output/coding_validation.md
+output/phase0_feasibility.md
+harvest.log
+nohup.out
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Secrets
+.env
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
