@@ -1,0 +1,8 @@
+# Analysis stack for the Tesla headline study.
+# src/power.py, src/lexicon.py, src/queries.py, src/gdelt_harvest.py and
+# src/cluster_incidents.py are standard-library only and need none of this.
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+statsmodels>=0.14
+pytest>=7.4

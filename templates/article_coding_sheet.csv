@@ -1,0 +1,2 @@
+article_id,incident_id,outlet,outlet_group,outlet_register,url,publish_datetime,headline,headline_source,headline_captured_at,standfirst,is_wire,syndication_group_id,article_wordcount,substantive,excluded,exclusion_reason,first_mention_position,coder,notes
+EXAMPLE01,20231106-VIC-01,ABC News,ABC,public,https://www.abc.net.au/news/EXAMPLE,2023-11-06T02:14:00Z,EXAMPLE ROW — DELETE ME,wayback,2023-11-06T03:00:00Z,,0,,640,1,0,,headline,,

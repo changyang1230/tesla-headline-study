@@ -1,0 +1,2 @@
+incident_id,incident_date,state,locality,remoteness,deaths,serious_injuries,victim_child,incident_type,multi_vehicle,fire_involved,index_make,index_model,index_vehicle_year,index_is_bev,second_make,all_makes,make_tier,make_source,adas_alleged,driver_notable,vehicle_age_band,is_seed_example,eligible,exclusion_reason,coded_by,coded_at,notes
+20231106-VIC-01,2023-11-06,VIC,EXAMPLE-ROW-DELETE-ME,regional,5,3,1,occupant_fatal_collision,0,0,,,,,,,1,https://police.vic.gov.au/media-release-id,0,0,unknown,1,0,seed example — excluded per Protocol 13,,,
