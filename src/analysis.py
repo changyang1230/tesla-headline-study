@@ -55,7 +55,13 @@ PRIMARY_OUTCOME = "headline_names_make"
 
 # --------------------------------------------------------------------------- loading
 
-def load(csv: str | None, db: str | None) -> pd.DataFrame:
+def load(csv: str | None, db: str | None, *, min_outlets: int = 2,
+         require_known_make: bool = True) -> pd.DataFrame:
+    """Loads `v_analysis` and applies the same population restriction as
+    `primary.py`'s `to_incidents()` — ≥`min_outlets` distinct outlets per incident, and
+    (by default) a determined vehicle make — so the appendix's odds ratio is computed on
+    the identical population the primary result is, not a broader or narrower one.
+    """
     if csv:
         df = pd.read_csv(csv)
     elif db:
@@ -64,6 +70,10 @@ def load(csv: str | None, db: str | None) -> pd.DataFrame:
         con.close()
     else:
         raise SystemExit("give --csv or --db")
+    if require_known_make:
+        df = df[df["index_make"].notna() & (df["index_make"] != "")]
+    n_outlets = df.groupby("incident_id")["outlet"].transform("nunique")
+    df = df[n_outlets >= min_outlets]
     return prepare(df)
 
 

@@ -27,9 +27,16 @@ import random
 import sqlite3
 
 #: Coverage threshold — an incident qualifies if at least this many of the top 10 brands
-#: covered it (docs/OUTLETS.md § Threshold). Lowering this is a Protocol §10.4 fallback,
-#: invoked and recorded before any outcome comparison.
-MIN_OUTLETS = 5
+#: covered it (docs/OUTLETS.md § Threshold). Protocol §10.4 fallback invoked 2026-08-25:
+#: 5 left only 15 eligible clusters, judged too few before any outcome comparison was
+#: run. Dropped to 3 — see matching note in cluster_incidents.py and CLAUDE.md.
+#: Dropped again to 2 on 2026-08-25, explicitly AFTER seeing the ≥3 result (1 Tesla
+#: incident, p=0.085) vs. the ≥2 sensitivity number (2 Tesla incidents, p=0.0029) — this
+#: is the exact post-hoc threshold-shopping the Analysis Integrity section otherwise
+#: warns against, done anyway at the user's explicit, informed request: this is personal
+#: research, not for publication, and they accepted the tradeoff knowingly. Not a
+#: pre-specified decision — do not describe it as one. See CLAUDE.md's decision table.
+MIN_OUTLETS = 2
 
 N_PERMUTATIONS = 20000
 PERMUTATION_SEED = 20260101
@@ -127,8 +134,18 @@ def load_rows(csv_path: str | None, db_path: str | None) -> list[dict]:
 
 
 def to_incidents(rows: list[dict], *, min_outlets: int = MIN_OUTLETS,
-                 tier1_only: bool = False) -> tuple[list[dict], dict]:
-    """Collapse articles to incidents, applying the coverage threshold."""
+                 tier1_only: bool = False, require_known_make: bool = True
+                 ) -> tuple[list[dict], dict]:
+    """Collapse articles to incidents, applying the coverage threshold.
+
+    `require_known_make` (default True) restricts the population to incidents where the
+    vehicle's make is actually determined, for both arms. "Does the headline name the
+    make" presupposes a make to name — an incident where no source ever established what
+    car was involved isn't a case where the headline failed to name a known brand, it's a
+    case where there's no ground truth to check the headline against. Mixing the two
+    conflates "was the brand ever ascertained" with "did the headline surface it," which
+    are different questions. Set False to reproduce the earlier (broader) population.
+    """
     by_inc: dict[str, list[dict]] = collections.defaultdict(list)
     for r in rows:
         by_inc[r["incident_id"]].append(r)
@@ -137,6 +154,9 @@ def to_incidents(rows: list[dict], *, min_outlets: int = MIN_OUTLETS,
     for inc_id, arts in by_inc.items():
         if tier1_only and str(arts[0].get("make_tier", "")) != "1":
             dropped["tier 2 make (media-dependent)"] += 1
+            continue
+        if require_known_make and not arts[0].get("index_make"):
+            dropped["make not established"] += 1
             continue
         outlets = {a.get("outlet") or a.get("outlet_group") for a in arts}
         if len(outlets) < min_outlets:
@@ -152,7 +172,7 @@ def to_incidents(rows: list[dict], *, min_outlets: int = MIN_OUTLETS,
     return kept, dict(dropped)
 
 
-def ascertainment(db_path: str | None) -> dict:
+def ascertainment(db_path: str | None, *, start: str | None = None, end: str | None = None) -> dict:
     """How many incidents were lost because the make could not be determined?
 
     This is the denominator problem, and it deserves to be visible rather than implicit.
@@ -170,15 +190,26 @@ def ascertainment(db_path: str | None) -> dict:
     con = sqlite3.connect(db_path)
     con.row_factory = sqlite3.Row
     out: dict = {}
+    # Scope to the study window when given — `incident` also holds leftover pre-pivot
+    # incidents (see CLAUDE.md's Study period decision) that were never adjudicated and
+    # would otherwise inflate "make undetermined" with rows this study period never
+    # touched, not real ascertainment loss.
+    where, params = "", ()
+    if start and end:
+        where, params = " WHERE incident_date >= ? AND incident_date <= ?", (start, end)
     try:
-        out["total_incidents"] = con.execute("SELECT COUNT(*) FROM incident").fetchone()[0]
+        out["total_incidents"] = con.execute(
+            f"SELECT COUNT(*) FROM incident{where}", params).fetchone()[0]
         out["eligible"] = con.execute(
-            "SELECT COUNT(*) FROM incident WHERE eligible=1").fetchone()[0]
+            f"SELECT COUNT(*) FROM incident{where}{' AND' if where else ' WHERE'} eligible=1",
+            params).fetchone()[0]
         out["make_unknown"] = con.execute(
-            "SELECT COUNT(*) FROM incident WHERE index_make IS NULL OR index_make=''"
-        ).fetchone()[0]
+            f"SELECT COUNT(*) FROM incident{where}"
+            f"{' AND' if where else ' WHERE'} (index_make IS NULL OR index_make='')",
+            params).fetchone()[0]
         out["by_tier"] = {r[0]: r[1] for r in con.execute(
-            "SELECT make_tier, COUNT(*) FROM incident WHERE eligible=1 GROUP BY 1")}
+            f"SELECT make_tier, COUNT(*) FROM incident{where}"
+            f"{' AND' if where else ' WHERE'} eligible=1 GROUP BY 1", params)}
     except sqlite3.Error:
         pass
     con.close()
@@ -192,7 +223,9 @@ def pct(x: float) -> str:
 
 
 def build_report(incidents: list[dict], dropped: dict, asc: dict, label: str,
-                 *, min_outlets: int, n_perm: int) -> str:
+                 *, min_outlets: int, n_perm: int,
+                 rows_for_sensitivity: list[dict] | None = None,
+                 tier1_only: bool = False, require_known_make: bool = True) -> str:
     L: list[str] = []
     w = L.append
 
@@ -311,6 +344,42 @@ def build_report(incidents: list[dict], dropped: dict, asc: dict, label: str,
           "`--tier1-only` to see the version that does not depend on article text at all.")
         w("")
 
+    # ---- sensitivity: does the result depend on the ≥3-outlet coverage threshold?
+    if rows_for_sensitivity is not None:
+        w("## Sensitivity: coverage threshold")
+        w("")
+        w("Everything above only includes incidents covered by at least "
+          f"**{min_outlets}** of the top 10 outlets — below that, an incident never enters "
+          "the probability calculation, the confidence interval, or the permutation test; "
+          "it only shows up as a count in \"What did not make it in\" above. That is an "
+          "unexamined exclusion: if Tesla incidents clear the coverage bar more easily "
+          "than non-Tesla incidents (plausible, since novelty is what got them covered at "
+          "all — see the Severity decision in CLAUDE.md), the excluded pile is not a "
+          "random sample and the threshold itself could be shaping the result. This "
+          "reruns the same comparison at other thresholds, on the same underlying "
+          "incident set, to check whether the effect's direction and rough size survive.")
+        w("")
+        w("| min outlets | incidents (Tesla / non-Tesla) | p(title \\| Tesla) | "
+          "p(title \\| non-Tesla) | difference | permutation p |")
+        w("|---|---|---|---|---|---|")
+        for mo in sorted({1, 2, 3, min_outlets, 5}):
+            sens_incidents, _ = to_incidents(rows_for_sensitivity, min_outlets=mo,
+                                             tier1_only=tier1_only,
+                                             require_known_make=require_known_make)
+            st = [i for i in sens_incidents if i["tesla"]]
+            so = [i for i in sens_incidents if not i["tesla"]]
+            if not st or not so:
+                w(f"| {mo} | {len(st)} / {len(so)} | — | — | — | one arm empty |")
+                continue
+            sk1, sn1 = sum(i["k"] for i in st), sum(i["n"] for i in st)
+            sk0, sn0 = sum(i["k"] for i in so), sum(i["n"] for i in so)
+            sp1, sp0 = sk1 / sn1, sk0 / sn0
+            _, sperm_p = permutation_p(sens_incidents, n_perm=n_perm)
+            flag = " ⟵ reported above" if mo == min_outlets else ""
+            w(f"| {mo} | {len(st)} / {len(so)} | {pct(sp1)} | {pct(sp0)} | "
+              f"{pct(sp1 - sp0)} | {sperm_p:.4f}{flag} |")
+        w("")
+
     w("---")
     w("")
     w("### Reading this")
@@ -335,21 +404,34 @@ def main() -> None:
     ap.add_argument("--tier1-only", action="store_true",
                     help="restrict to incidents whose make came from a police, coronial "
                          "or court source rather than article text")
+    ap.add_argument("--include-unknown-make", action="store_true",
+                    help="include incidents where the make was never established "
+                         "(reproduces the earlier, broader population; default excludes them)")
     ap.add_argument("--n-perm", type=int, default=N_PERMUTATIONS)
     ap.add_argument("--label", default=None)
+    ap.add_argument("--start", default=None,
+                    help="study window start, for the ascertainment denominator only — "
+                         "e.g. 2025-09-01 (excludes leftover pre-pivot incidents from "
+                         "'candidate incidents' / 'make undetermined' counts)")
+    ap.add_argument("--end", default=None, help="study window end, e.g. 2026-08-31")
     args = ap.parse_args()
 
     if not (args.csv or args.db):
         raise SystemExit("give --csv or --db")
     rows = load_rows(args.csv, args.db)
+    require_known_make = not args.include_unknown_make
     incidents, dropped = to_incidents(rows, min_outlets=args.min_outlets,
-                                      tier1_only=args.tier1_only)
+                                      tier1_only=args.tier1_only,
+                                      require_known_make=require_known_make)
     label = args.label or ("simulated data" if args.csv and "simul" in args.csv
                            else "study dataset")
     if args.tier1_only:
         label += ", Tier 1 makes only"
-    text = build_report(incidents, dropped, ascertainment(args.db), label,
-                        min_outlets=args.min_outlets, n_perm=args.n_perm)
+    text = build_report(incidents, dropped,
+                        ascertainment(args.db, start=args.start, end=args.end), label,
+                        min_outlets=args.min_outlets, n_perm=args.n_perm,
+                        rows_for_sensitivity=rows, tier1_only=args.tier1_only,
+                        require_known_make=require_known_make)
     out = pathlib.Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(text, encoding="utf-8")

@@ -18,16 +18,18 @@ import sqlite3
 from .primary import MIN_OUTLETS
 
 
-def load_eligible(db: sqlite3.Connection, *, min_outlets: int = MIN_OUTLETS) -> list[dict]:
-    """Only incidents that actually clear the coverage bar used in the primary result.
+def load_eligible(db: sqlite3.Connection, *, min_outlets: int = MIN_OUTLETS,
+                  require_known_make: bool = True) -> list[dict]:
+    """Only incidents that actually clear the population restriction used in the primary
+    result: ≥`min_outlets` distinct outlets AND (by default) a determined vehicle make.
 
     `incident.eligible=1` means "a human confirmed this is a real, correctly-coded
-    incident" — it does NOT mean "meets the outlet threshold." `primary.py` applies that
-    threshold separately, at analysis time, so the same adjudicated pool can be re-run at
-    different `--min-outlets` values without re-adjudicating. That split is deliberate,
-    but it means the raw `eligible=1` set includes incidents that never enter any
-    reported probability, CI, or p-value — listing them here without applying the same
-    filter is misleading, not transparent.
+    incident" — it does NOT mean "meets the outlet threshold" or "has a known make."
+    `primary.py` applies those separately, at analysis time, so the same adjudicated pool
+    can be re-run at different settings without re-adjudicating. That split is
+    deliberate, but it means the raw `eligible=1` set includes incidents that never enter
+    any reported probability, CI, or p-value — listing them here without applying the
+    same filters is misleading, not transparent.
     """
     db.row_factory = sqlite3.Row
     all_eligible = db.execute(
@@ -35,6 +37,8 @@ def load_eligible(db: sqlite3.Connection, *, min_outlets: int = MIN_OUTLETS) -> 
         "WHERE eligible=1 ORDER BY incident_date").fetchall()
     incidents = []
     for inc in all_eligible:
+        if require_known_make and not inc["index_make"]:
+            continue
         articles = [dict(r) for r in db.execute(
             "SELECT outlet, headline, url, headline_names_make FROM article "
             "WHERE incident_id=? AND excluded=0 AND substantive=1 ORDER BY publish_datetime",
@@ -83,9 +87,10 @@ def build(incidents: list[dict], *, min_outlets: int) -> str:
     w("# Data appendix — every incident used in the primary result, every headline, every link")
     w("")
     w(f"Backing data for the main write-up's primary result. **{len(incidents)}** incidents — "
-      f"human-adjudicated as real and correctly coded, AND covered by ≥{min_outlets} of "
-      f"the top 10 Australian outlets, the same threshold applied before an "
-      f"incident enters any reported probability, CI, or p-value. Every incident here "
+      f"human-adjudicated as real and correctly coded, with a determined vehicle make, "
+      f"AND covered by ≥{min_outlets} of the top 10 Australian outlets — the same "
+      f"population restrictions applied before an incident enters any reported "
+      f"probability, CI, or p-value. Every incident here "
       f"passed human review — see the main write-up for the full methodology and caveats.")
     w("")
     w("**[names make]** marks a headline that names the vehicle's make — the outcome "
