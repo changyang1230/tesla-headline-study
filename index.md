@@ -101,6 +101,24 @@ Toyota or Mazda (about 22 times more often). But Tesla's rate was still about
 4 times higher again than even those luxury brands. So "expensive car" explains some of
 it, but not most of it.
 
+<div style="display:flex; gap:16px; flex-wrap:wrap; margin: 20px 0;">
+  <div style="flex:1; min-width:180px; border:2px solid #14161a; border-radius:12px; padding:20px; text-align:center;">
+    <div style="font-size:13px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7078;">Tesla</div>
+    <div style="font-size:44px; font-weight:700; margin:8px 0;">57.1%</div>
+    <div style="font-size:13px; color:#4a4f57;">of headlines named the make<br>(4 of 7 articles, 3 crashes)</div>
+  </div>
+  <div style="flex:1; min-width:180px; border:2px solid #cccfd4; border-radius:12px; padding:20px; text-align:center;">
+    <div style="font-size:13px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7078;">Premium/luxury brands</div>
+    <div style="font-size:44px; font-weight:700; margin:8px 0;">15.4%</div>
+    <div style="font-size:13px; color:#4a4f57;">of headlines named the make<br>(6 of 39 articles, 10 crashes)</div>
+  </div>
+  <div style="flex:1; min-width:180px; border:2px solid #cccfd4; border-radius:12px; padding:20px; text-align:center;">
+    <div style="font-size:13px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7078;">Mainstream brands</div>
+    <div style="font-size:44px; font-weight:700; margin:8px 0;">0.7%</div>
+    <div style="font-size:13px; color:#4a4f57;">of headlines named the make<br>(1 of 150 articles, 53 crashes)</div>
+  </div>
+</div>
+
 **Maybe it's just that dramatic, out-of-control crashes get named more, and Tesla
 crashes happen to be more dramatic?** Two of the three Tesla crashes were exactly this
 kind of story — a car going airborne and hitting a bollard, and a car crashing into a
