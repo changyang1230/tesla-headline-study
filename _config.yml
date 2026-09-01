@@ -1,0 +1,11 @@
+title: Does the Media Really Say "Tesla" More Often?
+description: A twelve-month, brand-agnostic look at whether Australian crash headlines name Tesla more often than other car makes.
+theme: minima
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+minima:
+  skin: classic
+show_excerpts: false
