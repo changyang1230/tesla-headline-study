@@ -613,10 +613,7 @@ robust gap that survives adjustment for editorial clustering, outlet-level style
 general luxury-brand naming effect. The result is built on a small number of Tesla
 incidents and a deliberately narrowed population, and should be treated accordingly, but
 across every robustness check performed, the direction and approximate scale of the
-effect did not change. The most likely explanation is not a deliberate editorial policy
-against Tesla specifically, but Tesla's unusually high ambient brand salience translating
-into unusually complete and headline-surfaced identification, relative to the
-near-anonymity most vehicle makes receive in routine crash coverage.
+effect did not change.
 
 ---
 
