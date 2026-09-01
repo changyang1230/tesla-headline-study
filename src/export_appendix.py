@@ -28,9 +28,6 @@ def load_eligible(db: sqlite3.Connection, *, min_outlets: int = MIN_OUTLETS) -> 
     but it means the raw `eligible=1` set includes incidents that never enter any
     reported probability, CI, or p-value — listing them here without applying the same
     filter is misleading, not transparent.
-
-    Returns (incidents, n_adjudicated) — the latter is the total `eligible=1` count
-    before the outlet filter, used only for the header's "narrower than X" framing.
     """
     db.row_factory = sqlite3.Row
     all_eligible = db.execute(
@@ -50,7 +47,7 @@ def load_eligible(db: sqlite3.Connection, *, min_outlets: int = MIN_OUTLETS) -> 
             "make": inc["index_make"] or "(not established)",
             "articles": articles,
         })
-    return incidents, len(all_eligible)
+    return incidents
 
 
 def render_incident_full(inc: dict) -> list[str]:
@@ -65,7 +62,7 @@ def render_incident_full(inc: dict) -> list[str]:
 def render_incident_compact(inc: dict) -> list[str]:
     n_named = sum(1 for a in inc["articles"] if a["headline_names_make"])
     L = [f'<details markdown="1"><summary><strong>{inc["incident_date"]}</strong> — '
-         f"{inc['incident_id']} — {len(inc['articles'])} outlet(s), "
+         f"{inc['incident_id']} — {len(inc['articles'])} article(s), "
          f"{n_named} headline(s) name the make</summary>", ""]
     for a in inc["articles"]:
         tag = " **[names make]**" if a["headline_names_make"] else ""
@@ -76,7 +73,7 @@ def render_incident_compact(inc: dict) -> list[str]:
     return L
 
 
-def build(incidents: list[dict], *, min_outlets: int, n_adjudicated: int) -> str:
+def build(incidents: list[dict], *, min_outlets: int) -> str:
     L: list[str] = []
     w = L.append
 
@@ -88,10 +85,7 @@ def build(incidents: list[dict], *, min_outlets: int, n_adjudicated: int) -> str
     w(f"Backing data for the main write-up's primary result. **{len(incidents)}** incidents — "
       f"human-adjudicated as real and correctly coded, AND covered by ≥{min_outlets} of "
       f"the top 10 Australian outlets, the same threshold applied before an "
-      f"incident enters any reported probability, CI, or p-value. This is a narrower set "
-      f"than 'all human-adjudicated incidents' ({n_adjudicated}) — "
-      f"incidents that passed adjudication but never cleared the coverage bar are omitted "
-      f"here since they contribute nothing to the headline result. Every incident here "
+      f"incident enters any reported probability, CI, or p-value. Every incident here "
       f"passed human review — see the main write-up for the full methodology and caveats.")
     w("")
     w("**[names make]** marks a headline that names the vehicle's make — the outcome "
@@ -130,10 +124,10 @@ def main() -> None:
     args = ap.parse_args()
 
     db = sqlite3.connect(args.db)
-    incidents, n_adjudicated = load_eligible(db, min_outlets=args.min_outlets)
+    incidents = load_eligible(db, min_outlets=args.min_outlets)
     db.close()
 
-    text = build(incidents, min_outlets=args.min_outlets, n_adjudicated=n_adjudicated)
+    text = build(incidents, min_outlets=args.min_outlets)
     import pathlib
     out = pathlib.Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
