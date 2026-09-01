@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Main article
+title: Does the media name the car brand more when a car crash involves a Tesla?
+nav_title: Main article
 permalink: /
 ---
 
