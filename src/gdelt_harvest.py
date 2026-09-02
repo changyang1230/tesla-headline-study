@@ -36,7 +36,10 @@ USER_AGENT = (
     "tesla-headline-salience-study/0.2 "
     "(non-commercial media-content research; contact via repository)"
 )
-REQUEST_DELAY_S = 2.0        # repository rule
+#: GDELT's own 429 response says "limit requests to one every 5 seconds"; 2.0s (this
+#: repo's general scraping-rule minimum) is not enough for this host specifically. 6.0s
+#: leaves a safety margin.
+REQUEST_DELAY_S = 6.0
 MAXRECORDS = 250             # GDELT hard cap per call
 WINDOW_DAYS = 1              # daily windows keep every call under the 250 cap
 #: Domain-restricted queries return a fraction of the volume, so they can span far
@@ -44,22 +47,31 @@ WINDOW_DAYS = 1              # daily windows keep every call under the 250 cap
 SUPPLEMENTARY_WINDOW_DAYS = 30
 
 #: The top 10 Australian online news brands by readership (docs/OUTLETS.md).
-#: Ordering and membership must be verified against a current Ipsos iris monthly release
-#: before Phase 2; this is the tier that consistently occupies the top 10.
+#: Verified against real Ipsos iris "Top 10 News Category (excluding Weather &
+#: Aggregators)" reports for March, May and June 2026 (averaged). Herald Sun and The Age
+#: — both in the previous unverified list — do not appear in any of the three months and
+#: have been dropped; SBS News and bbc.com are real, consistent top-10 entrants and have
+#: been added. Daily Mail AUS's domain changed from dailymail.co.uk to dailymail.com
+#: (noted on the Ipsos June 2026 report itself).
+#:
+#: Yahoo News Australia dropped 2026-08-25 (user decision, not an Ipsos ranking change):
+#: its live sitemap only ever shows ~1 day of content, and Wayback had only 6 snapshots
+#: of it across the entire 12-month study window (~1.7% day-coverage) — unlike
+#: news.com.au's robots.txt gap, this isn't recoverable even manually, since the
+#: historical state simply isn't stored anywhere. Existing Yahoo harvest rows were
+#: deleted, not just excluded, so there's no ambiguity later about whether they count.
 OUTLET_DOMAINS: dict[str, tuple[str, str, str]] = {
     # domain: (brand, ownership group, register)
     "news.com.au":      ("news.com.au", "News Corp", "tabloid"),
     "abc.net.au":       ("ABC News", "ABC", "public"),
     "9news.com.au":     ("9News", "Nine", "broadcast"),
     "nine.com.au":      ("9News", "Nine", "broadcast"),
-    "dailymail.co.uk":  ("Daily Mail Australia", "DMG Media", "tabloid"),
+    "dailymail.com":    ("Daily Mail Australia", "DMG Media", "tabloid"),
     "7news.com.au":     ("7NEWS", "Seven West", "broadcast"),
     "smh.com.au":       ("Sydney Morning Herald", "Nine", "broadsheet"),
     "theguardian.com":  ("The Guardian Australia", "Guardian", "broadsheet"),
-    "au.news.yahoo.com": ("Yahoo News Australia", "Yahoo", "aggregator"),
-    "au.yahoo.com":     ("Yahoo News Australia", "Yahoo", "aggregator"),
-    "theage.com.au":    ("The Age", "Nine", "broadsheet"),
-    "heraldsun.com.au": ("Herald Sun", "News Corp", "tabloid"),
+    "sbs.com.au":       ("SBS News", "SBS", "public"),
+    "bbc.com":          ("BBC", "BBC", "broadcast"),
 }
 
 #: Distinct brands in the frame. 9news/nine and the two Yahoo domains are one brand each,
@@ -91,11 +103,12 @@ def url_hash(url: str) -> str:
 def match_outlet(url: str) -> tuple[str, str, str, str] | None:
     """(domain, brand, group, register) if the URL is one of the top 10 brands, else None.
 
-    Daily Mail Australia shares the `dailymail.co.uk` domain with the UK edition, so URL
-    alone cannot separate them. Every incident in this study is Australian by
-    construction (clustering is anchored on Australian localities), so a Daily Mail
-    article that clusters to an Australian incident is Australian coverage regardless of
-    which desk wrote it. See `docs/OUTLETS.md` and `gdelt_supplementary_queries()`.
+    Daily Mail Australia (`dailymail.com`) and bbc.com share their domain with
+    non-Australian editions, so URL alone cannot separate them. Every incident in this
+    study is Australian by construction (clustering is anchored on Australian
+    localities), so an article on either domain that clusters to an Australian incident
+    is Australian coverage regardless of which desk wrote it. See `docs/OUTLETS.md` and
+    `gdelt_supplementary_queries()`.
     """
     parts = urllib.parse.urlsplit(url)
     host = parts.netloc.lower().removeprefix("www.")
@@ -112,6 +125,15 @@ def _windows(start: dt.date, end: dt.date, days: int) -> list[tuple[dt.date, dt.
         out.append((cur, stop))
         cur = stop + dt.timedelta(days=1)
     return out
+
+
+class GDELTResponseError(RuntimeError):
+    """GDELT returned HTTP 200 with a non-JSON body (typically a plain-text error, e.g.
+    a rate-limit notice or a query-syntax complaint). Must propagate as a failure, not be
+    swallowed as "zero articles" — that would let a window be marked complete in
+    `harvest_progress` despite the fetch having failed, silently losing coverage on any
+    future resume.
+    """
 
 
 def _fetch(query: str, start: dt.date, end: dt.date, *, timeout: int = 60) -> list[dict]:
@@ -134,10 +156,12 @@ def _fetch(query: str, start: dt.date, end: dt.date, *, timeout: int = 60) -> li
         return []
     try:
         return json.loads(raw).get("articles", [])
-    except json.JSONDecodeError:
-        # GDELT returns plain-text errors with a 200 status often enough to matter.
-        LOG.warning("non-JSON response for %r %s..%s: %s", query, start, end, raw[:200])
-        return []
+    except json.JSONDecodeError as exc:
+        # GDELT returns plain-text errors with a 200 status often enough to matter (rate
+        # limiting and query complaints both look like this). Raise rather than return
+        # [] — see GDELTResponseError.
+        raise GDELTResponseError(
+            f"non-JSON response for {query!r} {start}..{end}: {raw[:200]}") from exc
 
 
 def harvest(db: sqlite3.Connection, start: dt.date, end: dt.date,
@@ -181,7 +205,7 @@ def harvest(db: sqlite3.Connection, start: dt.date, end: dt.date,
                 continue
             try:
                 arts = _fetch(query, w_start, w_end)
-            except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            except (urllib.error.URLError, TimeoutError, OSError, GDELTResponseError) as exc:
                 # Repository rule: never stop on errors, log and continue.
                 LOG.warning("fetch failed %r %s..%s: %s", query, w_start, w_end, exc)
                 stats["errors"] += 1
@@ -230,7 +254,11 @@ def harvest(db: sqlite3.Connection, start: dt.date, end: dt.date,
 def open_db(path: str | pathlib.Path) -> sqlite3.Connection:
     path = pathlib.Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    db = sqlite3.connect(path)
+    # Multiple harvesters/scripts run concurrently against the same file (WAL mode, one
+    # writer at a time) — the 5s default timeout isn't enough under real contention and
+    # surfaces as a hard crash ("database is locked") rather than a wait-and-retry.
+    db = sqlite3.connect(path, timeout=60.0)
+    db.execute("PRAGMA busy_timeout = 60000")
     schema = pathlib.Path(__file__).resolve().parent.parent / "db" / "schema.sql"
     db.executescript(schema.read_text())
     return db

@@ -37,7 +37,14 @@ COSINE_THRESHOLD = 0.35
 #: rule catches pairs whose cosine is diluted by differing event vocabulary.
 RARE_SHARED_TOKENS = 2
 RARE_DF_FRACTION = 0.002     # a token is "rare" if it appears in <0.2% of harvested headlines
-MIN_OUTLETS = 5              # >=5 of the top 10 brands (docs/OUTLETS.md)
+#: Protocol section 10.4 fallback invoked 2026-08-25: the pre-registered 5-outlet
+#: threshold left only 15 eligible clusters against ~6,650 harvested candidates, judged
+#: too few before any outcome comparison was run. Dropped to 3 per the documented
+#: fallback (docs/OUTLETS.md § Threshold) — record kept here and in CLAUDE.md.
+#: Dropped again to 2 same day, post-hoc (see matching note in src/primary.py) at the
+#: user's explicit request — not a pre-specified fallback, this one is honestly labelled
+#: as after-the-result in CLAUDE.md.
+MIN_OUTLETS = 2               # >=2 of the top 10 brands
 
 #: Both thresholds are provisional. Phase 0 calibrates them against a hand-labelled
 #: sample of ~200 articles and records the chosen values in output/phase0_feasibility.md
@@ -162,14 +169,32 @@ def main() -> None:
     ap.add_argument("--min-outlets", type=int, default=MIN_OUTLETS)
     ap.add_argument("--threshold", type=float, default=COSINE_THRESHOLD,
                     help="cosine linkage threshold; calibrate in Phase 0")
+    ap.add_argument("--start", default=None,
+                    help="only cluster articles with seendate >= this (ISO date) — the "
+                         "harvest table holds multiple study-scope windows in one table, "
+                         "so this and --end are needed to avoid mixing them")
+    ap.add_argument("--end", default=None, help="only cluster articles with seendate <= this")
+    ap.add_argument("--all-topics", action="store_true",
+                    help="include is_vehicle_crash=0/NULL rows too (default: vehicle-only)")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    db = sqlite3.connect(args.db)
+    db = sqlite3.connect(args.db, timeout=60.0)
+    db.execute("PRAGMA busy_timeout = 60000")
     db.row_factory = sqlite3.Row
-    rows = list(db.execute(
-        "SELECT url_hash, canonical_url, domain, title_at_crawl, seendate FROM harvest"))
-    LOG.info("clustering %d harvested articles", len(rows))
+    sql = "SELECT url_hash, canonical_url, domain, title_at_crawl, seendate FROM harvest WHERE 1=1"
+    params: list[str] = []
+    if not args.all_topics:
+        sql += " AND is_vehicle_crash = 1"
+    if args.start:
+        sql += " AND seendate >= ?"
+        params.append(args.start)
+    if args.end:
+        sql += " AND seendate <= ?"
+        params.append(args.end)
+    rows = list(db.execute(sql, params))
+    LOG.info("clustering %d harvested articles (start=%s end=%s vehicle_only=%s)",
+             len(rows), args.start, args.end, not args.all_topics)
 
     clusters = cluster(rows, threshold=args.threshold)
     kept = [c for c in clusters if len(counting_brands(rows, c)) >= args.min_outlets]

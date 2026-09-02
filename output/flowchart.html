@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #ffffff; margin: 0; padding: 48px;
+  }
+  .wrap { width: 880px; margin: 0 auto; }
+  h1 { font-size: 22px; text-align: center; color: #14161a; margin: 0 0 6px; }
+  .subtitle { text-align: center; color: #6b7078; font-size: 14px; margin-bottom: 36px; }
+  .stage { border: 2px solid #2c3038; border-radius: 12px; padding: 18px 24px; margin-bottom: 4px; background: #f7f8fa; }
+  .stage.highlight { border-color: #4f8cff; background: #eef4ff; }
+  .stage .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7078; font-weight: 600; margin-bottom: 4px; }
+  .stage .main { font-size: 16px; color: #14161a; font-weight: 600; }
+  .stage .detail { font-size: 13px; color: #4a4f57; margin-top: 6px; line-height: 1.5; }
+  .stage .num { color: #4f8cff; font-weight: 700; }
+  .stage .num.reject { color: #e05252; }
+  .arrow { text-align: center; color: #9aa0a8; font-size: 22px; margin: 2px 0; }
+  .split { display: flex; gap: 16px; margin-bottom: 4px; }
+  .split .stage { flex: 1; margin-bottom: 0; }
+  .split .stage.pass { border-color: #34a853; background: #eefaf0; }
+  .split .stage.fail { border-color: #cccfd4; background: #f5f5f6; }
+  .split .stage.pass .num { color: #1e8e3e; }
+  .final { border: 3px solid #4f8cff; border-radius: 14px; padding: 22px 24px; background: #14161a; color: white; text-align: center; margin-top: 4px; }
+  .final .main { font-size: 18px; font-weight: 700; }
+  .final .detail { color: #c7cbd1; font-size: 13px; margin-top: 8px; }
+  .final .num { color: #82b1ff; font-weight: 700; }
+  .footnote { text-align: center; color: #9aa0a8; font-size: 11px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>How the dataset was built</h1>
+  <div class="subtitle">2025-09-01 to 2026-08-31 &middot; 7 Australian news outlets &middot; brand-agnostic discovery</div>
+
+  <div class="stage">
+    <div class="label">Step 1 — Discovery</div>
+    <div class="main">Generic crash-language search (never a brand name)</div>
+    <div class="detail">"crash," "collision," "rolled," "T-boned," "hit by a car," "airborne" &hellip; searched across each outlet's own article index &mdash; not a ranked search engine, which would itself bias toward high-engagement (brand-name) headlines.</div>
+    <div class="detail"><span class="num">4,898</span> candidate articles matched, out of the full daily output of 7 outlets</div>
+  </div>
+  <div class="arrow">&#8595;</div>
+
+  <div class="stage">
+    <div class="label">Step 2 — Relevance filter</div>
+    <div class="main">AI check: is this actually a road-vehicle crash?</div>
+    <div class="detail">Filters out sport "collisions," stock-market "crashes," aviation, metaphor. Decided from the title alone &mdash; never from make or brand.</div>
+    <div class="detail"><span class="num">2,580</span> confirmed real road-vehicle crash candidates</div>
+  </div>
+  <div class="arrow">&#8595;</div>
+
+  <div class="stage">
+    <div class="label">Step 3 — Clustering</div>
+    <div class="main">Group articles describing the same real-world crash</div>
+    <div class="detail">Only crashes covered by <strong>2 or more</strong> of the top 10 Australian news brands are kept &mdash; a single outlet's editorial quirk can't create an incident on its own.</div>
+    <div class="detail"><span class="num">215</span> candidate incidents, real article text fetched for every one</div>
+  </div>
+  <div class="arrow">&#8595;</div>
+
+  <div class="stage highlight">
+    <div class="label">Step 4 — Human review</div>
+    <div class="main">Every single incident read and adjudicated by hand</div>
+    <div class="detail">Blind, one at a time, via a purpose-built review tool &mdash; is this really a road crash, is the AI's suggested make correct? Zero incidents left undecided.</div>
+  </div>
+  <div class="arrow">&#8595;</div>
+
+  <div class="split">
+    <div class="stage pass">
+      <div class="label">Kept</div>
+      <div class="main"><span class="num">150</span> confirmed real incidents</div>
+      <div class="detail">3 Tesla, 147 other makes</div>
+    </div>
+    <div class="stage fail">
+      <div class="label">Excluded</div>
+      <div class="main"><span class="num reject">65</span> incidents rejected</div>
+      <div class="detail">Overseas crashes, celebrity-driven domestic crashes, professional motorsport, non-crash noise, wrong clustering</div>
+    </div>
+  </div>
+  <div class="arrow">&#8595;</div>
+
+  <div class="stage">
+    <div class="label">Step 5 — Coverage threshold (re-checked)</div>
+    <div class="main">Does the incident still have ≥2 retrievable outlets?</div>
+    <div class="detail">Clustering targeted 2+ outlets, but some article fetches fail after the fact (dead links, thin extraction) &mdash; re-verified here against what was actually retrieved, not just what was originally clustered.</div>
+    <div class="detail"><span class="num">104</span> incidents enter the primary comparison &mdash; <span class="num reject">46</span> confirmed-real incidents have only 1 retrievable outlet and are excluded from every reported number</div>
+  </div>
+  <div class="arrow">&#8595;</div>
+
+  <div class="stage">
+    <div class="label">Step 6 — Independent accuracy check</div>
+    <div class="main">Hand-coded gold standard, blind to the AI's answers</div>
+    <div class="detail">28 incidents independently re-read by a human with no AI suggestion visible, specifically to test whether the AI was better at spotting "Tesla" than other brands.</div>
+    <div class="detail">Tesla recall <span class="num">100%</span> vs. non-Tesla recall <span class="num">92%</span> &mdash; no bias detected</div>
+  </div>
+  <div class="arrow">&#8595;</div>
+
+  <div class="final">
+    <div class="main">Result: headline names the make</div>
+    <div class="detail"><span class="num">57.1%</span> of the time for Tesla &nbsp;vs&nbsp; <span class="num">2.4%</span> of the time for everything else</div>
+    <div class="detail">p = 0.0003, permutation test clustered by incident (not by article)</div>
+  </div>
+
+  <div class="footnote">Full methodology, caveats, and every incident's sources: see the data appendix.</div>
+</div>
+</body>
+</html>

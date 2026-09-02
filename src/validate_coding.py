@@ -73,10 +73,20 @@ def _norm(v) -> str:
 
 
 def load_machine(db: sqlite3.Connection) -> dict[str, dict[str, str]]:
+    """All coders, not just 'claude' — `index_make` in particular is often resolved by
+    the mechanical regex shortcut (`llm_coding.py`'s `store_mechanical`), which never
+    touches the other Codebook fields. Restricting this to coder='claude' would silently
+    treat every mechanically-coded incident as "the machine didn't answer," understating
+    recall for whichever makes happen to route through the mechanical path more often —
+    found 2026-08-26 when a real Tesla-vs-rest differential (-0.28, apparently a fail)
+    turned out to be entirely an artifact of 2 of 3 gold Tesla incidents being
+    mechanically coded and therefore invisible here; the correct, coder-inclusive
+    differential was +0.08, a pass. An incident's index_make comes from exactly one
+    coder (mechanical short-circuits before the LLM call), so there's no risk of one
+    unit_id/variable pair getting two conflicting values here."""
     out: dict[str, dict[str, str]] = collections.defaultdict(dict)
     for unit_id, var, val in db.execute(
-            "SELECT unit_id, variable, value FROM dual_coding "
-            "WHERE coder='claude' AND unit_type='incident'"):
+            "SELECT unit_id, variable, value FROM dual_coding WHERE unit_type='incident'"):
         out[unit_id][var] = _norm(val)
     return out
 

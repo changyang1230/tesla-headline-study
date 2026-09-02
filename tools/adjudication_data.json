@@ -1,0 +1,4605 @@
+[
+ {
+  "incident_id": "20250902-01",
+  "incident_date": "2025-09-02",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Mum avoids jail over crash that killed twin daughters: \u2018Just want to grieve\u2019",
+    "url": "https://7news.com.au/news/rachel-van-oyen-wins-appeal-over-sentence-for-carrabin-crash-that-killed-twin-daughters-c-19885581",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-02"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Mum won't face jail over careless driving that killed her girls",
+    "url": "https://www.dailymail.com/news/article-15056659/Rachel-Van-Oyen-WA-fatal-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-02"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250915-01",
+  "incident_date": "2025-09-15",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "Fox Sports\u2019 James Hooper learns fate after drunken car crash in Sydney",
+    "url": "https://www.smh.com.au/national/nsw/fox-sports-james-hooper-learns-fate-after-drunken-car-crash-in-sydney-20250915-p5mv57.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-15"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250916-01",
+  "incident_date": "2025-09-16",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "BYD",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Sports community mourns young player killed in car crash",
+    "url": "https://7news.com.au/sport/sports-community-mourns-young-ice-hockey-player-orca-wiesblatt-killed-in-car-crash-c-20040810",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-16"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Promising hockey player, 25, killed in car crash",
+    "url": "https://www.dailymail.com/sport/othersports/article-15101911/hockey-orca-wiesblatt-killed-car-crash-allen-americans.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-16"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250917-01",
+  "incident_date": "2025-09-17",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Holden",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Shocking update after alleged gunman flees crash",
+    "url": "https://7news.com.au/news/manhunt-underway-near-rockhampton-after-gunshot-victim-found-and-firearms-seized-in-dramatic-crash-c-20046438",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-17"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250918-01",
+  "incident_date": "2025-09-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "General Hospital and Grey's Anatomy stars pay tribute to Brad...",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15111469/General-Hospital-Greys-Anatomy-stars-pay-tribute-Brad-Everett-Young-died-LA-car-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-18"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Grey's Anatomy actor and photographer Brad Everett Young dies in crash",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15110927/Greys-Anatomy-star-celebrity-photographer-Brad-Everett-Young-dies-Los-Angeles-car-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-18"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250918-02",
+  "incident_date": "2025-09-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Disney influencer's two kids dead in fatal car crash",
+    "url": "https://www.dailymail.com/lifestyle/article-15112331/disney-influencer-two-kids-die-fatal-crash-keeley-whitcomb.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-18"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250920-02",
+  "incident_date": "2025-09-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Truck driver charged following fatal crash in NSW north",
+    "url": "https://www.nine.com.au/australia-news/truck-driver-charged-after-fatal-crash-20250920-p5zh4k.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250921-01",
+  "incident_date": "2025-09-21",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Horror crash between car and bus leaves four people seriously hurt",
+    "url": "https://7news.com.au/news/serious-bus-crash-on-m2-motorway-leaves-four-in-serious-condition-c-20095486",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-21"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250923-01",
+  "incident_date": "2025-09-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Holden",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Voice of iconic footy anthem killed in crash tragedy",
+    "url": "https://7news.com.au/news/chris-doheny-dead-at-64-geisha-frontman-and-voice-of-footy-anthem-more-than-a-game-tragically-killed-in-car-crash-c-20107902",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-23"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Singer of AFL Footy Show anthem Chris Doheny dead in horror crash",
+    "url": "https://www.dailymail.com/sport/afl/article-15124373/Singer-AFL-Footy-anthem-Chris-Doheny-dead-horror-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250923-02",
+  "incident_date": "2025-09-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Mercedes-Benz",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Police dog injured after being thrown from airborne vehicle in freeway crash",
+    "url": "https://7news.com.au/news/police-dog-rocco-thrown-from-vehicle-in-freeway-crash-c-20119004",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-23"
+   },
+   {
+    "outlet": "9News",
+    "headline": "'Miracle' as police dog Rocco escapes horror crash with only a few scrapes",
+    "url": "https://www.nine.com.au/australia-news/police-dog-thrown-from-car-in-melbourne-crash-20250923-p5zh6u.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250923-03",
+  "incident_date": "2025-09-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "What bus driver told cops after fatal crash that left a teenager dead",
+    "url": "https://www.dailymail.com/news/article-15125631/Brisbane-bus-crash-court-Tia-Cameron.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20250926-01",
+  "incident_date": "2025-09-26",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Driver trapped in car dies after crash into pole",
+    "url": "https://7news.com.au/news/driver-trapped-in-wreckage-dies-after-crash-into-pole-at-bellevue-park-in-sydneys-east-c-20157414",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-26"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Man dies in single-car crash in Sydney's east",
+    "url": "https://www.nine.com.au/australia-news/man-dies-in-fatal-single-car-crash-sydneys-east-20250927-p5zhc0.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-09-27"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251002-01",
+  "incident_date": "2025-10-02",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Hero truckies wade through swamp to drag man from burning car and resuscitate him",
+    "url": "https://7news.com.au/news/truckies-pull-man-from-burning-wreck-after-salisbury-highway-crash-in-adelaides-north-c-20214241",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-02"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Police pull victim from burning vehicle after race leads to crash",
+    "url": "https://www.dailymail.com/news/article-15161301/police-pull-man-burning-car-crash-new-mexico.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-04"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251003-01",
+  "incident_date": "2025-10-03",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Nissan",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Shock new details emerge about \u2018completely avoidable\u2019 fatal crash",
+    "url": "https://7news.com.au/news/girl-16-killed-in-crash-involving-stolen-car-in-hume-freeway-in-wodonga-victoria--c-20221771",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-03"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251003-02",
+  "incident_date": "2025-10-03",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Driver killed in fiery crash during police chase",
+    "url": "https://7news.com.au/news/driver-killed-in-crash-during-hunter-valley-police-chase-c-20232611",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-04"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251005-02",
+  "incident_date": "2025-10-05",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Elderly man hit and killed in car park tragedy",
+    "url": "https://7news.com.au/news/elderly-man-hit-by-a-car-and-killed-in-lane-cove-car-park-in-sydney-c-20243362",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-05"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Elderly man dies after being hit by car on Sydney's North Shore",
+    "url": "https://www.nine.com.au/australia-news/lane-cove-sydney-man-hit-by-car-20251005-p5zhjh.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-05"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251006-01",
+  "incident_date": "2025-10-06",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Bus crashes down embankment with multiple people on board",
+    "url": "https://7news.com.au/news/vline-bus-crashes-down-embankment-in-foster-victoria--c-20253959",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-06"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Rescue after bus crashes down embankment",
+    "url": "https://www.news.com.au/national/victoria/news/rescue-operation-after-bus-carrying-passengers-crashes-down-embankment-at-foster-victoria/news-story/c1693494cfc3348c88ea0e772b08fb68",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-06"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251009-01",
+  "incident_date": "2025-10-09",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Porsche",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Rock legend Gene Simmons hospitalised after car crash in Malibu",
+    "url": "https://www.nine.com.au/entertainment/celebrity/gene-simmons-kiss-legend-hospitalised-car-crash-los-angeles-malibu-20251009-p5ppx5.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-09"
+   },
+   {
+    "outlet": "9News",
+    "headline": "KISS rocker recovering after serious car crash",
+    "url": "https://www.nine.com.au/australia-news/today-show/gene-simmons-kiss-rocker-car-crash-injured-entertainment-news-on-october-9-20251009-p5rllj.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-09"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "KISS rocker Gene Simmons, 76, hospitalized after car crash in Malibu",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15175049/KISS-rocker-Gene-Simmons-76-hospitalized-car-crash-Malibu.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-09"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Gene Simmons breaks silence after car crash sent him to the hospital",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15178339/KISS-Gene-Simmons-breaks-silence-car-crash-hospital.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-09"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251010-01",
+  "incident_date": "2025-10-10",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Boy dies after being hit by a truck on school holidays",
+    "url": "https://www.dailymail.com/news/article-15179539/crash-child-killed-bendigo-adelaide.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-10"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Child dies in truck collision",
+    "url": "https://www.news.com.au/national/victoria/news/schoolaged-child-dies-in-truck-collision-in-bendigo-victoria/news-story/8affef53fe4c87018220b6f5ff416662",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-10"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251010-02",
+  "incident_date": "2025-10-10",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "claude",
+  "deaths": "0",
+  "serious_injuries": "1",
+  "incident_type": "occupant_serious_collision",
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "Brock Stinson lost control of his Stinson Family Racing Toyota shortly after Hell Corner, pinballing into car 33 to his left and then 19 to his right",
+  "notes": "EXCLUSION FLAG: Professional motorsport incident at Bathurst 1000 (Toyota 86 Series support category). Per CLAUDE.md protocol, professional motorsport incidents are excluded because vehicle make naming is genre convention (manufacturer-specific race series) rather than newsroom editorial choice. All vehicles in this race series are Toyotas by definition. Severity of Clay Richards' injury is borderline: hospitalised for observation/precautionary medical checks with reported back pain but described as 'stable condition'. May not meet codebook threshold for 'serious injury' depending on severity definition. Driver Clay Richards is independently notable: son of five-time Bathurst 1000 champion Steven Richards, grandson of seven-time champion Jim Richards.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Bathurst race abandoned as ambulance called to horrific accident",
+    "url": "https://7news.com.au/sport/motorsport/toyota-86-series-at-bathurst-abandoned-after-horrific-crash-as-clay-richards-hospitalised-in-stable-condition-c-20302764",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-10"
+   },
+   {
+    "outlet": "9News",
+    "headline": "'Torn to pieces': Bathurst race abandoned after wild crash",
+    "url": "https://www.nine.com.au/sport/motorsport/bathurst-1000-news-supercars-qualifying-toyota-gr-cup-crash-video-clay-richards-harrison-blanchard-20251010-p5n1mp.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-10"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251016-01",
+  "incident_date": "2025-10-16",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "NRL star's mum 'aberrant' with grief before horror fatal car crash",
+    "url": "https://www.nine.com.au/australia-news/nrl-payne-haas-mum-uiatu-joan-taufua-fatal-car-crash-20251016-p5zhv3.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-16"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "NRL star\u2019s mother overcome by grief before devastating tragedy",
+    "url": "https://7news.com.au/sport/rugby-league/mother-of-nrl-star-payne-haas-grieving-the-death-of-first-born-son-before-fatal-crash-court-hears-c-20377461",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-16"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251016-02",
+  "incident_date": "2025-10-16",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Cause of crash under investigation as soldier remembered as leader and mentor",
+    "url": "https://www.nine.com.au/australia-news/soldiers-injured-adf-crash-townsville-queensland-20251016-p5zhum.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-16"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Three ADF soldiers injured in crash",
+    "url": "https://www.news.com.au/national/queensland/news/three-australian-defence-force-soldiers-injured-in-horror-crash-near-townsville/news-story/30af52f2fb4105d531d565934c22cb7d",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-16"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251020-01",
+  "incident_date": "2025-10-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Land Rover",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "England star Stuart Pearce's 21-year-old son dies in tractor crash",
+    "url": "https://www.dailymail.com/sport/football/article-15208665/Stuart-Pearces-son-dies-tractor-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-20"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Football great mourning death of son, 21, in tractor crash",
+    "url": "https://7news.com.au/sport/soccer/england-football-great-stuart-pearce-mourning-death-of-son-harley-21-in-tractor-crash-c-20415902",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-21"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Girlfriend of Stuart Pearce's son pays tribute after he was killed",
+    "url": "https://www.dailymail.com/sport/football/article-15209547/Girlfriend-Stuart-Pearce-son-died-tribute-tractor-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251020-02",
+  "incident_date": "2025-10-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Homeowner turns hero after car crashes into backyard pool",
+    "url": "https://7news.com.au/news/elderly-driver-crashes-car-into-backyard-pool-at-mount-druitt-in-sydneys-west-c-20413286",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251022-02",
+  "incident_date": "2025-10-22",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Baby and young girl among six hospitalised after horror crash",
+    "url": "https://7news.com.au/news/six-people-including-baby-and-young-girl-hospitalised-after-serious-multi-vehicle-crash-in-perths-south-c-20435522",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-22"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Baby among seven injured in multi-car crash",
+    "url": "https://www.news.com.au/national/western-australia/baby-among-seven-people-injured-in-multicar-crash-in-perths-south/news-story/fba5edd23ac49a36ba60af505c6a9964",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251024-01",
+  "incident_date": "2025-10-24",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "1",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Nissan",
+  "all_makes": null,
+  "make_quote": "A family of four were travelling in a silver Toyota Corolla at the intersection of High Street and Wallace Roads in Wantirna South about 8.20pm when the female driver of the Corolla allegedly did not give way and the car collided with a grey Nissan Skyline.",
+  "notes": "Clear two-vehicle collision; index vehicle unambiguous. Toyota Corolla was the striking vehicle (driver failed to give way). One fatality: the 11-year-old passenger in the Corolla who died in hospital. One serious injury: the 4-year-old passenger in the Corolla. Other occupants (mother, father in Corolla; two 18-year-old males in Nissan) suffered only minor injuries. The vehicle year is not stated in any article. No ADAS mention, no indication driver is a public figure.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Police probe whether children were properly restrained before horror crash",
+    "url": "https://www.nine.com.au/australia-news/child-in-critical-condition-after-crash-wantirna-south-melbourne-20251024-p5zi2k.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-24"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Seatbelt questions raised as children badly injured in crash",
+    "url": "https://7news.com.au/news/police-investigate-seatbelt-use-in-wantirna-south-melbourne-crash-that-left-two-children-badly-injured-c-20458829",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-24"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Young girl dies following crash that left family members, two men injured",
+    "url": "https://www.nine.com.au/australia-news/wantirna-crash-fatal-young-girl-dies-following-crash-that-left-parents-boy-injured-20251025-p5zi3w.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-25"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Devastating update two days after young girl badly injured in crash",
+    "url": "https://7news.com.au/news/devastating-update-as-young-girl-badly-injured-in-wantirna-melbourne-crash-dies-in-hospital-c-20466272",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-25"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251024-02",
+  "incident_date": "2025-10-24",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "news.com.au",
+    "headline": "Illegal immigrant trucker accused in fatal California crash",
+    "url": "https://www.news.com.au/world/north-america/us-politics/illegal-immigrant-trucker-accused-in-fatal-california-crash/news-story/09a5b3caef8f2430bebe3fad3c2d3509",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-24"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Dashcam footage shows DUI illegal migrant trucker slamming into cars",
+    "url": "https://www.dailymail.com/news/article-15220903/illegal-immigrant-dui-crash-video-california.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251025-01",
+  "incident_date": "2025-10-25",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Mazda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Tragedy as toddler DIES in the foyer of a police station after crash",
+    "url": "https://www.dailymail.com/news/article-15225749/Toddler-dies-police-station-crash-gold-coast.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-25"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Major update after three-year-old boy died following crash",
+    "url": "https://www.dailymail.com/news/article-15227323/Yatala-crash-three-year-old-deliberate-father.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-25"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Toddler who died in police station after car crash identified",
+    "url": "https://www.dailymail.com/news/article-15228141/Beenleigh-Yatala-crash-Gold-Coast-Queensland.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-27"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251029-02",
+  "incident_date": "2025-10-29",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Lamborghini",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Liam Payne's girlfriend Kate Cassidy reveals she's been in a car crash",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15239179/Liam-Paynes-girlfriend-Kate-Cassidy-car-crash-new-vehicle-drive-fame.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-29"
+   },
+   {
+    "outlet": "9News",
+    "headline": "'Lesson learned': Liam Payne's girlfriend involved in Lamborghini car crash",
+    "url": "https://www.nine.com.au/entertainment/celebrity/liam-payne-girlfriend-kate-cassidy-involved-lamborghini-car-crash-new-video-20251030-p5pq2d.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2025-10-30"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Kate Cassidy shares 'sign from Liam Payne' after she was in car crash",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15241395/Kate-Cassidy-claims-sign-late-boyfriend-Liam-Payne-car-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-30"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251030-02",
+  "incident_date": "2025-10-30",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 3,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Girl, 5, dies after she was hit by a ute while playing on her scooter",
+    "url": "https://www.dailymail.com/news/article-15241419/Rouse-Hill-crash-girl-Sydney.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-30"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Community in mourning after girl, 5, killed outside primary school",
+    "url": "https://www.nine.com.au/australia-news/rouse-hill-public-school-tributes-for-girl-killed-in-crash-outside-of-primary-school-20251031-p5zib5.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-31"
+   },
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "\u2018My heart breaks\u2019: Tributes to girl hit and killed by ute outside Sydney school",
+    "url": "https://www.smh.com.au/national/nsw/girl-5-critical-after-being-hit-by-ute-outside-sydney-school-20251030-p5n6mu.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-10-31"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251103-01",
+  "incident_date": "2025-11-03",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Boy, 11, killed in quad bike crash on Darwin mango farm",
+    "url": "https://www.nine.com.au/australia-news/darwin-quad-bike-crash-11-year-old-dead-20251103-p5zicn.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-03"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Tragedy as 11-year-old boy dies in quad bike crash",
+    "url": "https://www.dailymail.com/news/article-15252231/boy-11-dies-quad-bike-crash-Darwin-River.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-03"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251107-02",
+  "incident_date": "2025-11-07",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Subaru",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Man arrested after girl, 10, and woman killed in car crash in outback Queensland community",
+    "url": "https://www.nine.com.au/australia-news/queensland-doomadgee-crash-man-arrested-after-10yearold-girl-and-woman-killed-20251107-p5zihz.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-07"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Horrific crash leaves mother and 10yo girl dead with three other children hurt",
+    "url": "https://7news.com.au/news/man-arrested-after-woman-and-girl-killed-in-car-crash-in-far-north-queenslands-doomadgee--c-20605881",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-07"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251107-03",
+  "incident_date": "2025-11-07",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Motorcyclist killed, another critically injured in collision",
+    "url": "https://7news.com.au/news/female-motorbike-rider-killed-in-crash-on-the-gold-coast--c-20613402",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-07"
+   },
+   {
+    "outlet": "9News",
+    "headline": "'Thank you for your humanity': Grieving husband's powerful message after loss",
+    "url": "https://www.nine.com.au/australia-news/fatal-motorcycle-crash-south-gold-coast-20251108-p5ziih.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-08"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251109-01",
+  "incident_date": "2025-11-09",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Holden",
+  "suggested_coder": "claude",
+  "deaths": null,
+  "serious_injuries": "1",
+  "incident_type": "occupant_serious_collision",
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "A marked police car from Nepean Area Command and a Holden sedan had a head-on collision just minutes later on Debrincat Avenue in North St Mary's.",
+  "notes": "Holden is the index vehicle: CCTV shows it pulled out onto the road before being struck by the police car, and its driver sustained the most serious injuries (broken arm and leg). Police car make is not identified in either article. Locality spelled 'North St Marys' (without apostrophe) in article 2; article 1 uses 'North St Mary's'.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Investigation under way after horror head-on crash involving police car",
+    "url": "https://www.nine.com.au/australia-news/st-marys-sydney-three-injured-crash-involving-police-car-20251109-p5ziiw.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-09"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Cops injured after police car involved in horror head-on collision",
+    "url": "https://www.dailymail.com/news/article-15272905/NSW-Police-car-crash-st-marys.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-11"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251114-02",
+  "incident_date": "2025-11-14",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Five tourists killed in Bali minibus crash",
+    "url": "https://www.nine.com.au/world-news/bali-minibus-crash-five-tourists-killed-20251114-p5zipk.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-14"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Five Chinese tourists killed in Bali bus crash",
+    "url": "https://www.news.com.au/travel/travel-updates/incidents/five-chinese-tourists-killed-in-bali-bus-crash/news-story/f51df21251ad69d5790aeb8dc77b6e93",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-15"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251114-03",
+  "incident_date": "2025-11-14",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Several people killed as bus crashes into bus shelter in Sweden",
+    "url": "https://www.dailymail.com/news/article-15291883/Several-people-killed-bus-crashes-bus-shelter-Sweden.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-14"
+   },
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "Three killed as double-decker bus rams into pedestrians in Stockholm",
+    "url": "https://www.smh.com.au/world/europe/several-people-killed-as-bus-crashes-into-stop-in-stockholm-20251115-p5nfmi.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2025-11-15"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251114-04",
+  "incident_date": "2025-11-14",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "claude",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": "other",
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "Samantha Petrevski and her partner Daniel Sperandio pulled over when they saw a Toyota Land Cruiser flipped on its side on Donnybrook Road, Donnybrook, at about 9pm on Thursday.",
+  "notes": "Primary incident is a single-vehicle crash: a Toyota Land Cruiser mounted a road barrier and rolled on Donnybrook Road on Thursday 13 November at approximately 9pm. The vehicle was described as 'totalled'. The occupant exited the vehicle and fled, later carjacking the Good Samaritans' red Holden Commodore. The stolen Holden subsequently crashed and was abandoned. No deaths or serious injuries are mentioned for either vehicle's primary occupants. The index vehicle is unambiguously the Land Cruiser. The Holden is a secondary vehicle whose later crash is a consequence of the theft, not part of the primary incident.",
+  "review_flags": [
+   "incident_type:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Good Samaritans' car stolen by man they stopped to help from crash",
+    "url": "https://www.nine.com.au/australia-news/donnybrook-good-samaritan-couple-car-stolen-by-man-they-stopped-to-help-from-car-crash-20251114-p5zipc.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-14"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "\u2018Not worth it\u2019: Man vows to never help again",
+    "url": "https://www.news.com.au/technology/motoring/on-the-road/couple-who-stopped-to-help-at-melbourne-crash-scene-have-their-own-car-stolen/news-story/9f17b6f196f8b0540a26505ad35593fa",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-15"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251115-01",
+  "incident_date": "2025-11-15",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Kia",
+  "suggested_coder": "claude",
+  "deaths": "2",
+  "serious_injuries": "0",
+  "incident_type": "pedestrian_cyclist_struck",
+  "second_make": "BMW",
+  "all_makes": null,
+  "make_quote": "A Kia Carnival turning into the car park of the Hornsby Railway Station stopped to let them pass.",
+  "notes": "Two fatalities: the 33-year-old pedestrian who was 8 months pregnant, and her unborn child. Incident occurred at approximately 8pm on Friday 2025-11-14 at the entrance to a car park on George St, Hornsby. The Kia was lawfully stopped to allow the woman and her family to cross; a BMW rear-ended it, forcing the Kia into the pedestrian. The Kia driver (48 years old) was uninjured and not charged. The BMW driver (Aaron Papazoglu, 19 years old, P-plate holder) was charged with dangerous driving occasioning death, negligent driving occasioning death, and causing loss of a fetus. The woman's husband and 3-year-old son were present and uninjured. No ADAS systems mentioned. Neither driver identified as a public figure independently of this incident.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "\u2018Terrible\u2019: P-plate driver charged after pregnant woman killed in Sydney\u2019s north",
+    "url": "https://www.smh.com.au/national/nsw/p-plater-arrested-after-fatal-crash-involving-pregnant-woman-20251115-p5nfmm.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-15"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Teen charged after pregnant woman and unborn baby die in Sydney crash",
+    "url": "https://www.nine.com.au/australia-news/p-plater-arrested-pregnant-woman-dies-following-crash-20251115-p5zipm.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-15"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251117-01",
+  "incident_date": "2025-11-17",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Volkswagen",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Inside mercy dash to save 10-week old baby after horror crash",
+    "url": "https://7news.com.au/news/inside-lifeflight-dash-to-save-newborn-baby-after-horror-bundaberg-crash--c-20702404",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-17"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Lifeflight dash to save 10-week-old baby after crash near Bundaberg",
+    "url": "https://www.news.com.au/national/queensland/lifeflight-dash-to-save-10weekold-baby-after-crash-near-bundaberg/news-story/6b334454997698a79c19a2234595bbe9",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-17"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251120-01",
+  "incident_date": "2025-11-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "NRL star's mum to claim mental health defence over crash that killed three people",
+    "url": "https://www.nine.com.au/australia-news/qld/queensland-court-nrl-star-payne-haas-mum-uiatu-joan-taufua-mental-health-defence-over-triple-fatal-crash-20251120-p5nh41.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-20"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "NRL star\u2019s mum to claim mental health defence over triple-fatal crash",
+    "url": "https://7news.com.au/sport/rugby-league/nrl-star-payne-haass-mother-uiatu-joan-taufua-to-claim-mental-health-defence-over-triple-fatal-crash-c-20739055",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251120-02",
+  "incident_date": "2025-11-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Elderly pedestrian dies in Melbourne car park collision",
+    "url": "https://www.nine.com.au/australia-news/narre-warren-pedestrian-struck-and-killed-20251120-p5nh7c.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-20"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Elderly woman killed when struck in medical centre carpark",
+    "url": "https://7news.com.au/news/elderly-woman-killed-when-hit-by-car-in-narre-warren-victoria--c-20739138",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251121-01",
+  "incident_date": "2025-11-21",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "BMW",
+  "suggested_coder": "claude",
+  "deaths": "2",
+  "serious_injuries": null,
+  "incident_type": "pedestrian_cyclist_struck",
+  "second_make": "Kia",
+  "all_makes": null,
+  "make_quote": "It's alleged that a BMW sedan, driven by Aaron Papazoglu, 19, collided with the Kia, causing it to move forward and fatally strike Ms Dhareshwar.",
+  "notes": "Chain-reaction collision: BMW (white sedan, model unspecified) struck stationary Kia Carnival from behind at George Street carpark entrance; impact propelled Kia forward into pedestrians on footpath. Index vehicle is BMW as initiating vehicle. Two deaths: Samanvitha Dhareshwar, 33 years old, 8 months pregnant, and her unborn child. Her husband and 3-year-old son present at scene but no serious injuries reported. Driver is Aaron Papazoglu, 19-year-old P-plater/university student with no prior criminal history; not a public figure. No ADAS involvement alleged; incident attributed to driver error (speeding/running amber light).",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "news.com.au",
+    "headline": "Update on 19yo accused of fatal crash",
+    "url": "https://www.news.com.au/national/nsw-act/courts-law/pplater-accused-of-fatal-hornsby-crash-released-on-conditional-bail/news-story/173388de1736df4a647d83072079eaef",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-21"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Driver accused of horrific crash that killed pregnant mum granted bail",
+    "url": "https://www.dailymail.com/news/article-15311969/hornsby-crash-bail.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-21"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Terrifying noise when a pregnant mum was killed in a horror accident",
+    "url": "https://www.dailymail.com/news/article-15301115/hornsby-fatal-car-crash-pregnant-mum.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251123-01",
+  "incident_date": "2025-11-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Ford",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Boy, 17, dies after being hit by ute on Sunshine Coast",
+    "url": "https://www.nine.com.au/australia-news/qld/boy-hit-by-car-dead-noosa-queensland-20251123-p5nhpb.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251125-01",
+  "incident_date": "2025-11-25",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Elderly woman charged over alleged hit-and-run of schoolboy",
+    "url": "https://7news.com.au/news/vic/elderly-woman-charged-over-alleged-hit-and-run-incident-that-killed-six-year-old-boy-caleb-wesley-in-teesdale-victoria--c-20788282",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-25"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Update after 6yo killed on way to school",
+    "url": "https://www.news.com.au/national/victoria/news/woman-charged-after-6yo-caleb-wesley-killed-in-collision-in-teesdale-victoria/news-story/ec8cb66a3e1340fe19d5a81a820a8358",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-11-25"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251201-01",
+  "incident_date": "2025-12-01",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Closure as truck driver jailed for injuring students in horror bus crash",
+    "url": "https://www.nine.com.au/australia-news/vic/truck-driver-brett-michael-russell-jailed-for-injuring-loreto-college-students-in-horror-bus-crash-20251201-p5njse.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-01"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251202-02",
+  "incident_date": "2025-12-02",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Mitsubishi",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "Officer freed from police car crashed into western Sydney home",
+    "url": "https://www.smh.com.au/national/nsw/officer-trapped-in-cop-car-that-crashed-into-western-sydney-home-20251202-p5nk8x.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-02"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251202-03",
+  "incident_date": "2025-12-02",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Shocking moment pedestrian struck by car on wrong side of the road",
+    "url": "https://7news.com.au/news/teen-struck-by-car-on-wrong-side-of-the-road-in-mandurah-wa-c-20870208",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-02"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Shock moment teen is flung into the air in alleged hit-and-run",
+    "url": "https://www.dailymail.com/news/article-15347267/aussie-teen-crash-cctv-mandurah-perth.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-03"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251204-01",
+  "incident_date": "2025-12-04",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Two killed as car, motorbike crash in Melbourne",
+    "url": "https://www.nine.com.au/australia-news/vic/woman-man-dead-after-car-motorcycle-crash-in-mentone-melbourne-20251204-p5nkou.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-04"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251206-01",
+  "incident_date": "2025-12-06",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Nissan",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Major update after man found unconscious on road",
+    "url": "https://7news.com.au/news/man-dies-another-arrested-after-walking-into-police-station-in-fatal-mooroolbark-hit-and-run-c-20910454",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-06"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Man, 39, arrested after man, 28, 'lay down in road' and was killed in Melbourne",
+    "url": "https://www.nine.com.au/australia-news/arrest-man-mooroolbark-death-hit-and-run-20251206-p5nle6.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-06"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251210-01",
+  "incident_date": "2025-12-10",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Honda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Woman killed in freak accident on busy highway identified",
+    "url": "https://www.dailymail.com/news/article-15372415/somerton-crash-melbourne-woman-killed.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-13"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251211-01",
+  "incident_date": "2025-12-11",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Honda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Young school worker killed in freak telegraph pole accident remembered",
+    "url": "https://7news.com.au/news/sayyida-nafeesa-zulfikar-identified-as-young-woman-killed-when-light-pole-fell-on-her-car-in-melbourne-crash-c-20966149",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-11"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Woman fatally crushed in freak incident named",
+    "url": "https://www.news.com.au/technology/motoring/on-the-road/sayyida-nafeesa-zulfikar-21-killed-in-freak-incident-after-crash-between-car-and-truck/news-story/cb24e29057db5048887fe9c9ba6ea1d5",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-11"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251212-02",
+  "incident_date": "2025-12-12",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Honda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "One dead, six in hospital after horror Melbourne crash",
+    "url": "https://www.nine.com.au/australia-news/vic/one-dead-six-in-hospital-three-vehicle-crash-truganina-melbourne-20251212-p5nn25.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-12"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Teen dead and six injured after driver tried to overtake and crashed",
+    "url": "https://www.dailymail.com/news/article-15379901/teen-dead-six-injured-truganina-melbourne-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-12"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251212-03",
+  "incident_date": "2025-12-12",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Mazda",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "0",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": null,
+  "all_makes": "Mazda|Nissan|Toyota",
+  "make_quote": "He had been driving a blue Mazda CX5 wagon, which smashed into a Nissan Navara ute and a Toyota Tundra.",
+  "notes": "Three-vehicle crash. Mazda CX5 driver (72-year-old male) died at scene \u2014 index vehicle is the Mazda based on initiation of contact (article states it 'smashed into' the other vehicles) and occupant fatality. Nissan Navara passenger (42-year-old female) hospitalised with explicitly noted non-life-threatening injuries; therefore not counted as serious injury. Toyota Tundra driver (41-year-old male) uninjured. Serious injury confidence is 0.7 due to ambiguity over whether hospitalisation with non-life-threatening qualifier should be coded as 'serious injury' per study definitions.",
+  "review_flags": [
+   "serious_injuries:low_confidence"
+  ],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Driver killed in horror Hunter highway crash",
+    "url": "https://7news.com.au/news/driver-killed-in-three-car-highway-smash-at-glennies-creek-in-the-hunter-valley-region-c-20987870",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-12"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Man dies in multi-vehicle crash in NSW Hunter Region",
+    "url": "https://www.nine.com.au/australia-news/nsw/driver-dies-in-multi-vehicle-crash-nsw-hunter-region-20251213-p5nndi.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-13"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251212-04",
+  "incident_date": "2025-12-12",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Audi",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Mum killed two sons in collision after failing to inflate tyre",
+    "url": "https://www.dailymail.com/news/article-15378447/Mum-killed-two-sons-collision-drove-home-school-inflated-tyre-spared-jail.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-12"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251214-01",
+  "incident_date": "2025-12-14",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Mercedes-Benz",
+  "suggested_coder": "claude",
+  "deaths": "2",
+  "serious_injuries": "1",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Kia",
+  "all_makes": null,
+  "make_quote": "The accident occurred on the Pacific Highway at Wadalba, near Wyong, at approximately 2.15am after a Mercedes sedan and a Kia hatchback collided head-on.",
+  "notes": "Two-vehicle head-on collision. Mercedes sedan driver (49M) police identified as initiating vehicle (crossed into wrong lane). Two Kia hatchback occupants killed at scene (45F, 38F). Mercedes driver in serious condition with arm and leg injuries. Date inferred from publication on 2025-12-15 and reference to 'early Sunday morning'; coincides with Lady Gaga concert timing. No specific Mercedes model name provided; Kia described as hatchback.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Australian Lady Gaga fans killed in horror crash",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15382763/Australian-Lady-Gaga-fans-killed-horror-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-15"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251216-01",
+  "incident_date": "2025-12-16",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Porsche",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Glamorous influencer, 41, dies in horror Porsche crash",
+    "url": "https://www.dailymail.com/lifestyle/article-15388683/influencer-aline-cristina-dalmolin-dies-horror-porsche-crash.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2025-12-16"
+   },
+   {
+    "outlet": "news.com.au",
+    "headline": "Influencer killed in horror crash in Brazil",
+    "url": "https://www.news.com.au/travel/travel-updates/incidents/glam-business-influencer-aline-cristina-dalmolin-killed-in-horror-highspeed-porsche-crash-as-drunk-driver-flees/news-story/7faba12f2c96d95006bbbe42f6a20e65",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-17"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251223-01",
+  "incident_date": "2025-12-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Murder charge laid after daylight stabbing outside Melbourne home",
+    "url": "https://www.nine.com.au/australia-news/vic/clyde-fatal-stabbing-stabbing-victim-dies-after-car-crashes-en-route-to-hospital-20251223-p5npra.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-23"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Man dies in car crash shortly after being stabbed",
+    "url": "https://7news.com.au/news/man-dies-following-stabbing-car-crash-in-clyde--c-21092499",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251223-02",
+  "incident_date": "2025-12-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Cyclist struck by truck dies on NSW highway",
+    "url": "https://7news.com.au/news/cyclist-struck-by-truck-killed-on-pacific-hwy-in-buladelah-on-the-mid-north-coast-of-nsw-c-21081408",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-22"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Rider thrown from motorbike in deadly highway crash",
+    "url": "https://7news.com.au/news/rider-thrown-from-motorbike-in-deadly-crash-on-nsw-highway-south-of-taree-c-21095592",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-23"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Teen killed, two others injured in shocking Christmas Eve crash",
+    "url": "https://7news.com.au/news/teenager-dies-two-others-flown-to-hospital-after-car-hits-tree-near-taree-on-nsw-mid-north-coast-c-21112430",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-24"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Teenager dies in Christmas Eve car crash in northern NSW",
+    "url": "https://www.nine.com.au/australia-news/nsw/taree-nsw-car-crash-teenager-dead-20251225-p5nq1z.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-25"
+   }
+  ]
+ },
+ {
+  "incident_id": "20251229-02",
+  "incident_date": "2025-12-29",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Nine injured as bus crashes into medical centre",
+    "url": "https://7news.com.au/news/nine-injured-in-northern-sydney-as-public-bus-crashes-into-medical-centre-at-ryde-c-21147946",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-29"
+   },
+   {
+    "outlet": "9News",
+    "headline": "'Absolute miracle': Bus driver lucky to be alive after becoming trapped in crash with medical centre",
+    "url": "https://www.nine.com.au/australia-news/multiple-people-injured-in-bus-and-car-crash-at-north-ryde-in-northern-sydney-20251229-p5nqi3.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2025-12-29"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260101-01",
+  "incident_date": "2026-01-01",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Honda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Australian man dead and girlfriend fighting for life after Bali crash",
+    "url": "https://www.dailymail.com/news/article-15425811/Australian-man-dead-Bali-scooter-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-01"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Next step for mum injured in Bali scooter crash that claimed boyfriend\u2019s life",
+    "url": "https://7news.com.au/news/friends-rally-around-australian-couple-bryce-black-and-samantha-baillie-after-fatal-scooter-crash-in-kuta-bali-c-21186766",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-02"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Bali couple update as grieving mum prepares to be flown home",
+    "url": "https://www.dailymail.com/news/article-15434095/australian-mum-bali-scooter-crash-injuries-fundraiser-Samantha-Baillie-Bryce-Alexander-Black.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-05"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260104-01",
+  "incident_date": "2026-01-04",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Ford",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Investigation underway after police pursuit ends in fatal crash",
+    "url": "https://7news.com.au/news/eyre-highway-crash-south-australia-police-investigate-death-in-custody-c-21201434",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-04"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260105-01",
+  "incident_date": "2026-01-05",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Holden",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Fatal car crash causes paddock fire",
+    "url": "https://7news.com.au/news/driver-dies-after-fiery-paddock-crash-in-suttontown-south-australia-c-21246867",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-08"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260109-01",
+  "incident_date": "2026-01-09",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Mazda",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "2",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Toyota",
+  "all_makes": null,
+  "make_quote": "a Mazda sedan and a Toyota Hilux ute collided",
+  "notes": "Incident occurred 2026-01-08 (inferred from 'overnight' and 'about 8pm last night' relative to 2026-01-09 publication). Mazda identified as index vehicle per the rule that the vehicle whose occupants were most seriously hurt is the index vehicle. Deaths: 1 (17-year-old girl in Mazda). Serious injuries: 2 (46-year-old man and 30-year-old woman from Mazda in critical condition). Minor injuries: 12-year-old boy from Mazda and 22-year-old Hilux driver. No fire mentioned. Investigation ongoing.",
+  "review_flags": [
+   "fire_involved:no_evidence",
+   "adas_alleged:no_evidence",
+   "driver_notable:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Teen girl dies in horror crash south-west of Sydney",
+    "url": "https://www.nine.com.au/australia-news/nsw/teen-girl-dies-in-horror-crash-southwest-of-sydney-appin-new-south-wales-news-20260109-p5nstr.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-09"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260118-02",
+  "incident_date": "2026-01-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Teen fighting for life after car rollover in Victoria",
+    "url": "https://7news.com.au/news/teenage-boy-in-critical-condition-following-car-rollover-in-elmore-victoria-c-21343865",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-18"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Boy, 17, critically injured after car rolls near Bendigo",
+    "url": "https://www.nine.com.au/australia-news/vic/elmore-victoria-crash-boy-fighting-for-life-20260118-p5nuul.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-18"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260119-01",
+  "incident_date": "2026-01-19",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Pedestrian is struck by a garbage truck in North Sydney",
+    "url": "https://www.dailymail.com/news/article-15478621/Pedestrian-struck-garbage-truck-North-Sydney.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-19"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Man suffers serious injuries after being hit by garbage truck in Sydney",
+    "url": "https://www.nine.com.au/australia-news/nsw/man-hit-by-garbage-truck-north-sydney-20260120-p5nvdq.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-20"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Man dies after being struck by garbage truck in North Sydney",
+    "url": "https://www.nine.com.au/australia-news/nsw/man-dies-in-hospital-following-truck-crash-north-sydney-20260122-p5nw73.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-22"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260120-01",
+  "incident_date": "2026-01-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Young boy loses a tooth after being mowed down by e-scooter rider",
+    "url": "https://www.dailymail.com/news/article-15482305/Byford-Perth-e-scooter-boy-injured-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-20"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "\u2018Blood everywhere\u2019: Young boy wiped out by e-scooter",
+    "url": "https://7news.com.au/news/young-boy-mowed-down-and-injured-by-e-scooter-at-byford-train-station-west-australia-c-21368790",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-21"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260124-01",
+  "incident_date": "2026-01-24",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Mazda",
+  "suggested_coder": "claude",
+  "deaths": "0",
+  "serious_injuries": "1",
+  "incident_type": "occupant_serious_collision",
+  "second_make": "Mercedes-Benz",
+  "all_makes": null,
+  "make_quote": "A stolen white Mazda 3 came racing through at Endeavour Hills on the Monash Freeway on Saturday morning, colliding with an innocent woman's Mercedes and causing it to flip.",
+  "notes": "Primary incident: stolen Mazda 3 struck Mercedes SUV on Monash Freeway, causing Mercedes to flip. Eight teenage boys fled the Mazda; one 15-year-old arrested, seven at large. Mercedes driver hospitalized with non-life-threatening injuries. Age of Mercedes driver not stated, so victim_child cannot be confirmed. Articles also mention a separate unrelated incident involving a Nissan Navara; extraction covers only the Mazda-Mercedes collision. Mazda was stolen 2025-12-30 from Noble Park car park.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Dashcam shows moment hoons flee after freeway crash",
+    "url": "https://7news.com.au/news/teenage-hoons-on-the-run-after-stolen-car-crashes-into-mercedes-on-monash-freeway-melbourne-c-21410418",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-24"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Car packed with eight teens hits Mercedes on freeway, flips it over",
+    "url": "https://www.nine.com.au/australia-news/melbourne-monash-crash-eight-teens-20260124-p5nwpk.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-01-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260129-02",
+  "incident_date": "2026-01-29",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Baby spends first birthday in hospital after horror crash",
+    "url": "https://7news.com.au/news/baby-girl-to-spend-first-birthday-in-hospital-after-ormeau-hills-crash-gold-coast-c-21466387",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-29"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Baby girl and grandmother injured after being struck by car",
+    "url": "https://www.nine.com.au/australia-news/qld/infant-critically-injured-gold-coast-crash-ormeau-hills-20260129-p5nxuu.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-01-29"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260206-01",
+  "incident_date": "2026-02-06",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Major highway lanes remain closed after truck crash \u2018severely\u2019 damages bridge",
+    "url": "https://7news.com.au/news/truck-crashes-into-sunshine-coast-bridge-at-tanawha-causing-bruce-highway-nightmare-c-21547835",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-06"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Major highway closed after truck carrying excavator hits overhead bridge",
+    "url": "https://www.nine.com.au/australia-news/qld/truck-carrying-excavator-crashes-into-overhead-bridge-on-the-bruce-highway-at-tanawha-queensland-sunshine-coast-20260206-p5o07m.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-06"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260207-01",
+  "incident_date": "2026-02-07",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Ford",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Horror as woman killed by car smashing into home",
+    "url": "https://7news.com.au/news/woman-killed-as-car-smashes-into-home-in-rivervale-perth-c-21558055",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-07"
+   },
+   {
+    "outlet": "ABC News",
+    "headline": "CCTV footage shows the moment the car crashed into a home in Rivervale.",
+    "url": "https://www.abc.net.au/news/2026-02-07/cctv-footage-of-car-crashing-into-rivervale-home/106317792",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-07"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260208-01",
+  "incident_date": "2026-02-08",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "claude",
+  "deaths": "3",
+  "serious_injuries": "3",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Volkswagen",
+  "all_makes": null,
+  "make_quote": "The family was travelling in a white Volkswagen station wagon when it collided with a white Toyota HiLux on Waterford-Tamborine Road at Yarrabilba",
+  "notes": "Index vehicle is the Toyota HiLux: both the striking vehicle (CCTV 'showed the HiLux speeding southbound before veering into the path of the family's wagon') and the burning vehicle ('The ute caught fire'). Incident date: articles reference 'Saturday' with incident ID 20260208 suggesting 2026-02-08. Three fatalities: Jorge Ortiz (65, driver of Volkswagen), Jessica Ortiz (33, passenger), Izayiah Aitken (18, HiLux driver). Three serious injuries: Patricia Ortiz (65, critical), Damian Ortiz (36, critical), Sylvie Ortiz (2, serious). No mention of automated driving systems despite detailed crash analysis. No indication of driver's public figure status independent of this incident.",
+  "review_flags": [
+   "adas_alleged:no_evidence",
+   "driver_notable:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Teen among three killed in fiery crash",
+    "url": "https://7news.com.au/news/teen-among-three-killed-in-fiery-yarrabilba-crash-south-of-brisbane-as-two-others-fight-for-life-c-21567119",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-08"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Heartbreaking details emerge about horror crash that killed three",
+    "url": "https://www.dailymail.com/news/article-15540841/family-car-crash-Yarrabilba-grandfather-two-year-old.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-09"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Brisbane family torn apart as crash kills mum and grandfather",
+    "url": "https://www.dailymail.com/news/article-15544489/Yarrabilba-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-10"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260211-01",
+  "incident_date": "2026-02-11",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Brit left with leg 'hanging off' after moped crash in Thailand",
+    "url": "https://www.dailymail.com/news/article-15549051/Brit-left-leg-hanging-moped-crash-Thailand-pleads-help-paying-medical-bill.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-11"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260214-01",
+  "incident_date": "2026-02-14",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "ABC News",
+    "headline": "Car collision after police pursuit in Sydney\u2019s south-west - ABC News",
+    "url": "https://www.abc.net.au/news/2026-02-14/car-collision-after-police-pursuit-in-sydney-s-south-west/106345096",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-14"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260221-01",
+  "incident_date": "2026-02-21",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Melbourne teen dies in hospital a week after being struck by a car",
+    "url": "https://www.nine.com.au/australia-news/narre-warren-south-crash-16-year-old-boy-dies-a-week-after-being-hit-by-car-20260221-p5o4bq.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-21"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Tragedy as teen dies one week after being hit by a car",
+    "url": "https://www.dailymail.com/news/article-15580011/Melbourne-Narre-Warren-South-teen-dies-tragic-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-21"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260223-01",
+  "incident_date": "2026-02-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Honda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "New vision captures arrest and gun linked to deadly wrong-way crash",
+    "url": "https://7news.com.au/news/two-men-charged-after-allegedly-stolen-truck-crashes-on-bruce-hwy-amid-wrong-way-pursuit-c-21726439",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260224-02",
+  "incident_date": "2026-02-24",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Ford",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Two men, dog killed in Sunshine Coast crash, woman critically injured",
+    "url": "https://www.nine.com.au/australia-news/qld/two-men-dog-dead-after-utv-crash-sandy-creek-sunshine-coast-20260224-p5o4w5.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-02-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260226-01",
+  "incident_date": "2026-02-26",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Bentley",
+  "suggested_coder": "claude",
+  "deaths": "0",
+  "serious_injuries": "0",
+  "incident_type": "other",
+  "second_make": "BMW",
+  "all_makes": "Bentley|BMW",
+  "make_quote": "McMahon, now 80, was driving his 2024 Bentley Continental GT at more than 160kmph on the Merritt Parkway when he crashed in the town of Westport, according to state police.",
+  "notes": "CRITICAL: This incident occurred in Westport, Connecticut, USA on the Merritt Parkway, NOT in Australia. Although covered by Australian outlets (Daily Mail Australia, 9News), this is an overseas incident included only because Vince McMahon (former WWE president) is a notable public figure. Per study protocol (CLAUDE.md, Crash location decision, 2026-08-25): 'Domestic Australian crashes only' \u2014 this incident should be EXCLUDED from analysis. State and locality fields are null because Connecticut is not an Australian jurisdiction. The incident involved three vehicles: McMahon's index vehicle (2024 Bentley Continental GT), a BMW that was rear-ended, and a third vehicle struck by debris with unknown make. Deaths and serious injuries explicitly ruled out: 'No one was seriously injured in the July 24 crash.'",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Terrifying new footage shows moment Vince McMahon crashes his Bentley",
+    "url": "https://www.dailymail.com/sport/wwe/article-15595401/vince-mcmahon-bentley-crash-connecticut-police.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-02-26"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Video shows Vince McMahon ram $300,000 car in high-speed crash",
+    "url": "https://www.nine.com.au/world-news/usa/vince-mcmahon-police-video-shows-former-wwe-executives-160kmph-car-crash-on-a-connecticut-highway-20260227-p5o60a.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-02-27"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260227-02",
+  "incident_date": "2026-02-27",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Audi",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Audi driver's disgraceful act after horror crash",
+    "url": "https://www.dailymail.com/news/article-15597077/audi-crash-chapel-st-melbourne.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-02-27"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260302-01",
+  "incident_date": "2026-03-02",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "BMW",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "1",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Volkswagen",
+  "all_makes": null,
+  "make_quote": "The woman was a passenger in a white BMW M135 that reportedly failed to stop for police and drove on the wrong side of the road on the A19 dual carriageway near Sunderland during the pursuit.",
+  "notes": "OUT OF SCOPE: This incident occurred in Sunderland, England (UK), not Australia. Per the study protocol, only domestic Australian crashes should be included. Article 2 (7NEWS) describes a completely different incident in Western Sydney (a stolen car crashing with a semi-trailer) and does not relate to Articles 1 and 3. Articles 1 and 3 both cover the same UK incident. The BMW is the clear index vehicle\u2014it was being pursued by police and drove the wrong way on a dual carriageway before colliding with the Volkswagen.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Woman dead and man critical after car being chased by police crashes",
+    "url": "https://www.dailymail.com/news/article-15604315/Woman-dead-man-critical-police-chase-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-02"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Teens hospitalised as police chase ends in serious crash",
+    "url": "https://7news.com.au/news/teens-hospitalised-as-western-sydney-police-chase-ends-in-serious-crash-c-21842509",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-05"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Woman, 24, killed in head-on crash during police chase",
+    "url": "https://www.dailymail.com/news/article-15618299/24-killed-crash-BMW-VW-police-chase.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-05"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260304-01",
+  "incident_date": "2026-03-04",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Terrifying moment driver picks up alleged armed man on the run",
+    "url": "https://7news.com.au/news/police-shoot-allegedly-armed-man-after-traffic-crash-in-woombye-sunshine-coast-c-21830572",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-04"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260309-01",
+  "incident_date": "2026-03-09",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Dodge",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Aussie mum fighting for life after 'devastating' Bali scooter and truck crash",
+    "url": "https://www.nine.com.au/world-news/asia/bali-scooter-crash-nsw-central-coast-mother-alivia-campbell-fighting-for-life-20260309-p5o8wm.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-09"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Family's plea as young Aussie mum fights for life after Bali crash",
+    "url": "https://www.dailymail.com/news/article-15630777/Alivia-Campbell-bali-crash-update-motorbike.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-10"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260309-02",
+  "incident_date": "2026-03-09",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Hyundai",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Three killed in horror Kings Highway crash near Queanbeyan",
+    "url": "https://www.dailymail.com/news/article-15628353/Monga-Kings-Highway-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-09"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Three killed in 'devastating' head-on crash in southern NSW",
+    "url": "https://www.nine.com.au/australia-news/nsw/monga-crash-three-killed-in-head-on-crash-in-southern-nsw-20260309-p5o8w8.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-10"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260310-02",
+  "incident_date": "2026-03-10",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Police car swerves into Sydney home for second time in two years",
+    "url": "https://www.nine.com.au/australia-news/nsw/police-car-smashes-through-family-home-for-second-time-in-two-years-in-sydney-west-20260310-p5o97f.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-10"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260311-01",
+  "incident_date": "2026-03-11",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Mitsubishi",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "One teen dead and two critical after horror crash in Queensland",
+    "url": "https://www.dailymail.com/news/article-15637349/queensland-ipswich-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-11"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260311-02",
+  "incident_date": "2026-03-11",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Mystery as driver killed by his own truck",
+    "url": "https://7news.com.au/news/truck-driver-killed-after-being-hit-by-his-own-vehicle-on-the-pacific-highway-in-north-sydney-c-21915088",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-11"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Driver killed by his own truck in Sydney highway rollover",
+    "url": "https://www.nine.com.au/australia-news/truck-driver-killed-in-sydney-highway-rollover-20260312-p5o9tv.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-12"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260313-02",
+  "incident_date": "2026-03-13",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Two teens killed in e-bike collision with Harley Davidson in Brisbane",
+    "url": "https://www.nine.com.au/australia-news/qld/ebike-crash-brisbane-two-teens-killed-in-ebike-collision-with-harley-davidson-in-greenbank-20260313-p5oa3d.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-13"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260315-01",
+  "incident_date": "2026-03-15",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Holden",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "1",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "BMW",
+  "all_makes": null,
+  "make_quote": "A white Holden Commodore and a black BMW travelling in opposite directions collided head-on on the Brisbane Valley Highway at Lake Wivenhoe in southeast Queensland about 11.10pm on Saturday, police said.",
+  "notes": "Incident date inferred as Saturday 2026-03-14 based on articles published 2026-03-15 referring to incident occurring on 'Saturday' and 'yesterday'. Holden Commodore identified as index vehicle: police investigated whether it was part of a suspected hoon meet-up (suggesting it initiated the event), and its driver was fatally injured (most serious outcome). Serious injuries count is 1 (Commodore passenger with injuries in 'serious condition'); BMW driver's injuries were explicitly 'non-life-threatening'.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Young woman dies in horror head-on after suspected hoon gathering",
+    "url": "https://7news.com.au/news/young-woman-killed-two-injured-in-head-on-crash-linked-to-suspected-hoon-meet-up-at-lake-wivenhoe-queensland-c-21947750",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-15"
+   },
+   {
+    "outlet": "9News",
+    "headline": "One dead, one seriously injured after head-on crash west of Brisbane",
+    "url": "https://www.nine.com.au/australia-news/lake-wivenhoe-queensland-crash-20260315-p5oame.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-15"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260315-02",
+  "incident_date": "2026-03-15",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Baby caught up in allegedly drunk driver's rampage",
+    "url": "https://www.nine.com.au/australia-news/nsw/sydney-car-park-crash-turramurra-20260315-p5oane.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-15"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "The trail of destruction left by allegedly drunk woman in carpark",
+    "url": "https://www.dailymail.com/news/article-15647599/Turramurra-drink-driving-crash-arrest.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-16"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260318-01",
+  "incident_date": "2026-03-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Isuzu",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "1",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Honda",
+  "all_makes": null,
+  "make_quote": "a white Isuzu truck collided head-on with a white Honda Accord",
+  "notes": "Index vehicle is the Isuzu truck, identified as the vehicle police allege was being driven the wrong way on the highway and initiated the collision with the Honda Accord. The Honda Accord driver died (26-year-old Andre Roberts) while the Isuzu driver sustained potentially life-threatening injuries. No specific model information provided for the Isuzu beyond 'truck' (body type). Incident date is inferred as 2026-02-17 based on publication date and context, though only 'February 17' is explicitly stated in the article.",
+  "review_flags": [
+   "adas_alleged:no_evidence",
+   "driver_notable:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Serious charges laid over deadly wrong-way crash",
+    "url": "https://7news.com.au/news/burpengary-crash-two-more-men-charged-after-wrong-way-stolen-truck-caused-fatal-head-on-crash-on-bruce-highway-c-21981031",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-18"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260324-01",
+  "incident_date": "2026-03-24",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Three dead and two fighting for life after Adelaide car crash",
+    "url": "https://7news.com.au/news/car-crash-in-adelaide-hills-kills-three-with-two-others-fighting-for-life-in-hospital-c-22043276",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-03-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260402-01",
+  "incident_date": "2026-04-02",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Crash involving cattle truck kills young driver and 35 cows",
+    "url": "https://7news.com.au/news/cattle-truck-caught-up-in-three-vehicle-crash-killing-young-driver-and-dozens-of-livestock-in-walcha-c-22084947",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-02"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260403-01",
+  "incident_date": "2026-04-03",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Young girl suffers serious injuries after buggy flips on property",
+    "url": "https://7news.com.au/news/young-girl-suffers-serious-injuries-after-atv-rollover-on-farm-at-yattalunga-north-of-adelaide-c-22092671",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-03"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Easter tragedy as girl dies after ATV rollover on private property",
+    "url": "https://7news.com.au/news/girl-dies-in-hospital-after-atv-rollover-on-farm-at-yattalunga-north-of-adelaide-c-22098238",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-06"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260405-02",
+  "incident_date": "2026-04-05",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Ford",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Woman killed in head-on crash after car meet south of Brisbane",
+    "url": "https://www.nine.com.au/australia-news/qld/logan-crash-woman-killed-car-meet-queensland-20260405-p5zlgl.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-05"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Wild pictures emerge as cops probe if hoon meet is to blame for mum\u2019s death",
+    "url": "https://7news.com.au/news/victorian-mother-of-four-killed-in-logan-reserve-head-on-collision-as-queensland-police-investigate-hoon-meet-link-c-22099238",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-06"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Family in disbelief as innocent mum killed in crash linked to notorious hooning meet",
+    "url": "https://7news.com.au/news/victorian-mother-roza-abebwa-identified-as-logan-car-crash-victim-with-police-probing-hoon-meet-link-c-22100463",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-06"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260408-01",
+  "incident_date": "2026-04-08",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Parents of teen killed in gap year crash pay tribute to hospital staff",
+    "url": "https://www.dailymail.com/news/article-15715049/Heartbroken-parents-teen-killed-gap-year-motorbike-crash-pay-tribute-hospital-staff-able-fly-Vietnam-say-goodbyes-died.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-08"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260418-01",
+  "incident_date": "2026-04-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "One killed, another fighting for life as car mounts kerb at fan convention",
+    "url": "https://7news.com.au/news/car-crashes-outside-supanova-comic-con-at-melbourne-showgrounds-c-22160053",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-18"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Learner driver charged after deadly Supanova crash",
+    "url": "https://7news.com.au/news/crime/supanova-crash-werribee-man-charged-after-deadly-rampage-outside-melbourne-showgrounds-c-22162458",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-19"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Driver accused of killing pedestrian outside fan convention named",
+    "url": "https://7news.com.au/news/alleged-driver-in-fatal-supanova-comic-con-crash-named-as-yarraville-learner-driver-awer-dau-c-22163637",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-20"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Pedestrian killed in Melbourne fan convention crash identified",
+    "url": "https://7news.com.au/news/pedestrian-killed-in-supanova-comic-con-crash-identified-volkan-aksoy-c-22169645",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-21"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260418-02",
+  "incident_date": "2026-04-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Ford",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "'Caring' father-of-five killed after allegedly being run over by teenage driver",
+    "url": "https://www.nine.com.au/australia-news/qld/shorncliffe-fatal-father-killed-allegedly-run-over-after-teenager-lost-control-of-car-20260418-p5zp2h.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-18"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Teenager charged after pedestrian killed by car in Brisbane",
+    "url": "https://7news.com.au/news/police-charge-17-year-old-boy-after-pedestrian-dies-after-being-hit-by-car-in-shorncliffe-c-22158998",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-18"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260419-01",
+  "incident_date": "2026-04-19",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Nissan",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Pedestrian dies after being struck by car in Queensland",
+    "url": "https://7news.com.au/news/pedestrian-killed-in-crash-while-walking-through-glenore-grove-in-southeast-queensland-c-22161926",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-19"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "CCTV shows moments before toddler fatally hit by ute north of Brisbane",
+    "url": "https://7news.com.au/news/girl-3-dies-after-being-hit-by-ute-while-walking-with-family-in-caboolture-queensland-c-22174306",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-22"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Family pay tribute to 'loveable' girl, 3, fatally struck by ute",
+    "url": "https://www.dailymail.com/news/article-15755549/Brisbane-Caboolture-ute-crash-Esha.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260421-01",
+  "incident_date": "2026-04-21",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Nissan",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Fire erupts as car ploughs into shopfront on busy Sydney street",
+    "url": "https://7news.com.au/news/major-emergency-response-underway-after-car-crashes-into-hair-salon-sparking-fire-in-sydneys-south-west-c-22171905",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-21"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Car crashes into hair salon, bursts into flames on busy Sydney shopping strip",
+    "url": "https://www.nine.com.au/australia-news/campsie-crash-car-crashes-into-hair-salon-bursts-into-flames-on-busy-shopping-strip-in-sydneys-southwest-20260421-p5zpvk.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-04-22"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260510-01",
+  "incident_date": "2026-05-10",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "E-scooter rider hospitalised after hit-and run in Melbourne",
+    "url": "https://7news.com.au/news/e-scooter-rider-hospitalised-after-melton-hit-and-run-in-outer-melbourne-c-22261591",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-10"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Mother fighting for life after Melbourne e-scooter hit and run",
+    "url": "https://www.nine.com.au/australia-news/vic/woman-fighting-for-life-melton-melbourne-hit-and-run-20260510-p5zvd2.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-10"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260511-01",
+  "incident_date": "2026-05-11",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Mitsubishi",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "2",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": null,
+  "all_makes": "Mitsubishi|Mazda|Mazda",
+  "make_quote": "Emergency services were called to Maudsland Road, Maudsland, around 12pm on Sunday amid reports of a three-vehicle collision involving a Mitsubishi ASX station wagon, a Mazda 3 hatchback and a Mazda BT-50 dual-cab utility.",
+  "notes": "Three-vehicle collision on Mother's Day (May 10, 2026). Rebecca Hayes (41) died at scene while driving Mitsubishi ASX with her 11-year-old daughter. Daughter critically injured; male driver (30s) of a Mazda also critically injured with potentially life-threatening abdominal injuries. Text does not explicitly state which vehicle initiated collision; index vehicle identified as Mitsubishi ASX based on occupant severity rule (1 death + 1 critical condition).",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Mum-of-seven killed in horror Mothers Day crash",
+    "url": "https://www.dailymail.com/news/article-15806453/gold-coast-mothers-day-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-11"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260516-01",
+  "incident_date": "2026-05-16",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Boy killed, two other teenagers fighting for life after ute hits tree",
+    "url": "https://www.nine.com.au/australia-news/vic/victoria-crash-woosang-20260516-p5zxq3.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-16"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Crash leaves teen offender, dead and two in critical condition",
+    "url": "https://www.dailymail.com/news/article-15823305/Woosang-crash-teenager-dead.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-16"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Footage shows teens hanging from stolen ute moments before crash",
+    "url": "https://www.dailymail.com/news/article-15825961/Footage-Woosang-car-crash-stunt-killed-teen.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-17"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260516-02",
+  "incident_date": "2026-05-16",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Claim Queensland bus hit guardrail a day before fatal crash",
+    "url": "https://www.nine.com.au/australia-news/qld/claim-queensland-bus-hit-guardrail-a-day-before-fatal-crash-20260516-p5zxrk.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-16"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260518-02",
+  "incident_date": "2026-05-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "BMW",
+  "suggested_coder": "claude",
+  "deaths": "0",
+  "serious_injuries": "1",
+  "incident_type": "occupant_serious_collision",
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "Police say the 24-year-old was speeding down the highway in his BMW before losing control and slamming into a power pole.",
+  "notes": "Index vehicle is the BMW sedan. Driver (24yo) was speeding, lost control, initiated the crash into a hatchback before hitting a power pole. Hatchback make not identified. One serious injury: BMW driver suffered burns and fractures. No fatalities. Fire occurred after impact. The hatchback driver (48yo) was taken to hospital for assessment but no explicit serious injury stated.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Driver under police guard in hospital after car torn in half in fiery Sydney crash",
+    "url": "https://www.nine.com.au/australia-news/nsw/car-smashes-into-pole-bursts-into-fire-villawood-sydney-20260518-p5zy2f.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-18"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Driver cheats death after car splits in HALF and erupts in flames",
+    "url": "https://www.dailymail.com/news/article-15826369/hume-highway-fiery-crash-villawood.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260518-03",
+  "incident_date": "2026-05-18",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Isuzu",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": null,
+  "incident_type": "pedestrian_cyclist_struck",
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "she was struck by a white Isuzu dual cab ute",
+  "notes": "Incident date inferred from reference number 20260518-03; article text states 'on Monday' without explicit date. The woman was returning to her Audi after a separate minor collision with an MG when struck by the Isuzu ute. Only the woman's fatal injuries are described; the ute driver's injuries are not mentioned, so serious_injuries is null. Index vehicle clearly identified as the striking vehicle (Isuzu ute). Model not specified beyond 'dual cab ute'.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Woman dies after pulling over to exchange details following crash",
+    "url": "https://www.dailymail.com/news/article-15829165/Pacific-Motorway-fatal-crash-loganlea.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-19"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260519-01",
+  "incident_date": "2026-05-19",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "ABC News",
+    "headline": "Pacific Motorway crash - ABC News",
+    "url": "https://www.abc.net.au/news/2026-05-19/highway-crash/106695676",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-19"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260520-01",
+  "incident_date": "2026-05-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Car is flipped upside-down during nasty crash on the Harbour Bridge",
+    "url": "https://www.dailymail.com/news/article-15833221/Sydney-bridge-crash-traffic.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260521-02",
+  "incident_date": "2026-05-21",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Toyota",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "ABC News",
+    "headline": "The police vehicle was seen turning its lights and sirens on shortly before the crash in Cairns.",
+    "url": "https://www.abc.net.au/news/2026-05-21/police-car-cctv-cairns-fatal-crash/106707504",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-21"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Woman dies after being hit by police car",
+    "url": "https://www.nine.com.au/australia-news/qld/cairns-woman-fighting-for-life-hit-by-police-car-20260521-p5zzde.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-21"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260524-01",
+  "incident_date": "2026-05-24",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Mazda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "'Drunk' driver's car windscreen speared by post as she careered onto beach",
+    "url": "https://www.nine.com.au/australia-news/south-australia-drunk-driver-beach-crash-20260524-p6004z.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260526-01",
+  "incident_date": "2026-05-26",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Nissan",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Cops urge ute driver to come forward after 12-year-old struck",
+    "url": "https://www.nine.com.au/australia-news/nsw/boy-hit-by-ute-appeal-to-find-car-driver-revesby-sydney-20260526-p600mz.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-26"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Schoolboy, 12, allegedly struck by a Nissan Navara",
+    "url": "https://www.dailymail.com/news/article-15851253/Sydney-Revesby-ute-child-crash.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-05-27"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260530-01",
+  "incident_date": "2026-05-30",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Ford",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Elderly driver killed after garbage truck, SUV collide",
+    "url": "https://7news.com.au/news/man-in-his-90s-killed-in-collision-between-truck-and-suv-in-hindmarsh-valley-sa-c-22359710",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-30"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Man, 93, killed in collision with garbage truck",
+    "url": "https://www.nine.com.au/australia-news/sa/south-australia-crash-hindmarsh-valley-20260531-p602k2.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-05-31"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260604-01",
+  "incident_date": "2026-06-04",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Perth news: Multiple injured in Wanneroo bus crash | Nine.com.au",
+    "url": "https://www.nine.com.au/australia-news/wa/perth-bus-crash-wanneroo-20260604-p603ze.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-04"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Family torn apart as devoted father killed in shocking crash",
+    "url": "https://7news.com.au/news/perth-father-identified-as-man-killed-in-wanneroo-bus-crash-c-22390460",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-05"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Wanneroo bus crash: Survivor of fatal Perth bus crash on how she raised the alarm | Nine.com.au",
+    "url": "https://www.nine.com.au/australia-news/wa/wanneroo-bus-crash-survivor-of-fatal-perth-bus-crash-on-how-she-raised-the-alarm-20260607-p604j4.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-07"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260605-01",
+  "incident_date": "2026-06-05",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Holden",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "0",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Ford",
+  "all_makes": null,
+  "make_quote": "Layna was a passenger in a Holden Astra that collided with a Ford Mustang at the intersection of Boardman Rd and Garden St in Canning Vale.",
+  "notes": "Incident date inferred as June 4, 2026 from 'on Wednesday' in article published June 5, 2026. Serious injuries coded as 0: mother and brother were hospitalized but discharged without indication of serious injury; Mustang driver explicitly noted to have only minor injuries. fire_involved and adas_alleged coded as false based on complete absence from article describing a fatal collision in detail. Holden Astra is index vehicle as its occupants (Layna fatally injured, mother and brother hospitalized) sustained most severe injuries versus Ford Mustang driver with minor injuries only.",
+  "review_flags": [
+   "incident_date:low_confidence",
+   "serious_injuries:low_confidence",
+   "fire_involved:no_evidence",
+   "adas_alleged:no_evidence",
+   "driver_notable:low_confidence"
+  ],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Mum\u2019s moving tribute for 4yo \u2018angel\u2019 killed in crash",
+    "url": "https://7news.com.au/news/mums-moving-tribute-for-beautiful-angel-killed-in-shocking-perth-crash-c-22391692",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-05"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260617-02",
+  "incident_date": "2026-06-17",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "Bystanders frantically tried to save two children after car crashed into pram",
+    "url": "https://www.smh.com.au/national/nsw/two-children-dead-after-car-crashes-into-pram-20260617-p607qg.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-17"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260620-01",
+  "incident_date": "2026-06-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Drunk\u2011driver allegedly totals mum\u2019s car after airborne crash",
+    "url": "https://7news.com.au/news/melbourne-man-blows-triple-the-blood-alcohol-limit-after-allegedly-crashing-mums-car-into-bridge-c-22460500",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260620-02",
+  "incident_date": "2026-06-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Crash in Sydney Harbour Tunnel halts traffic",
+    "url": "https://7news.com.au/news/sydney-harbour-tunnel-crash-causes-traffic-chaos-c-22459981",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-20"
+   },
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "Harbour Tunnel crash brings northbound traffic to standstill",
+    "url": "https://www.smh.com.au/national/nsw/harbour-tunnel-crash-brings-northbound-traffic-to-standstill-20260620-p608lw.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260620-03",
+  "incident_date": "2026-06-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Fatal truck crash causes major train disruptions in Victoria",
+    "url": "https://7news.com.au/news/trains-suspended-as-fatal-fuel-tanker-crash-causes-major-disruptions-in-victoria-c-22459783",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260630-02",
+  "incident_date": "2026-06-30",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Miracle escape for six drivers after truck crash inferno",
+    "url": "https://7news.com.au/news/driver-unaccounted-for-major-highway-closed-after-horror-crash-engulfs-seven-trucks-in-flames-c-22506548",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-30"
+   },
+   {
+    "outlet": "9News",
+    "headline": "\u2018Nothing short of a miracle\u2019: All truck drivers walk away from horror crash inferno",
+    "url": "https://www.nine.com.au/australia-news/nsw/truck-driver-unaccounted-for-after-fiery-seven-vehicle-crash-20260630-p60b9t.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-06-30"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260711-01",
+  "incident_date": "2026-07-11",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Nissan",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "2",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Subaru",
+  "all_makes": null,
+  "make_quote": "The six-year-old boy was a passenger in a Nissan Qashqai when it collided with a Subaru Impreza at the intersection of Mount Lindsey Hwy and Gould Hill Rd in Gleneagle about 2.14pm on Monday.",
+  "notes": "Incident date inferred from published date (2026-07-11, which is Saturday), death on Friday (July 10), and crash on Monday four days prior (July 6). Index vehicle is Nissan Qashqai because its occupants sustained the most serious injuries and included the fatality. No mention of vehicle years, autonomous driving systems, or notable drivers.",
+  "review_flags": [
+   "fire_involved:no_evidence",
+   "adas_alleged:no_evidence",
+   "driver_notable:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Boy dies in hospital four days after horror Queensland crash",
+    "url": "https://7news.com.au/news/six-year-old-boy-dies-in-hospital-after-horrific-collision-at-gleneagle-intersection-c-22562628",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-11"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260714-02",
+  "incident_date": "2026-07-14",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Driver's \u2018shocking\u2019 phone use before fatal crash revealed",
+    "url": "https://7news.com.au/news/driver-used-phone-55-times-before-crash-that-killed-cyclist-in-port-pirie-south-australian-court-hears-c-22577751",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-14"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Driver accused of using his phone 55 times before he hit cyclist",
+    "url": "https://www.dailymail.com/news/article-15976487/cyclist-crash-Port-Pirie.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-14"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260715-01",
+  "incident_date": "2026-07-15",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "LDV",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "1",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": null,
+  "all_makes": "Harley-Davidson|BMW|LDV",
+  "make_quote": "crash involved two Harley-Davidson motorbikes, a BMW X3, and an LDV Maxus motorhome",
+  "notes": "Overseas incident: occurred in Hampshire, England on A287 near Hook (not Australia). Reported by Australian news outlets due to victim being a public figure (celebrity bodyguard Mason Haynes). Falls outside study scope of domestic Australian crashes per protocol decision (2026-08-25). Index vehicle identified as LDV Maxus motorhome based on police charges: the motorhome driver was arrested on suspicion of causing serious injury by dangerous driving and causing death by dangerous driving, while BMW driver faced less serious charge of careless/inconsiderate driving. Text does not explicitly describe collision sequence but charges indicate motorhome was initiating vehicle.",
+  "review_flags": [
+   "victim_child:no_evidence",
+   "fire_involved:no_evidence",
+   "adas_alleged:no_evidence",
+   "driver_notable:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Celebrity bodyguard Mason Haynes dies in tragic motorcycle crash",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15968231/Celebrity-bodyguard-Mason-Haynes-protected-Kardashians-Lewis-Hamilton-dies-aged-52-tragic-motorcycle-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-15"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Family pays tribute to bodyguard of Kardashians after he died in crash",
+    "url": "https://www.dailymail.com/news/article-15982873/Family-tribute-bodyguard-Kardashians-David-Beckham-died-motorcycle-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-16"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Kardashian-Jenner bodyguard dies in motorcycle crash",
+    "url": "https://www.nine.com.au/entertainment/celebrity/kardashian-jenner-celebrity-bodyguard-mason-haynes-dies-in-motorcycle-crash-20260717-p60g1g.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-17"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260715-02",
+  "incident_date": "2026-07-15",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Sydney Hyde Park fountain crash: Frenchman thankful despite troubled police case",
+    "url": "https://www.nine.com.au/australia-news/nsw/sydney-hyde-park-fountain-crash-frenchman-eizeur-kouki-thankful-despite-troubled-police-case-20260716-p60fom.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-16"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260720-01",
+  "incident_date": "2026-07-20",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Subaru",
+  "suggested_coder": "claude",
+  "deaths": "0",
+  "serious_injuries": "0",
+  "incident_type": "other",
+  "second_make": "Kia",
+  "all_makes": null,
+  "make_quote": "a Subaru Outback involved in the collision drove through the city's Burnley Tunnel about 11.30pm on Sunday",
+  "notes": "Wrong-way collision on Bolte Bridge, Melbourne. Subaru Outback (index vehicle, wrong-way driver) struck Kia Sorrento rideshare vehicle (6 occupants, correct direction). No deaths or injuries despite significant impact; Kia's rear tyre ripped off. Subaru driver (51-year-old woman from Rye) charged with reckless conduct, drug possession, and traffic offences. Incident date inferred as Sunday 2026-07-19 from text references to Sunday incident and Monday 2026-07-20 publication with Monday interview.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Miraculous escape from terrifying head-on crash captured on dashcam",
+    "url": "https://www.nine.com.au/australia-news/vic/victoria-bolte-bridge-head-on-crash-dashcam-footage-20260720-p60gws.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-20"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260722-02",
+  "incident_date": "2026-07-22",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Honda",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Horrifying photos of Kaylee Hottle's fatal car crash emerge",
+    "url": "https://www.dailymail.com/tvshowbiz/article-15997233/kaylee-hottle-photos-car-crash-godzilla-death.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-22"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Deaf Godzilla vs Kong star, 18, killed in car crash",
+    "url": "https://www.dailymail.com/news/article-15996057/Dispatch-call-sign-language-road-crash-killed-deaf-Godzilla-Kong-Kaylee-Hottle.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-22"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "New details emerge in Kaylee Hottle's fatal car crash at 18",
+    "url": "https://www.dailymail.com/tvshowbiz/article-16000095/Kaylee-Hottle-fatal-car-crash-maryland-godzilla-death.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-23"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260723-01",
+  "incident_date": "2026-07-23",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "BMW",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Moment female driver screams abuse at Nigel Farage before crashing",
+    "url": "https://www.dailymail.com/news/article-15999569/driver-screams-abuse-Nigel-Farage-crashing-car.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-23"
+   },
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "What a viral car crash video reveals about Nigel Farage",
+    "url": "https://www.smh.com.au/world/europe/what-a-viral-car-crash-video-reveals-about-nigel-farage-20260724-p60i4j.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-24"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260725-01",
+  "incident_date": "2026-07-25",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Tesla",
+  "suggested_coder": "claude",
+  "deaths": "0",
+  "serious_injuries": "1",
+  "incident_type": "occupant_serious_collision",
+  "second_make": "Mercedes-Benz",
+  "all_makes": null,
+  "make_quote": "It's going to be a black Tesla vs. a blue Mercedes. There are reports of one driver bleeding from the head.",
+  "notes": "This incident occurred in Palo Alto, California, USA, not Australia. It was covered by Daily Mail Australia only because the driver (Kyle Shanahan, San Francisco 49ers head coach) is a notable public figure. As per the study protocol for overseas incidents, this should be excluded from the analysis. The incident was a two-vehicle collision between Shanahan's black Tesla and a blue Mercedes. Shanahan was the at-fault driver (took eyes off road for 2 seconds while looking for dropped phone). He sustained serious injuries (concussion, broken bones, 40 stitches); the other driver suffered minor injuries per one source, but another source states was not injured.",
+  "review_flags": [
+   "adas_alleged:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "49ers coach Kyle Shanahan involved in horrific offseason car crash",
+    "url": "https://www.dailymail.com/sport/nfl/article-16004925/kyle-shanahan-49ers-car-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-25"
+   },
+   {
+    "outlet": "9News",
+    "headline": "NFL coach in car crash weeks out from historic MCG game",
+    "url": "https://www.nine.com.au/sport/nfl-news-san-francisco-49ers-coach-kyle-shanahan-car-crash-injury-doubt-for-mcg-game-20260726-p60il2.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-26"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "911 audio from Kyle Shanahan's horror car crash emerges",
+    "url": "https://www.dailymail.com/sport/nfl/article-16006289/kyle-shanahan-car-crash-california.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-07-26"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Kyle Shanahan's close friend and NFL rival 'shaken up' by car crash",
+    "url": "https://www.dailymail.com/sport/nfl/article-16006057/kyle-shanahan-car-crash-california.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-26"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Kyle Shanahan's friend says 49ers coach nearly lost his eye in crash",
+    "url": "https://www.dailymail.com/sport/nfl/article-16008913/kyle-shanahan-car-crash-injuries.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-27"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "49ers coach Kyle Shanahan breaks his silence on horrifying car crash",
+    "url": "https://www.dailymail.com/sport/nfl/article-16011711/kyle-shanahan-car-crash-palo-alto.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-28"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "49ers coach speaks out on drugs past as he covers for Kyle Shanahan",
+    "url": "https://www.dailymail.com/sport/nfl/article-16009081/49ers-coach-speaks-drugs-past-steps-replace-Kyle-Shanahan-car-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-28"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "TV station uses AI picture of Kyle Shanahan in embarrassing blunder",
+    "url": "https://www.dailymail.com/sport/nfl/article-16016965/kyle-shanahan-car-crash-chicago-tv-blunder.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-30"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Cops release statement on Kyle Shanahan car crash footage",
+    "url": "https://www.dailymail.com/sport/nfl/article-16017927/Cops-Kyle-Shanahan-car-crash-footage-49ers.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-31"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Kyle Shanahan shows off bold new look in the wake of horror car crash",
+    "url": "https://www.dailymail.com/sport/nfl/article-16022143/kyle-shanahan-49ers-car-crash-mustache.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-01"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260725-02",
+  "incident_date": "2026-07-25",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Ferrari",
+  "suggested_coder": "claude",
+  "deaths": "0",
+  "serious_injuries": "0",
+  "incident_type": "other",
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "The SF90 Spider Ferrari smashed into a tree on Rio Vista Blvd in Mermaid Waters, Gold Coast, about 9.15am on Sunday.",
+  "notes": "Single-vehicle crash into tree. Internal contradiction between articles on day of week: Article 1 states 'about 9.15am on Sunday'; Article 2 states 'on Saturday morning'. Incident reference 20260725-02 and dual publication date of 2026-07-25 confirm 2026-07-25, but day-of-week discrepancy lowers date confidence. Outcome extremely minor: driver 'walked away with just minor injuries' and 'paramedics confirmed no one involved needed treatment.' Driver is public figure with significant social media presence and viral property portfolio notability. High-value luxury vehicle (Ferrari SF90 Spider, valued $900,000\u2013$1.7 million) purchased May 2025. No fire mentioned despite severe vehicle damage (split in half). Incident type classified as 'other' because it is single-vehicle collision with no occupant deaths, no serious injuries, and no fire\u2014does not fit categorical options.",
+  "review_flags": [
+   "fire_involved:no_evidence",
+   "adas_alleged:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Influencer miraculously walks away from horror Ferrari crash",
+    "url": "https://7news.com.au/news/gold-coast-developer-sam-gordon-miraculously-uninjured-after-crash-splits-1-million-ferrari-in-half-c-22627735",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-07-25"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Property investor's $1million Ferrari is split in half after crash",
+    "url": "https://www.dailymail.com/news/article-16004403/sam-gordon-ferrari-ripped-half-crash-gold-coast.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-07-25"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260726-01",
+  "incident_date": "2026-07-26",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "\u2018Spirit\u2019 of late friends inspires Joshua on way to Fury showdown",
+    "url": "https://www.nine.com.au/sport/combat-sports/news-anthony-joshua-beats-kristian-prenga-fight-tyson-fury-callout-first-fight-since-friends-death-car-crash-20260726-p60ilq.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-26"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Anthony Joshua fights back tears after Kristian Prenga victory",
+    "url": "https://www.dailymail.com/sport/boxing/article-16005367/Anthony-Joshua-fights-tears-dedicates-dramatic-victory-Kristian-Prenga-two-best-friends-killed-car-crash-just-seven-months-ago.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-26"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260728-01",
+  "incident_date": "2026-07-28",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Man fighting for life after freak accident at bus shelter",
+    "url": "https://7news.com.au/news/man-critically-injured-in-freak-bus-shelter-crash-on-the-gold-coast-c-22638051",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-28"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260729-02",
+  "incident_date": "2026-07-29",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Skoda",
+  "suggested_coder": "claude",
+  "deaths": "2",
+  "serious_injuries": "1",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Nissan",
+  "all_makes": null,
+  "make_quote": "his Skoda slammed into Gee's Nissan Navara",
+  "notes": "Incident involving domestic violence and intentional vehicular collision. Keith Mitton (42, welder from Perth) stabbed his partner Sarah at her home in Exeter, Tasmania, on Friday 24 July, then deliberately drove his blue Skoda head-on into Elaine Gee's Nissan Navara on West Tamar Highway near Legana. Both vehicles were engulfed in flames. Elaine Gee (39), a nurse, died from injuries on Sunday. Mitton died at the scene. Sarah survived with serious stab wounds. The Skoda is unambiguously the index vehicle as the striking vehicle in the collision.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Father unmasked after stabbing partner, killing nurse in crash",
+    "url": "https://7news.com.au/news/keith-mitton-identified-as-perth-man-who-stabbed-partner-and-killed-elaine-gee-in-tasmania-crash-c-22647999",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-29"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Man plotted to terrorise girlfriend before killing innocent mum",
+    "url": "https://www.dailymail.com/news/article-16012671/tasmania-elaine-gee-car-crash-launceston-killer-plan-sarah.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-29"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260729-03",
+  "incident_date": "2026-07-29",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "SsangYong",
+  "suggested_coder": "claude",
+  "deaths": null,
+  "serious_injuries": "0",
+  "incident_type": "other",
+  "second_make": null,
+  "all_makes": "Toyota|SsangYong",
+  "make_quote": "they allege a black SsangYong attempted to merge from a centre lane and turn off near the intersection of Beaudesert Road and Granard Road before the Yaris in the outer lane swerved and lost control",
+  "notes": "Three vehicles involved: a blue Toyota Yaris, a black SsangYong, and an empty Brisbane City Council bus (make not specified). Police investigation determined the SsangYong driver was the initiating vehicle\u2014they were fined $690 and 3 demerit points for driving without due care and attention when attempting to merge/turn. The Yaris driver (45-year-old Pallara woman) was taken to hospital and treated for shock. The bus driver (66-year-old Sunnybank Hills man) was uninjured. No serious injuries reported across any party. Collision at Beaudesert Road and Granard Road intersection, Rocklea, at 6:30pm Wednesday 29 July 2026.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Car left hanging in the air after hitting Brisbane bus at intersection",
+    "url": "https://www.dailymail.com/news/article-16015103/brisbane-car-bus-crash-rocklea-toyota.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-29"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Car hitches ride on Brisbane bus after freak crash",
+    "url": "https://www.nine.com.au/australia-news/qld/toyota-yaris-lodges-in-side-of-bus-after-crash-rocklea-brisbane-20260730-p60jty.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-30"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260731-01",
+  "incident_date": "2026-07-31",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "9News",
+    "headline": "Hunter Valley bus driver had 27 complaints, history of opioid abuse before deadly crash, review finds",
+    "url": "https://www.nine.com.au/australia-news/nsw/hunter-valley-bus-driver-had-27-complaints-history-of-opioid-abuse-before-deadly-crash-review-finds-20260731-p60kfj.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-07-31"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260802-01",
+  "incident_date": "2026-08-02",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "Toyota",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": "0",
+  "incident_type": "pedestrian_cyclist_struck",
+  "second_make": "Ford",
+  "all_makes": null,
+  "make_quote": "Police said the 18-year-old from Greenwith was hit by a Toyota sedan before falling into the path of a Ford 4WD, where he was struck again.",
+  "notes": "Single pedestrian fatality. Victim Campbell Thorp, 18 years old (born 2008, turning 18 one week before incident). Index vehicle is the Toyota sedan, identified as the primary striking vehicle based on sequence: Toyota struck victim first, causing him to fall into path of Ford 4WD. Incident dated 2026-08-01 (Saturday) based on article 2 published 2026-08-03 (Monday) stating 'On Monday, Campbell's family shared their devastation'. No specific model years identified for either vehicle. Drivers of both vehicles not identified or described.",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Teen killed when struck by two cars on busy street",
+    "url": "https://7news.com.au/news/teenager-dies-in-hospital-after-being-hit-by-two-cars-in-adelaide-cbd-crash-c-22663253",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-02"
+   },
+   {
+    "outlet": "7NEWS",
+    "headline": "Family\u2019s heartbreak as teen killed in CBD crash identified",
+    "url": "https://7news.com.au/news/adelaide-teen-campbell-thorp-tributes-after-fatal-cbd-crash-c-22667824",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-03"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260803-02",
+  "incident_date": "2026-08-03",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "Award-winning Sydney insurance broker killed in US car crash",
+    "url": "https://www.smh.com.au/national/nsw/award-winning-sydney-insurance-broker-killed-in-nashville-car-crash-20260803-p60kt7.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-03"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260806-02",
+  "incident_date": "2026-08-06",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Ford",
+  "suggested_coder": "claude",
+  "deaths": "5",
+  "serious_injuries": "0",
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Toyota",
+  "all_makes": null,
+  "make_quote": "Police investigations suggest the Ford Ranger was travelling northbound when, for reasons yet to be determined, it crossed onto the incorrect side of the highway.",
+  "notes": "Incident occurred on Stuart Highway approximately 2 km south of Marrakai Road turn-off, south-east of Darwin, NT. Five fatalities (ages 23, 23, 32, 36, 69 \u2014 all adults, no children). Zero survivors. Both vehicles fully engulfed in flames immediately post-collision. Ford Ranger (northbound) crossed onto wrong side of road and collided head-on with southbound Toyota HiAce. Ford Ranger identified as index vehicle as police determined it initiated the collision. Incident date inferred from articles published 2026-08-06 referring to event on 'Wednesday' \u2014 interpreted as Wednesday, 2026-08-05 (day before publication).",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Police confirm no survivors after horror head-on crash",
+    "url": "https://7news.com.au/news/four-people-killed-in-two-car-head-on-crash-on-the-stuart-highway-northern-territory-c-22682236",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-06"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Five killed in head-on crash that saw flames engulf the crash scene",
+    "url": "https://www.dailymail.com/news/article-16032777/highway-crash-five-dead-darwin-northern-territory-police.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-06"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260811-01",
+  "incident_date": "2026-08-11",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Volkswagen",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Family\u2019s heartbreak after man killed in horror car crash",
+    "url": "https://7news.com.au/news/man-killed-in-beaumaris-car-crash-identified-as-family-reveals-heartbreak-over-shock-death-c-22706108",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-11"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Family's heartbreak after man killed in horror car crash",
+    "url": "https://www.dailymail.com/news/article-16043399/horror-crash-Beaumaris-melbourne.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-13"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260814-01",
+  "incident_date": "2026-08-14",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Tesla",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Sydney Morning Herald",
+    "headline": "Woman injured after Tesla goes airborne near busy Adelaide mall The Sydney Morning Herald logo Video icon Video icon Video icon Video icon The Sydney Morning Herald logo",
+    "url": "https://www.smh.com.au/national/woman-injured-after-tesla-goes-airborne-near-busy-adelaide-mall-20260814-p60of5.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-08-14"
+   },
+   {
+    "outlet": "9News",
+    "headline": "Tesla goes airborne after striking bollard near Adelaide mall",
+    "url": "https://www.nine.com.au/australia-news/sa/tesla-goes-airborne-after-striking-bollard-near-adelaide-mall-20260814-p60oeq.html",
+    "headline_names_make": 1,
+    "publish_datetime": "2026-08-14"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260817-01",
+  "incident_date": "2026-08-17",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 2,
+  "suggested_make": "Holden",
+  "suggested_coder": "claude",
+  "deaths": "1",
+  "serious_injuries": null,
+  "incident_type": "occupant_fatal_collision",
+  "second_make": "Ford",
+  "all_makes": null,
+  "make_quote": "Saoirse Wynne, 33, was driving her daughter Layna Leavy and her eight-year-old son inside a Holden Astra when it crashed into a Ford Mustang in Canning Vale in Perth's southeast on June 3.",
+  "notes": "Year 2026 inferred from article publication date (August 17, 2026) and temporal context (charges 'just months after' funeral, family immigrated June 2024). A charge of 'careless driving causing grievous bodily harm or bodily harm' exists, but the text does not explicitly identify who sustained serious injuries. The eight-year-old son and mother are stated to have survived, with no injuries explicitly mentioned for either them or the Ford Mustang's occupants; therefore serious_injuries set to null pending clarification. The index vehicle is the Holden Astra, driven by the charged driver Saoirse Wynne and carrier of the fatally injured child.",
+  "review_flags": [
+   "fire_involved:no_evidence",
+   "driver_notable:no_evidence"
+  ],
+  "articles": [
+   {
+    "outlet": "7NEWS",
+    "headline": "Mum charged over horrific crash that killed young daughter",
+    "url": "https://7news.com.au/news/crime/mother-charged-over-canning-vale-crash-that-killed-four-year-old-laina-leavy-c-22734791",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-17"
+   },
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Mum charged after her four-year-old daughter was killed in crash",
+    "url": "https://www.dailymail.com/news/article-16057359/mum-charged-crash-four-year-old-killed-canning-vale.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-17"
+   }
+  ]
+ },
+ {
+  "incident_id": "20260824-02",
+  "incident_date": "2026-08-24",
+  "already_eligible": 0,
+  "already_adjudicated": false,
+  "already_index_make": null,
+  "n_outlets": 1,
+  "suggested_make": "",
+  "suggested_coder": "mechanical",
+  "deaths": null,
+  "serious_injuries": null,
+  "incident_type": null,
+  "second_make": null,
+  "all_makes": null,
+  "make_quote": "",
+  "notes": "",
+  "review_flags": [],
+  "articles": [
+   {
+    "outlet": "Daily Mail Australia",
+    "headline": "Aussie's $30k fight to get home after Bali holiday goes horribly wrong",
+    "url": "https://www.dailymail.com/news/article-16074705/Aussie-Bali-injured-scooter-crash.html",
+    "headline_names_make": 0,
+    "publish_datetime": "2026-08-24"
+   }
+  ]
+ }
+]

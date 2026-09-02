@@ -17,6 +17,12 @@ CREATE TABLE IF NOT EXISTS harvest (
     seendate        TEXT,                      -- ISO8601 UTC
     query           TEXT,                      -- which frozen query surfaced it
     harvested_at    TEXT NOT NULL DEFAULT (datetime('now')),
+    -- Post-discovery topical relevance (src/classify_vehicle.py): NULL = not yet
+    -- classified, 0 = not a road-vehicle crash (sports "collision", aviation, metaphor,
+    -- etc.), 1 = plausibly a road-vehicle crash. Decided from the title/slug alone,
+    -- never from make/brand — a relevance screen, not a discovery-time or outcome
+    -- decision. See Protocol §6.1: this must never depend on which brand is mentioned.
+    is_vehicle_crash INTEGER,
     UNIQUE (canonical_url, source)
 );
 CREATE INDEX IF NOT EXISTS ix_harvest_domain  ON harvest(domain);
@@ -40,9 +46,18 @@ CREATE TABLE IF NOT EXISTS harvest_progress (
 -- Incidents (Codebook 1). Manually verified clusters.
 -- ---------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS incident (
-    incident_id        TEXT PRIMARY KEY,       -- YYYYMMDD-STATE-nn
+    incident_id        TEXT PRIMARY KEY,       -- YYYYMMDD-nn (state dropped 2026-08-25:
+                                                -- not used by the primary analysis, only
+                                                -- ever meant as an appendix covariate --
+                                                -- analysis.py uses remoteness instead --
+                                                -- and required promotion to guess it from
+                                                -- the headline alone, silently blocking
+                                                -- real incidents whose headline never
+                                                -- named a state, e.g. the Ed Husic Tesla
+                                                -- crash. Kept as an optional column for
+                                                -- anyone who fills it in by hand.)
     incident_date      TEXT NOT NULL,
-    state              TEXT NOT NULL CHECK (state IN ('NSW','VIC','QLD','WA','SA','TAS','NT','ACT')),
+    state              TEXT CHECK (state IN ('NSW','VIC','QLD','WA','SA','TAS','NT','ACT') OR state IS NULL),
     locality           TEXT,
     remoteness         TEXT CHECK (remoteness IN ('metro','regional','remote') OR remoteness IS NULL),
     deaths             INTEGER NOT NULL DEFAULT 0,

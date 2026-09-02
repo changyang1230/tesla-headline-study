@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tesla Headline Study — adjudication</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #14161a; color: #e6e6e6; margin: 0; padding: 0;
+  }
+  #loadbar { padding: 40px; text-align: center; }
+  #loadbar input[type=file] { color: #e6e6e6; }
+  header {
+    position: sticky; top: 0; background: #1c1f24; border-bottom: 1px solid #2c3038;
+    padding: 10px 24px; display: flex; justify-content: space-between; align-items: center;
+    z-index: 10;
+  }
+  header .progress { font-variant-numeric: tabular-nums; color: #9aa0a8; }
+  header .bar { width: 240px; height: 6px; background: #2c3038; border-radius: 3px; overflow: hidden; margin-left: 12px; display: inline-block; vertical-align: middle;}
+  header .bar-fill { height: 100%; background: #4f8cff; }
+  main { max-width: 880px; margin: 0 auto; padding: 24px; }
+  .incident-id { font-size: 13px; color: #7d8590; letter-spacing: 0.02em; }
+  h1 { font-size: 22px; margin: 4px 0 2px; }
+  .meta { color: #9aa0a8; font-size: 13px; margin-bottom: 18px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin-right: 6px; }
+  .badge.tesla { background: #3a1f1f; color: #ff8a80; }
+  .badge.make { background: #1f2a3a; color: #82b1ff; }
+  .badge.coder { background: #23281f; color: #c5e1a5; }
+  .badge.flag { background: #3a2f1f; color: #ffcc80; }
+  .badge.outlets { background: #22262c; color: #9aa0a8; }
+  section { background: #1a1d22; border: 1px solid #262a31; border-radius: 8px; padding: 16px 18px; margin-bottom: 14px; }
+  section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #7d8590; margin: 0 0 10px; }
+  .quote { font-style: italic; color: #d7dae0; border-left: 3px solid #4f8cff; padding-left: 10px; margin: 6px 0; }
+  .notes { white-space: pre-wrap; color: #c7cbd1; font-size: 14px; line-height: 1.5; }
+  ul.articles { list-style: none; margin: 0; padding: 0; }
+  ul.articles li { padding: 8px 0; border-bottom: 1px solid #24272d; }
+  ul.articles li:last-child { border-bottom: none; }
+  ul.articles a { color: #82b1ff; text-decoration: none; font-size: 14px; }
+  ul.articles a:hover { text-decoration: underline; }
+  .outlet { color: #7d8590; font-size: 12px; margin-right: 8px; }
+  .named { color: #c5e1a5; font-size: 12px; }
+  .not-named { color: #6b7078; font-size: 12px; }
+  .keys { position: fixed; bottom: 0; left: 0; right: 0; background: #1c1f24; border-top: 1px solid #2c3038;
+          padding: 10px 24px; display: flex; gap: 22px; font-size: 13px; color: #9aa0a8; justify-content: center;}
+  .keys kbd { background: #2c3038; border-radius: 4px; padding: 2px 7px; color: #e6e6e6; font-family: inherit; margin-right: 5px;}
+  .decision-tag { font-weight: 600; padding: 3px 10px; border-radius: 5px; font-size: 12px; }
+  .decision-tag.accept { background: #1f3a24; color: #81c995; }
+  .decision-tag.reject { background: #3a1f1f; color: #ff8a80; }
+  #makeInput { background: #14161a; border: 1px solid #3a3f47; color: #e6e6e6; padding: 6px 10px; border-radius: 5px; font-size: 14px; width: 220px; }
+  #done-screen { text-align: center; padding: 80px 20px; }
+  #done-screen button { margin-top: 20px; font-size: 15px; padding: 10px 20px; background: #4f8cff; border: none; border-radius: 6px; color: white; cursor: pointer; }
+  .hidden { display: none; }
+  .toast { position: fixed; top: 14px; right: 24px; background: #1f3a24; color: #81c995; padding: 8px 16px; border-radius: 6px; font-size: 13px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<div id="loadbar">
+  <h2>Tesla Headline Study — adjudication</h2>
+  <p>Load <code>adjudication_data.json</code> (from <code>python -m src.export_adjudication</code>):</p>
+  <input type="file" id="fileInput" accept="application/json">
+  <p style="color:#7d8590; font-size:13px; max-width:520px; margin:16px auto;">
+    j/k step through incidents · p accepts the suggested make (sets eligible=1) ·
+    x rejects (sets eligible=0) · m lets you type a corrected make before accepting ·
+    u undoes the current incident's decision. Progress is saved in this browser
+    (localStorage) as you go — reload any time. Press <kbd>e</kbd> to export your
+    decisions as a JSON file when done.
+  </p>
+</div>
+
+<header id="header" class="hidden">
+  <div>
+    <span id="progressText" class="progress"></span>
+    <span class="bar"><span id="progressFill" class="bar-fill" style="width:0%"></span></span>
+  </div>
+  <div>
+    <button onclick="exportDecisions()" style="background:#2c3038;border:1px solid #3a3f47;color:#e6e6e6;border-radius:5px;padding:6px 14px;cursor:pointer;">Export decisions (e)</button>
+  </div>
+</header>
+
+<main id="main" class="hidden"></main>
+
+<div id="done-screen" class="hidden">
+  <h2>All incidents reviewed</h2>
+  <p id="doneSummary" style="color:#9aa0a8;"></p>
+  <button onclick="exportDecisions()">Export decisions.json</button>
+</div>
+
+<div class="keys hidden" id="keysBar">
+  <span><kbd>j</kbd>next</span>
+  <span><kbd>k</kbd>prev</span>
+  <span><kbd>p</kbd>accept</span>
+  <span><kbd>x</kbd>reject</span>
+  <span><kbd>m</kbd>correct make</span>
+  <span><kbd>u</kbd>undo</span>
+  <span><kbd>e</kbd>export</span>
+</div>
+
+<div id="toast" class="toast">Saved</div>
+
+<script>
+let incidents = [];
+let idx = 0;
+let decisions = {}; // incident_id -> {verdict, make, reason}
+const STORAGE_KEY = "tesla_study_adjudication_v1";
+
+document.getElementById("fileInput").addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    incidents = JSON.parse(reader.result);
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) decisions = JSON.parse(saved);
+    document.getElementById("loadbar").classList.add("hidden");
+    document.getElementById("header").classList.remove("hidden");
+    document.getElementById("main").classList.remove("hidden");
+    document.getElementById("keysBar").classList.remove("hidden");
+    idx = incidents.findIndex(i => !decisions[i.incident_id]);
+    if (idx === -1) idx = 0;
+    render();
+  };
+  reader.readAsText(file);
+});
+
+function saveDecisions() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
+  const t = document.getElementById("toast");
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 500);
+}
+
+function esc(s) {
+  if (s === null || s === undefined) return "";
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function render() {
+  if (idx >= incidents.length) { showDone(); return; }
+  document.getElementById("done-screen").classList.add("hidden");
+  document.getElementById("main").classList.remove("hidden");
+
+  const inc = incidents[idx];
+  const nDecided = Object.keys(decisions).length;
+  document.getElementById("progressText").textContent =
+    `${idx + 1} / ${incidents.length}  ·  ${nDecided} decided`;
+  document.getElementById("progressFill").style.width =
+    `${(100 * (idx + 1) / incidents.length).toFixed(1)}%`;
+
+  const d = decisions[inc.incident_id];
+  const isTesla = (inc.suggested_make || "").toLowerCase() === "tesla";
+
+  const flagsHtml = (inc.review_flags || []).filter(Boolean).map(f =>
+    `<span class="badge flag">${esc(f)}</span>`).join("");
+
+  const articlesHtml = inc.articles.map(a => `
+    <li>
+      <span class="outlet">${esc(a.outlet)}</span>
+      <a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.headline)}</a><br>
+      <span class="${a.headline_names_make ? 'named' : 'not-named'}">
+        ${a.headline_names_make ? '✓ headline names the make' : '– headline does not name the make'}
+      </span>
+    </li>`).join("");
+
+  document.getElementById("main").innerHTML = `
+    <div class="incident-id">${esc(inc.incident_id)} ${d ? `<span class="decision-tag ${d.verdict}">${d.verdict.toUpperCase()}${d.verdict === 'accept' ? ': ' + esc(d.make) : ''}</span>` : ''}</div>
+    <h1>${esc(inc.suggested_make) || '(no make found)'} ${isTesla ? '⚡' : ''}</h1>
+    <div class="meta">
+      ${esc(inc.incident_date)} ·
+      <span class="badge outlets">${inc.n_outlets} outlet${inc.n_outlets === 1 ? '' : 's'}</span>
+      <span class="badge coder">${esc(inc.suggested_coder || 'unknown')}-coded</span>
+      ${inc.deaths ? `<span class="badge flag">${esc(inc.deaths)} death(s)</span>` : ''}
+      ${flagsHtml}
+    </div>
+
+    ${inc.make_quote ? `<section><h2>Evidence quote</h2><div class="quote">"${esc(inc.make_quote)}"</div></section>` : ''}
+    ${inc.notes ? `<section><h2>Coder notes</h2><div class="notes">${esc(inc.notes)}</div></section>` : ''}
+    ${(inc.second_make || inc.all_makes) ? `<section><h2>Other vehicles</h2><div>${inc.second_make ? 'Second make: ' + esc(inc.second_make) : ''} ${inc.all_makes ? '· All makes: ' + esc(inc.all_makes) : ''}</div></section>` : ''}
+
+    <section>
+      <h2>Articles (${inc.articles.length})</h2>
+      <ul class="articles">${articlesHtml}</ul>
+    </section>
+  `;
+}
+
+function decide(verdict, make) {
+  const inc = incidents[idx];
+  if (verdict === "accept") {
+    decisions[inc.incident_id] = { verdict: "accept", make: make !== undefined ? make : (inc.suggested_make || "") };
+  } else {
+    decisions[inc.incident_id] = { verdict: "reject", reason: "rejected in adjudication" };
+  }
+  saveDecisions();
+  next();
+}
+
+function undo() {
+  const inc = incidents[idx];
+  delete decisions[inc.incident_id];
+  saveDecisions();
+  render();
+}
+
+function next() {
+  if (idx < incidents.length - 1) { idx++; render(); }
+  else { idx = incidents.length; showDone(); }
+}
+function prev() {
+  if (idx > 0) { idx--; render(); }
+}
+
+function showDone() {
+  document.getElementById("main").classList.add("hidden");
+  document.getElementById("done-screen").classList.remove("hidden");
+  const nAccept = Object.values(decisions).filter(d => d.verdict === "accept").length;
+  const nReject = Object.values(decisions).filter(d => d.verdict === "reject").length;
+  document.getElementById("doneSummary").textContent =
+    `${nAccept} accepted, ${nReject} rejected, ${incidents.length - nAccept - nReject} undecided.`;
+}
+
+function exportDecisions() {
+  const out = incidents
+    .filter(i => decisions[i.incident_id])
+    .map(i => ({ incident_id: i.incident_id, ...decisions[i.incident_id] }));
+  const blob = new Blob([JSON.stringify(out, null, 1)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = "adjudication_decisions.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+document.addEventListener("keydown", (e) => {
+  if (!incidents.length) return;
+  if (e.target.tagName === "INPUT") return;
+  switch (e.key) {
+    case "j": next(); break;
+    case "k": prev(); break;
+    case "p": decide("accept"); break;
+    case "x": decide("reject"); break;
+    case "u": undo(); break;
+    case "e": exportDecisions(); break;
+    case "m": {
+      const current = incidents[idx].suggested_make || "";
+      const val = prompt("Corrected make:", current);
+      if (val !== null) decide("accept", val.trim());
+      break;
+    }
+  }
+});
+</script>
+</body>
+</html>

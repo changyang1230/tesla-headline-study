@@ -40,7 +40,12 @@ MAKES: tuple[Make, ...] = (
     # --- other battery-electric makes -------------------------------------------
     Make("BYD", OTHER_BEV, aliases=("BYD",), models=("Atto 3", "Seal", "Dolphin", "Sealion", "Shark")),
     Make("Polestar", OTHER_BEV, aliases=("Polestar",), models=()),
-    Make("Nissan", MAINSTREAM_ICE, aliases=("Nissan",), models=("Leaf", "Navara", "Patrol", "Qashqai", "X-Trail")),
+    # "Patrol" deliberately excluded from models: in crash/police reporting context it is
+    # overwhelmingly "Highway Patrol" or generic policing usage ("on patrol", "police
+    # patrols"), not the Nissan SUV. Found 2026-08-25: 27/32 (84%) of body-text "Nissan"
+    # matches were this false positive even after adding negative-context rules for the
+    # common phrasings; the remainder were still generic policing usage, not the vehicle.
+    Make("Nissan", MAINSTREAM_ICE, aliases=("Nissan",), models=("Leaf", "Navara", "Qashqai", "X-Trail")),
     Make("Volvo", PREMIUM_ICE, aliases=("Volvo",), models=()),
     Make("Cupra", OTHER_BEV, aliases=("Cupra",), models=()),
     Make("GWM", MAINSTREAM_ICE, aliases=("GWM", "Great Wall"), models=("Haval", "Cannon", "Tank")),
@@ -74,7 +79,12 @@ MAKES: tuple[Make, ...] = (
     Make("Ford", MAINSTREAM_ICE, aliases=("Ford",), models=("Ranger", "Falcon", "Mustang", "Raptor")),
     Make("Mitsubishi", MAINSTREAM_ICE, aliases=("Mitsubishi",), models=("Triton", "Outlander", "Pajero", "ASX", "Lancer")),
     Make("Subaru", MAINSTREAM_ICE, aliases=("Subaru",), models=("Forester", "Outback", "WRX", "Liberty", "Impreza")),
-    Make("Holden", MAINSTREAM_ICE, aliases=("Holden",), models=("Commodore", "Barina", "Ute")),
+    # "Ute" deliberately excluded from models: it is the generic Australian-English word
+    # for any pickup-style vehicle, not specifically a Holden. Holden also stopped
+    # selling cars in Australia in 2020-2021, entirely before this study's 2023-2025
+    # window, so the token has no legitimate use here. Found 2026-08-25: 11/11 "Holden"
+    # matches in real harvested headlines were "ute" false positives, zero genuine.
+    Make("Holden", MAINSTREAM_ICE, aliases=("Holden",), models=("Commodore", "Barina")),
     Make("Volkswagen", MAINSTREAM_ICE, aliases=("Volkswagen", "VW", "Volkswagon"),
          models=("Golf", "Tiguan", "Amarok", "Passat", "Polo")),
     Make("Honda", MAINSTREAM_ICE, aliases=("Honda",), models=("Accord", "HR-V", "CR-V")),
@@ -134,7 +144,10 @@ NEGATIVE_CONTEXTS: dict[str, tuple[str, ...]] = {
     "cannon": (r"\bcannon\s+(hill|fire|ball)\b",),
     "mustang": (r"\bwild\s+mustangs?\b",),
     "raptor": (r"\braptors?\s+(bird|nest|species)\b", r"\btoronto\s+raptors\b"),
-    "swift": (r"\btaylor\s+swift\b", r"\bswift\s+(action|response|justice|current)\b"),
+    "swift": (r"\btaylor\s+swift\b", r"\bswift\s+(action|response|justice|current)\b",
+              # Found 2026-08-25: "young Swift fan's death" (Taylor Swift fan, not a
+              # Suzuki) matched with no adjacent "Taylor" for the pattern above to catch.
+              r"\bswift('s)?\s+fans?\b", r"\bswifties?\b", r"\b(young|die-?hard)\s+swift\b"),
     "wrangler": (r"\bwrangler\s+jeans\b",),
 }
 

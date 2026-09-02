@@ -1,6 +1,6 @@
 # Does the headline name the car? — simulated data
 
-Generated 2026-08-24T11:59:58+00:00  
+Generated 2026-08-24T12:38:40+00:00  
 Incidents covered by ≥5 of the top 10 Australian news brands: **139** (25 Tesla, 114 non-Tesla), **1180** articles.
 
 ## The answer

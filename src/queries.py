@@ -25,24 +25,63 @@ EVENT_TERMS: tuple[str, ...] = (
     "collision",
     "collided",
     "smash",
+    "smashed",
     "head-on",
     "rollover",
     "rolled",
+    "flipped",
+    "overturned",
     "ploughed",
     "veered",
+    "swerved",
     "hit and run",
     "car fire",
     "vehicle fire",
     "vehicle alight",
     "car alight",
+    "burst into flames",
+    "engulfed in flames",
+    "went up in flames",
+    "thermal runaway",
+    "battery fire",
+    "runaway car",
+    "runaway vehicle",
     "struck by a car",
     "hit by a car",
     "pedestrian struck",
     "cyclist struck",
+    "mowed down",
+    "mows down",
     "single vehicle",
     "wrong side of the road",
+    "lost control",
+    "out of control",
+    "off the road",
+    "slammed into",
+    "careered",
+    "careened",
+    "plunged",
+    "wrapped around a pole",
+    "wrapped around a tree",
+    "t-boned",
+    "airborne",
+    "launched into",
+    "car hit",
+    "car hits",
+    "vehicle hit",
+    "vehicle hits",
+    "hit by",
+    "bollard",
 )
 
+#: Protocol §10.4 fallback 3 invoked 2026-08-25: 165/173 coded incidents under the
+#: fatal/critical-only bar and zero were Tesla (power target was >=25) — a real
+#: feasibility signal, recorded before any outcome comparison was run. Extended per the
+#: fallback's own wording ("any crash with a hospitalisation or major property damage").
+#: Note this only catches incidents whose HEADLINE mentions an outcome of this kind —
+#: a purely novelty-framed headline ("wild crash", "chaos") with no injury/damage
+#: language still won't match; that would need dropping the outcome-term requirement
+#: entirely, a much larger and noisier change not implied by this fallback.
 OUTCOME_TERMS: tuple[str, ...] = (
     "killed",
     "dies",
@@ -55,6 +94,15 @@ OUTCOME_TERMS: tuple[str, ...] = (
     "life-threatening injuries",
     "trapped",
     "airlifted",
+    "hospitalised",
+    "hospitalized",
+    "taken to hospital",
+    "rushed to hospital",
+    "airlifted to hospital",
+    "written off",
+    "extensively damaged",
+    "extensive damage",
+    "significant damage",
 )
 
 CONTEXT_TERMS: tuple[str, ...] = (
@@ -71,37 +119,45 @@ CONTEXT_TERMS: tuple[str, ...] = (
 GDELT_SOURCE_FILTER = "sourcecountry:australia"
 
 
-#: GDELT rejects very long/complex queries, so event terms are OR-ed in chunks rather
-#: than as one enormous disjunction. Four chunks x daily windows keeps every call under
-#: the 250-record cap while finishing the three-year harvest in a couple of hours.
+#: GDELT rejects queries over ~250 characters ("query was too short or too long"), not
+#: just ones over the 250-record cap. Both event terms AND outcome terms must be chunked
+#: — the full outcome OR-group alone is 171 characters, so pairing it with more than a
+#: handful of event terms blows the limit. 4 event chunks x 2 outcome chunks = 8 queries
+#: per window, longest observed 243 characters.
 EVENT_CHUNKS = 4
+OUTCOME_CHUNKS = 2
 
 
 def _or_group(terms) -> str:
     return "(" + " OR ".join(f'"{t}"' for t in terms) + ")"
 
 
+def _chunk(seq, n_chunks):
+    size = (len(seq) + n_chunks - 1) // n_chunks
+    return [seq[i:i + size] for i in range(0, len(seq), size)]
+
+
 def gdelt_queries() -> list[str]:
     """The harvest query set: OR-grouped event terms AND OR-grouped outcome terms.
 
-    One query per event chunk. Combined with daily windows in the harvester, this stays
-    well under GDELT's 250-record-per-call cap, so nothing is silently truncated, while
-    keeping the call count to a few thousand rather than sixty thousand.
+    One query per (event chunk, outcome chunk) pair. Combined with daily windows in the
+    harvester, this stays under GDELT's ~250-character query-length limit and its
+    250-record-per-call cap, so nothing is silently truncated or rejected.
     """
-    outcome = _or_group(OUTCOME_TERMS)
-    chunk = (len(EVENT_TERMS) + EVENT_CHUNKS - 1) // EVENT_CHUNKS
     return [
-        f"{_or_group(EVENT_TERMS[i:i + chunk])} {outcome} {GDELT_SOURCE_FILTER}"
-        for i in range(0, len(EVENT_TERMS), chunk)
+        f"{_or_group(e)} {_or_group(o)} {GDELT_SOURCE_FILTER}"
+        for e in _chunk(EVENT_TERMS, EVENT_CHUNKS)
+        for o in _chunk(OUTCOME_TERMS, OUTCOME_CHUNKS)
     ]
 
 
-#: Brands GDELT may not tag `sourcecountry:australia` because they sit on a foreign
-#: domain. Daily Mail Australia is the case that matters: it is a top-5 Australian news
-#: site publishing on `dailymail.co.uk`, so the country filter can miss it entirely.
-#: Dropping it would bias the study toward finding nothing — it is exactly the kind of
-#: outlet most inclined to put a brand in a headline.
-CROSS_DOMAIN_BRANDS: tuple[str, ...] = ("dailymail.co.uk", "theguardian.com")
+#: Brands GDELT may not tag `sourcecountry:australia` because they sit on a global/foreign
+#: domain. Daily Mail Australia (dailymail.com, formerly dailymail.co.uk) and bbc.com are
+#: the cases that matter: both are top-10 Australian news sites by audience (Ipsos iris)
+#: publishing on domains the country filter may not attribute to Australia. Dropping them
+#: would bias the study toward finding nothing — they are exactly the kind of outlet most
+#: inclined to put a brand in a headline.
+CROSS_DOMAIN_BRANDS: tuple[str, ...] = ("dailymail.com", "theguardian.com", "bbc.com")
 
 
 def gdelt_supplementary_queries() -> list[str]:
@@ -111,12 +167,11 @@ def gdelt_supplementary_queries() -> list[str]:
     to cluster onto an Australian incident to enter the study, so non-Australian coverage
     falls out at the clustering step.
     """
-    outcome = _or_group(OUTCOME_TERMS)
-    chunk = (len(EVENT_TERMS) + EVENT_CHUNKS - 1) // EVENT_CHUNKS
     return [
-        f"{_or_group(EVENT_TERMS[i:i + chunk])} {outcome} domain:{brand}"
+        f"{_or_group(e)} {_or_group(o)} domain:{brand}"
         for brand in CROSS_DOMAIN_BRANDS
-        for i in range(0, len(EVENT_TERMS), chunk)
+        for e in _chunk(EVENT_TERMS, EVENT_CHUNKS)
+        for o in _chunk(OUTCOME_TERMS, OUTCOME_CHUNKS)
     ]
 
 
@@ -129,9 +184,26 @@ def gdelt_queries_narrow() -> list[str]:
     ]
 
 
+#: Deliberate decision 2026-08-25, OUTSIDE Protocol §10.4's pre-specified fallback
+#: ladder (fallback 3 only widened OUTCOME_TERMS to include hospitalisation/damage
+#: language — see the comment above OUTCOME_TERMS). This goes further: the outcome-term
+#: co-occurrence requirement is dropped entirely, so keyword_regex() now matches on an
+#: EVENT_TERMS alone. Explicitly chosen for maximum recall (catching viral/novelty
+#: incidents like the DFO Homebush "runaway Tesla" story, which had a headline with no
+#: injury/damage language at all) at the acknowledged cost of reintroducing the
+#: circularity risk the brand-agnostic design otherwise guards against: for minor/no-
+#: injury incidents, "does this get covered by media at all" becomes driven by
+#: novelty rather than severity, and novelty is plausibly make-correlated (a dramatic
+#: EV/autopilot incident is more newsworthy than an equivalent-severity ICE incident).
+#: OUTCOME_TERMS is kept, unused by this function, for any future severity tagging.
+REQUIRE_OUTCOME_TERM = False
+
+
 def keyword_regex() -> re.Pattern[str]:
     """Local re-filter for harvests that arrive without server-side query support."""
     ev = "|".join(re.escape(t) for t in EVENT_TERMS)
+    if not REQUIRE_OUTCOME_TERM:
+        return re.compile(rf"(?:{ev})", re.IGNORECASE | re.DOTALL)
     oc = "|".join(re.escape(t) for t in OUTCOME_TERMS)
     return re.compile(rf"(?=.*(?:{ev}))(?=.*(?:{oc}))", re.IGNORECASE | re.DOTALL)
 

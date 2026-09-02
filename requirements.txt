@@ -6,3 +6,4 @@ numpy>=1.24
 scipy>=1.10
 statsmodels>=0.14
 pytest>=7.4
+trafilatura>=2.2   # article-body extraction for src/fetch_bodies.py

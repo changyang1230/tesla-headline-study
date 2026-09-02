@@ -5,6 +5,8 @@ data/*.db-wal
 data/*.db-shm
 data/*.csv
 data/bodies/
+data/raw_cache/
+data/manual_sitemaps/
 
 # Run outputs regenerated from the data (results_simulated.md IS committed — it is the
 # evidence that the analysis works on data whose answer is known)
@@ -14,6 +16,7 @@ output/coding_validation.md
 output/phase0_feasibility.md
 harvest.log
 nohup.out
+*.log
 
 # Python
 __pycache__/
@@ -25,6 +28,10 @@ venv/
 
 # Secrets
 .env
+
+# Session working notes — candid scope/decision reasoning not meant for the public repo
+# (was tracked as CLAUDE.md, purged from history 2026-09-01; kept locally, untracked)
+CLAUDE.md
 
 # Editor / OS
 .vscode/
